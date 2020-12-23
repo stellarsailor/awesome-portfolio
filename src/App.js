@@ -1,25 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import { Container, Row, Col } from 'react-grid-system';
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Project from './pages/Project';
+import Footer from './components/Footer';
+import Projects from './components/Projects';
+import BackToTop from './components/BackToTop';
+import NavBar from './components/NavBar';
+
+import Scroll from 'react-scroll';
+var Element  = Scroll.Element;
+
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid style={{padding: 0}}>
+      <BackToTop />
+      <Element name="top" />
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/project" component={Projects} />
+          <Route path="/project/:title" component={Project} />
+          <Route path="/" component={Home} />
+        </Switch>
+      </Router>
+      <Footer />
+    </Container>
   );
 }
 
-export default App;
