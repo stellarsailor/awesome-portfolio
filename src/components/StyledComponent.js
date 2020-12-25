@@ -58,3 +58,16 @@ export const CenteredRow = styled.div`
     align-items: center;
     justify-content: center;
 `
+
+export const Divider = styled.div`
+    width: 100%;
+    border-bottom: 1px solid var(--mono-3);
+    margin: 16px 0px;
+`
+
+export const DividerTitle = styled.div`
+    font-size: 24px;
+    margin-top: 16px;
+    font-weight: 800;
+    color: var(--mono-7);
+`

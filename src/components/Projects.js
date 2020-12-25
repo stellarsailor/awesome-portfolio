@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'react-grid-system'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
-import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol, TextSticky } from '../components/StyledComponent'
+import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol, TextSticky, DividerTitle, Divider } from '../components/StyledComponent'
 import { projects } from '../datas/projects'
 import { dynamicSort } from '../logics/dynamicSort'
 import { Link } from "react-router-dom"
@@ -38,11 +38,8 @@ export default function Projects (){
         <>
             <TextMain>Personal Projects</TextMain>
 
-            <StickyHeader>
-                <TextSticky>
-                    Running Services
-                </TextSticky>
-            </StickyHeader>
+            <DividerTitle>Running Services</DividerTitle>
+            <Divider />
 
             <Row nogutter>
                 {projects.filter(v => v.type === 'Production').sort(dynamicSort('id')).map( prj => (
@@ -66,11 +63,8 @@ export default function Projects (){
                 ))}
             </Row>
 
-            <StickyHeader>
-                <TextSticky>
-                    Toy Projects
-                </TextSticky>
-            </StickyHeader>
+            <DividerTitle>Toy Projects</DividerTitle>
+            <Divider />
 
             <Row nogutter>
                 {projects.filter(v => v.type === 'Toy').sort(dynamicSort('id')).map( prj => (
@@ -94,11 +88,8 @@ export default function Projects (){
                 ))}
             </Row>
             
-            <StickyHeader>
-                <TextSticky>
-                    Others
-                </TextSticky>
-            </StickyHeader>
+            <DividerTitle>Others</DividerTitle>
+            <Divider />
         </>
     )
 }

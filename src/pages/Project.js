@@ -62,7 +62,7 @@ export default function Project (props){
                     <Col sm={12} md={8} >
                         <StickyHeader>
                             <BackToProjectList onClick={() => props.history.goBack()}>
-                                {`<-`} Back
+                                {`<-`} Back       {title}
                             </BackToProjectList>
                         </StickyHeader>
                         <FlexDRow style={{marginTop: 16}}>

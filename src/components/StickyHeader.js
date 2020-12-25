@@ -7,14 +7,14 @@ const HeaderPane = styled.div`
     background-color: ${ props => props.isFixed ? 'rgba(255,255,255, 1)' : 'rgba(255,255,255, 1)' };
     display: flex;
     align-items: center;
-    z-index: 100;
+    /* z-index: 100; */
 `
 
 const HeaderBottomBorder = styled.div`
     width: ${ props => props.isFixed ? '100vw' : '100%' };
     margin-left:  ${ props => props.isFixed ? 'calc(50% - 50vw)' : '0' };
     border-bottom: 1px solid var(--mono-3);
-    z-index: 100;
+    /* z-index: 100; */
     margin-bottom: 16px;
 `
 

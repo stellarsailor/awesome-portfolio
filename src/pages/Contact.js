@@ -54,12 +54,12 @@ export default function Contact (){
     },[])
 
     const contactType = ['Email', 'GitHub', 'LinkedIn', 'Instagram']
-    const contactInfo = ['devsss@gmail.com', 'stellarsailor', 'Minsu Lee', 'stellarsailor']
 
     return (
         <Row nogutter justify="center">
             <ContactImage>
                 <HighlightText>
+                    <div>TORONTO, CA</div>
                     I'm willing to work with anything if you give a chance to me.
                 </HighlightText>
             </ContactImage>

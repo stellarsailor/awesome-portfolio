@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Row, Col } from 'react-grid-system'
-import { TextSubTitle, CenteredRow, TextCenterThin, TextSticky } from '../components/StyledComponent'
+import { TextSubTitle, CenteredRow, TextCenterThin, TextSticky, DividerTitle, Divider } from '../components/StyledComponent'
 import StickyHeader from '../components/StickyHeader'
 import WorkTogether from '../components/WorkTogether'
 import { skills } from '../datas/skills'
-
-const Divider = styled.div`
-    width: 100%;
-    border-bottom: 1px solid var(--mono-3);
-    margin: 16px 0px;
-`
 
 const CenteredTitle = styled.div`
     text-align: center;
@@ -56,6 +50,17 @@ export default function About (){
         window.scrollTo(0, 0)
     },[])
 
+    const [ isSummaryMode, setIsSummaryMode ] = useState(true)
+    const [ selectedProficiency, setSelectedProficiency ] = useState(0)
+
+    const renderSkill = useCallback( (typeParams) => {
+        return skills.filter(v => v.type === typeParams).filter(v => selectedProficiency === 0 | v.proficiency === selectedProficiency).map(v => (
+            <div>
+                {v.name} { !isSummaryMode && <span>{v.comment}</span>}
+            </div>
+        ))
+    },[selectedProficiency, isSummaryMode])
+
     return (
         <Row nogutter justify="center">
             <Col sm={12} md={8} >
@@ -70,57 +75,36 @@ export default function About (){
 
                 <img src="/images/navy.jpg" style={{width: '100%'}} />
 
-                <StickyHeader>
-                    <TextSticky>
-                        Skills
-                    </TextSticky>
-                </StickyHeader>
-                <div style={{textAlign: 'right'}}>Summary | Detail</div>
-                <div style={{textAlign: 'right'}}>Proficiency : all, 0, 1, 2</div>
+                <DividerTitle>Skills</DividerTitle>
+                <Divider />
+                <div style={{textAlign: 'right'}}>
+                    <span onClick={() => setIsSummaryMode(true)}>Summary</span> | <span onClick={() => setIsSummaryMode(false)}>Detail</span>
+                </div>
+                <div style={{textAlign: 'right'}}>
+                    Proficiency : <span onClick={() => setSelectedProficiency(0)}>all</span> | <span onClick={() => setSelectedProficiency(1)}>1</span> | <span onClick={() => setSelectedProficiency(2)}>2</span>
+                </div>
 
                 <SkillTitle>Front-End</SkillTitle>
-                {skills.filter(v => v.type === 'FE').map(v => (
-                    <div>
-                        {v.name}
-                    </div>
-                ))}
-                <SkillTitle>Back-End/DB</SkillTitle>
-                {skills.filter(v => v.type === 'BE').map(v => (
-                    <div>
-                        {v.name}
-                    </div>
-                ))}        
-                <SkillTitle>DevOps</SkillTitle>
-                {skills.filter(v => v.type === 'DO').map(v => (
-                    <div>
-                        {v.name}
-                    </div>
-                ))}
-                <SkillTitle>Programming Languages</SkillTitle>
-                {skills.filter(v => v.type === 'PL').map(v => (
-                    <div>
-                        {v.name}
-                    </div>
-                ))}
-                <SkillTitle>etc.</SkillTitle>
-                {skills.filter(v => v.type === 'etc').map(v => (
-                    <div>
-                        {v.name}
-                    </div>
-                ))}
-                <SkillTitle>OS</SkillTitle>
-                {skills.filter(v => v.type === 'OS').map(v => (
-                    <div>
-                        {v.name}
-                    </div>
-                ))}
-                {/* <Divider /> */}
+                {renderSkill('FE')}
 
-                <StickyHeader>
-                    <TextSticky>
-                        Career / Education
-                    </TextSticky>
-                </StickyHeader>
+                <SkillTitle>Back-End/DB</SkillTitle>
+                {renderSkill('BE')}     
+
+                <SkillTitle>DevOps</SkillTitle>
+                {renderSkill('DO')}
+
+                <SkillTitle>Programming Languages</SkillTitle>
+                {renderSkill('PL')}
+
+                <SkillTitle>etc.</SkillTitle>
+                {renderSkill('etc')}
+
+                <SkillTitle>OS</SkillTitle>
+                {renderSkill('OS')}
+
+                <DividerTitle>Career / Education</DividerTitle>
+                <Divider />
+
                 <InfoLine>
                     <InfoLeft>2019 - 2020</InfoLeft>
                     <InfoRight>
@@ -150,11 +134,8 @@ export default function About (){
                     </InfoRight>
                 </InfoLine>
                 
-                <StickyHeader>
-                    <TextSticky>
-                        Languages
-                    </TextSticky>
-                </StickyHeader>
+                <DividerTitle>Languages</DividerTitle>
+                <Divider />
 
                 <InfoLine>
                     <InfoLeft>Korean</InfoLeft>

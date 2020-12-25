@@ -3,7 +3,7 @@ type skillType = {
     name: string;
     image: string;
     comment: string;
-    proficiency: 0 | 1 | 2; // 0 for only read document, followed tutorial or under 10 hrs, 1 for 10 ~ 100 hrs, 2 for 300+ hrs
+    proficiency: 1 | 2; // 1 for only read document, followed tutorial or under 10 hrs, 2 for 100+ hrs
 }
 
 export const skills: Array<skillType> = [
@@ -89,14 +89,14 @@ export const skills: Array<skillType> = [
         name: 'Docker',
         image: 'docker',
         comment: "I did Typescript for a year right now something.",
-        proficiency: 1,
+        proficiency: 2,
     },
     {
         type: 'DO',
         name: 'Jenkins',
         image: 'jenkins',
         comment: "I did Typescript for a year right now something.",
-        proficiency: 0,
+        proficiency: 1,
     },
     {
         type: 'DO',
