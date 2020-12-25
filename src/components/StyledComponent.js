@@ -30,6 +30,19 @@ export const TextCenterThin = styled.div`
     color: var(--mono-4);
 `
 
+export const TextUpper = styled.div`
+    font-size: 1.4rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+    color: var(--mono-5);
+`
+
+export const TextSticky = styled.div`
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--mono-6);
+`
+
 export const FlexDRow = styled.div`
     display: flex;
     flex-direction: row;

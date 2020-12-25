@@ -2,10 +2,11 @@ import React from 'react'
 import { Row, Col } from 'react-grid-system'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
-import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol } from '../components/StyledComponent'
+import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol, TextSticky } from '../components/StyledComponent'
 import { projects } from '../datas/projects'
 import { dynamicSort } from '../logics/dynamicSort'
 import { Link } from "react-router-dom"
+import StickyHeader from './StickyHeader'
 
 const ProjectPane = styled.div`
     background-color: black; //#fbfbfd;
@@ -36,9 +37,15 @@ export default function Projects (){
     return (
         <>
             <TextMain>Personal Projects</TextMain>
-            <TextSubTitle>Running Services</TextSubTitle>
+
+            <StickyHeader>
+                <TextSticky>
+                    Running Services
+                </TextSticky>
+            </StickyHeader>
+
             <Row nogutter>
-                {projects.filter(v => v.type === 'service').sort(dynamicSort('id')).map( prj => (
+                {projects.filter(v => v.type === 'Production').sort(dynamicSort('id')).map( prj => (
                     <Col sm={12} md={6} style={{padding: 24}}>
                         <Link to={`/project/${prj.title}`}>
                             <ProjectPane style={{backgroundImage: `url('/images/project-image.jpg')`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
@@ -58,9 +65,15 @@ export default function Projects (){
                     </Col>
                 ))}
             </Row>
-            <TextSubTitle>Toy Projects</TextSubTitle>
+
+            <StickyHeader>
+                <TextSticky>
+                    Toy Projects
+                </TextSticky>
+            </StickyHeader>
+
             <Row nogutter>
-                {projects.filter(v => v.type === 'toy').sort(dynamicSort('id')).map( prj => (
+                {projects.filter(v => v.type === 'Toy').sort(dynamicSort('id')).map( prj => (
                     <Col sm={12} md={6} style={{padding: 24}}>
                     <Link to={`/project/${prj.title}`}>
                         <ProjectPane style={{backgroundImage: `url('/images/project-image.jpg')`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
@@ -80,7 +93,12 @@ export default function Projects (){
                 </Col>
                 ))}
             </Row>
-            <TextSubTitle>Others</TextSubTitle>
+            
+            <StickyHeader>
+                <TextSticky>
+                    Others
+                </TextSticky>
+            </StickyHeader>
         </>
     )
 }

@@ -9,6 +9,7 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -24,21 +25,21 @@ var Element  = Scroll.Element;
 export default function App() {
 
   return (
-    <Container fluid style={{padding: 0}}>
-      <BackToTop />
-      <Element name="top" />
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/project" component={Projects} />
-          <Route path="/project/:title" component={Project} />
-          <Route path="/" component={Home} />
-        </Switch>
-      </Router>
-      <Footer />
-    </Container>
+      <Container fluid style={{padding: 0}}>
+        <BackToTop />
+        <Element name="top" />
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/project/:title" component={Project} />
+            <Route path="/project" component={Home} />
+            <Route path="/" component={Home} />
+          </Switch>
+        </Router>
+        <Footer />
+      </Container>
   );
 }
 

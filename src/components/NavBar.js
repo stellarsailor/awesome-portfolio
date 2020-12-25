@@ -6,7 +6,6 @@ import Scroll from 'react-scroll'
 var scroller = Scroll.scroller;
 
 const NavigationPane = styled.div`
-    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     width: 100%;
     height: 45px;
@@ -18,7 +17,6 @@ const NavigationPane = styled.div`
 const MobileTab = styled.div`
     width: 100%;
     height: 45px;
-    background-color: rgba(0, 0, 0, 0.8);
     z-index: 10;
     display: flex;
     justify-content: space-between;
@@ -54,11 +52,16 @@ const MobileSides = styled.div`
 
 const EachButton = styled.div`
     width: 100px;
-    color: white;
+    font-size: 15px;
+    color: #f5f5f7;
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0.8;
+    transition: opacity .3s cubic-bezier(0.25, 0.1, 0.25, 1);
     &:hover {
+        color: white;
+        opacity: 1;
         cursor: pointer;
     }
 `
@@ -75,7 +78,7 @@ export default function NavBar(props) {
     })
 
     return (
-        <Row nogutter>
+        <Row nogutter justify="center" style={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
             <Visible xs sm>
                 <div style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
                     <MobileTab>
@@ -120,12 +123,14 @@ export default function NavBar(props) {
                 </div>
             </Visible>
             <Visible md lg xl xxl>
-                <NavigationPane>
-                    <Link to="/"> <EachButton><img src="/images/logo.png" style={{width: 30}} /></EachButton> </Link>
-                    <Link to="/project"><EachButton>Projects</EachButton></Link>
-                    <Link to="/about"><EachButton >About Me</EachButton></Link>
-                    <Link to="/contact"><EachButton >Contact</EachButton></Link>
-                </NavigationPane>
+                <Col sm={12} md={8} >
+                    <NavigationPane>
+                        <Link to="/"> <EachButton><img src="/images/logo.png" style={{width: 30}} /></EachButton> </Link>
+                        <Link to="/project" onClick={() => goToProjects()}><EachButton>Projects</EachButton></Link>
+                        <Link to="/about"><EachButton >About Me</EachButton></Link>
+                        <Link to="/contact"><EachButton >Contact</EachButton></Link>
+                    </NavigationPane>
+                </Col>
             </Visible>
         </Row>
     )

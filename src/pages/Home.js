@@ -2,12 +2,13 @@ import React, { useEffect } from 'react'
 import { Row, Col } from 'react-grid-system'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
-import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol } from '../components/StyledComponent'
-import { Link } from "react-router-dom"
+import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol, TextUpper } from '../components/StyledComponent'
+import { Link, useRouteMatch } from "react-router-dom"
 import WorkTogether from '../components/WorkTogether'
 import Scroll from 'react-scroll';
 import Projects from '../components/Projects'
 var Element  = Scroll.Element;
+var scroller = Scroll.scroller;
 
 const MainLeftPane = styled.div`
     height: 100%;
@@ -18,14 +19,27 @@ const MainLeftPane = styled.div`
 
 export default function Home (){
 
+    let match = useRouteMatch()
+
+    useEffect(() => {
+        if(match.path === '/project'){
+            scroller.scrollTo('project', {
+                duration: 1200,
+                delay: 50,
+                smooth: true,
+                offset: 0, 
+            })
+        }
+    },[])
+
     return (
         <>
             <Row nogutter style={{height: 'calc(100vh - 45px)', backgroundImage: `url('/images/main-background-text.png')`}} bottom="xs">
                 <Col sm={12} md={6} style={{padding: 24}}>
                     <MainLeftPane>
-                        <div style={{fontSize: 24}}>
-                            ^ Toronto
-                        </div>
+                        <TextUpper>
+                            TORONTO
+                        </TextUpper>
                         <TextMain>
                             Web Developer 
                         </TextMain>
@@ -44,11 +58,13 @@ export default function Home (){
                     <img src="/images/main-portrait.png" style={{width: '100%', height: '100%'}} />
                 </Col>
             </Row>
-            <div style={{padding: '5%'}}>
-                <Element name="project" />
-                <Projects />
-                <WorkTogether />
-            </div>
+            <Row nogutter justify="center">
+                <Col sm={12} md={10} >
+                    <Element name="project" />
+                    <Projects />
+                    <WorkTogether />
+                </Col>
+            </Row>
         </>
     )
 }
