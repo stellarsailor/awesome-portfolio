@@ -21,7 +21,7 @@ const WorkTogetherText = styled.div`
         font-size: 28px;
     }
     &:hover{
-        /* text-decoration-line: underline; */
+        text-decoration-line: underline;
     }
     cursor: pointer;
 `

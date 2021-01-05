@@ -15,6 +15,9 @@ const HighlightText = styled.div`
     font-weight: 800;
     text-align: center;
     margin: 24px 0px;
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+    }
 `
 
 const ContactImage = styled.div`
@@ -24,6 +27,14 @@ const ContactImage = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    /* filter: brightness(30%); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/contact.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media (max-width: 768px) {
+        height: 200px;
+    }
 `
 
 const ContactText = styled.div`
@@ -38,6 +49,7 @@ const ContactText = styled.div`
 
 const ContactTypeBox = styled.div`
     width: 100%;
+    color: var(--mono-6);
     font-size: 24px;
     display: flex;
     justify-content: center;
@@ -49,6 +61,9 @@ const ContactTypeBox = styled.div`
     &:hover{
         transform: scale(1.1);
     }
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
 `
 
 export default function Contact (){
@@ -58,26 +73,31 @@ export default function Contact (){
     },[])
 
     const contactType = ['Email', 'GitHub', 'LinkedIn', 'Instagram']
+    const contactLink = ['mailto:dev.stellarsailor@gmail.com', 'https://github.com/stellarsailor', 'https://www.linkedin.com/in/minsu-lee-b6818b198/', 'https://www.instagram.com/stellarsalior']
 
     return (
         <Row nogutter justify="center">
             <ContactImage>
                 <HighlightText>
-                    <div>TORONTO, CA</div>
-                    I'm willing to work with anything if you give a chance to me.
+                    <div style={{color: 'white', filter: 'none'}}>
+                        <div>TORONTO, CA</div>
+                        I'm willing to work with anything if you give a chance to me.
+                    </div>
                 </HighlightText>
             </ContactImage>
             <Col sm={12} md={8} >
                 <ContactText>
                     Contact
                 </ContactText>
-                <Row nogutter justify="center">
-                    {contactType.map( (v, index) => (
+                <Row nogutter justify="center" style={{minHeight: 200}}>
+                    {contactType.map( (type, index) => (
                         <Col xs={6} sm={6} md={3} style={{padding: 8}} key={index}>
-                            <ContactTypeBox>
-                                <img src={`/images/icons/${v.toLowerCase()}.png`} width={80} height={80} />
-                                {v}
-                            </ContactTypeBox>
+                            <a href={contactLink[index]} target="_blank">
+                                <ContactTypeBox>
+                                    <img src={`/images/icons/${type.toLowerCase()}.png`} width={60} height={60} />
+                                    {type}
+                                </ContactTypeBox>
+                            </a>
                         </Col>
                     ))}
                 </Row>
