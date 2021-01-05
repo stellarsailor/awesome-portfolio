@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import { Row, Col, Visible, Hidden } from 'react-grid-system'
+import { useParams, useLocation, useHistory, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components'
 import Scroll from 'react-scroll'
 var scroller = Scroll.scroller;
@@ -43,6 +44,9 @@ const MobileTabLine = styled.div`
 `
 
 const MobileSides = styled.div`
+    color: white; //var(--blue);
+    font-size: 20px;
+    font-weight: 600;
     width: 50px;
     height: 50px;
     margin: 0px 8px;
@@ -69,6 +73,22 @@ const EachButton = styled.div`
 `
 
 export default function NavBar(props) {
+    const location = useLocation()
+
+    const [ scrollPosition, setScrollPosition ] = useState(0)
+
+    const handleScroll = () => {
+        const position = window.pageYOffset
+        setScrollPosition(position)
+    }
+        
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true })
+    
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
 
     const [ viewMobilePane, setViewMobilePane ] = useState(false)
 
@@ -80,11 +100,18 @@ export default function NavBar(props) {
     })
 
     return (
-        <Row nogutter justify="center" style={{backgroundColor: 'rgba(0, 0, 0, 0.9)', position: 'fixed', width: '100%', zIndex: 10}}>
+        <Row nogutter justify="center" style={{position: 'fixed', width: '100%', zIndex: 10}}>
             <Visible xs sm>
-                <div style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
+                <div style={{width: '100%', display: 'flex', flexDirection: 'column', backgroundColor: 'rgba(0, 0, 0, 1)'}}>
                     <MobileTab>
-                        <MobileSides></MobileSides>
+                        {
+                            location.pathname.includes('/project/') && scrollPosition > 50 ?
+                            <MobileSides onClick={() => window.history.back()}>
+                                <img src="/images/more.png" style={{width: 20, height: 20, transform: 'rotate(180deg)', marginLeft: 24}} /> Back
+                            </MobileSides>
+                            :
+                            <div style={{width: 50, height: 50, margin: '0px 8px'}}></div>
+                        }
                         <Link to="/"> 
                             <img src="/images/logo.png" style={{width: 30}} onClick={() => setViewMobilePane(false)} />
                         </Link>
@@ -130,14 +157,16 @@ export default function NavBar(props) {
                 </div>
             </Visible>
             <Visible md lg xl xxl>
-                <Col sm={12} md={10} >
-                    <NavigationPane>
-                        <Link to="/"> <EachButton><img src="/images/logo.png" style={{width: 30}} /></EachButton> </Link>
-                        <Link to="/projects"><EachButton>Projects</EachButton></Link>
-                        <Link to="/about"><EachButton >About Me</EachButton></Link>
-                        <Link to="/contact"><EachButton >Contact</EachButton></Link>
-                    </NavigationPane>
-                </Col>
+                <div style={{width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.9)'}}>
+                    <Col sm={12} md={10} >
+                        <NavigationPane>
+                            <Link to="/"> <EachButton><img src="/images/logo.png" style={{width: 30}} /></EachButton> </Link>
+                            <Link to="/projects"><EachButton>Projects</EachButton></Link>
+                            <Link to="/about"><EachButton >About Me</EachButton></Link>
+                            <Link to="/contact"><EachButton >Contact</EachButton></Link>
+                        </NavigationPane>
+                    </Col>
+                </div>
             </Visible>
         </Row>
     )

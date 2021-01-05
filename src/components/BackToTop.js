@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Scroll from 'react-scroll';
-var scroller = Scroll.scroller;
+import Scroll from 'react-scroll'
+var scroller = Scroll.scroller
 
 const GoToTopButton = styled.div`
     width: 45px;
@@ -24,12 +24,12 @@ const GoToTopButton = styled.div`
 
 export default function BackToTop() {
 
-    const [ scrollPosition, setScrollPosition ] = useState(0);
+    const [ scrollPosition, setScrollPosition ] = useState(0)
 
     const handleScroll = () => {
-        const position = window.pageYOffset;
-        setScrollPosition(position);
-    };
+        const position = window.pageYOffset
+        setScrollPosition(position)
+    }
     
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, { passive: true })
