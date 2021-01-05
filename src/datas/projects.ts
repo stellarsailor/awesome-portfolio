@@ -2,6 +2,7 @@ type ProjectType = {
     id: number;
     type: 'Production' | 'Toy' | 'Others';
     title: string;
+    languages: string;
     idea: string;
     timespent: number;
     duration: string;
@@ -32,6 +33,7 @@ export const projects: Array<ProjectType> = [
         id: 0,
         type: 'Toy',
         title: 'Memoiz',
+        languages: 'Korean',
         idea: "After learning asd is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
         timespent: 300,
         duration: '2020. 3. - 2020. 5.',
@@ -46,6 +48,7 @@ export const projects: Array<ProjectType> = [
         id: 1,
         type: 'Production',
         title: 'BritTea',
+        languages: 'English / Korean',
         idea: "After learning asd is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
         timespent: 300,
         duration: '2020. 3. - 2020. 5.',
@@ -60,6 +63,7 @@ export const projects: Array<ProjectType> = [
         id: 2,
         type: 'Production',
         title: 'Valog',
+        languages: 'Korean',
         idea: "After learning asd is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
         timespent: 300,
         duration: '2020. 3. - 2020. 5.',
@@ -74,6 +78,7 @@ export const projects: Array<ProjectType> = [
         id: 3,
         type: 'Production',
         title: 'SelfBingo',
+        languages: 'English / Korean',
         idea: "After learning asd is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
         timespent: 300,
         duration: '2020. 3. - 2020. 5.',
@@ -88,6 +93,22 @@ export const projects: Array<ProjectType> = [
         id: 4,
         type: 'Toy',
         title: 'Damwon Project',
+        languages: 'Korean',
+        idea: "After learning asd is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        timespent: 300,
+        duration: '2020. 3. - 2020. 5.',
+        stack: ['',],
+        library: ['',],
+        profit: '',
+        lesson: '',
+        code: '',
+        livelink: '',
+    },
+    {
+        id: 5,
+        type: 'Toy',
+        title: 'Genshin Party',
+        languages: 'English / Korean',
         idea: "After learning asd is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
         timespent: 300,
         duration: '2020. 3. - 2020. 5.',

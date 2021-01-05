@@ -7,6 +7,7 @@ import { FlexDCol, FlexDRow } from '../components/StyledComponent'
 import { projects } from '../datas/projects'
 
 const BackToProjectList = styled.div`
+    color: var(--blue);
     font-size: 1.8rem;
     font-weight: 800;
     cursor: pointer;
@@ -44,7 +45,7 @@ const InfoRight = styled.div`
     color: var(--mono-6);
 `
 
-export default function Project (props){
+export default function ProjectDetail (props){
 
     let { title } = useParams()
 
@@ -59,12 +60,11 @@ export default function Project (props){
         <Row nogutter justify="center">
             {
                 selectedPrj && (
-                    <Col sm={12} md={8} >
-                        <StickyHeader>
-                            <BackToProjectList onClick={() => props.history.goBack()}>
-                                {`<-`} Back       {title}
-                            </BackToProjectList>
-                        </StickyHeader>
+                    <Col sm={12} md={10} style={{padding: '1rem'}}>
+                        <BackToProjectList onClick={() => props.history.goBack()}>
+                            <img src="/images/more.png" width={20} style={{transform: 'rotate(180deg)'}} /> Back 
+                        </BackToProjectList>
+                        <Divider />
                         <FlexDRow style={{marginTop: 16}}>
                             <div style={{backgroundColor: 'aliceblue', width: 150, height: 150, borderRadius: 30, marginRight: 16}} />
                             <FlexDCol>
@@ -80,6 +80,10 @@ export default function Project (props){
                         <InfoLine>
                             <InfoLeft>Type</InfoLeft>
                             <InfoRight>{selectedPrj.type}</InfoRight>
+                        </InfoLine>
+                        <InfoLine>
+                            <InfoLeft>Language</InfoLeft>
+                            <InfoRight>{selectedPrj.languages}</InfoRight>
                         </InfoLine>
                         <InfoLine>
                             <InfoLeft>Time Spent</InfoLeft>

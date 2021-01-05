@@ -39,12 +39,16 @@ const ContactText = styled.div`
 const ContactTypeBox = styled.div`
     width: 100%;
     font-size: 24px;
-    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
+    cursor: pointer;
+    transition: .2s linear;
+    &:hover{
+        transform: scale(1.1);
+    }
 `
 
 export default function Contact (){
@@ -71,7 +75,7 @@ export default function Contact (){
                     {contactType.map( (v, index) => (
                         <Col xs={6} sm={6} md={3} style={{padding: 8}} key={index}>
                             <ContactTypeBox>
-                                <div style={{width: 80, height: 80, backgroundColor: 'gold'}} />
+                                <img src={`/images/icons/${v.toLowerCase()}.png`} width={80} height={80} />
                                 {v}
                             </ContactTypeBox>
                         </Col>

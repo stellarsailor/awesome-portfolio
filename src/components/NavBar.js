@@ -39,6 +39,7 @@ const MobileTabLine = styled.div`
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid rgba(60, 60, 60, 1);
+    color: white;
 `
 
 const MobileSides = styled.div`
@@ -48,6 +49,7 @@ const MobileSides = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 `
 
 const EachButton = styled.div`
@@ -78,44 +80,49 @@ export default function NavBar(props) {
     })
 
     return (
-        <Row nogutter justify="center" style={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
+        <Row nogutter justify="center" style={{backgroundColor: 'rgba(0, 0, 0, 0.9)', position: 'fixed', width: '100%', zIndex: 10}}>
             <Visible xs sm>
                 <div style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
                     <MobileTab>
                         <MobileSides></MobileSides>
-                        <Link to="/" style={{ textDecoration: 'none' }}> 
+                        <Link to="/"> 
                             <img src="/images/logo.png" style={{width: 30}} onClick={() => setViewMobilePane(false)} />
                         </Link>
                         <MobileSides onClick={() => setViewMobilePane(!viewMobilePane)}>
-                            <img src="/images/icon_hamburger.png" style={{width: 20, height: 20}} />
+                            <img src="/images/icon_hamburger.png" style={{width: 25, height: 25}} />
                         </MobileSides>
                     </MobileTab>
                     {
                         viewMobilePane && 
                         <MobileOpenedPane>
-                            <Link to="/message" style={{ textDecoration: 'none' }}>
+                            <Link to="/projects">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
-                                    To. DWG
+                                    Projects
                                 </MobileTabLine>
                             </Link>
-                            <Link to="/fanart" style={{ textDecoration: 'none' }}>
+                            <Link to="/about">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
-                                    Fan Arts
+                                    About Me
                                 </MobileTabLine>
                             </Link>
-                            <Link to="/dadjoke" style={{ textDecoration: 'none' }}>
+                            <Link to="/contact">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
-                                    Dad Joke
+                                    Contact
                                 </MobileTabLine>
                             </Link>
-                            <Link to="/article" style={{ textDecoration: 'none' }}>
+                            <Link to="/">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
-                                    Articles
+                                    GitHub
                                 </MobileTabLine>
                             </Link>
-                            <Link to="/highlight" style={{ textDecoration: 'none' }}>
+                            <Link to="/">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
-                                    Highlights
+                                    LinkedIn
+                                </MobileTabLine>
+                            </Link>
+                            <Link to="/">
+                                <MobileTabLine onClick={() => setViewMobilePane(false)}>
+                                    Instagram
                                 </MobileTabLine>
                             </Link>
                         </MobileOpenedPane>
@@ -123,10 +130,10 @@ export default function NavBar(props) {
                 </div>
             </Visible>
             <Visible md lg xl xxl>
-                <Col sm={12} md={8} >
+                <Col sm={12} md={10} >
                     <NavigationPane>
                         <Link to="/"> <EachButton><img src="/images/logo.png" style={{width: 30}} /></EachButton> </Link>
-                        <Link to="/project" onClick={() => goToProjects()}><EachButton>Projects</EachButton></Link>
+                        <Link to="/projects"><EachButton>Projects</EachButton></Link>
                         <Link to="/about"><EachButton >About Me</EachButton></Link>
                         <Link to="/contact"><EachButton >Contact</EachButton></Link>
                     </NavigationPane>

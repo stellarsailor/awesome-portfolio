@@ -6,7 +6,7 @@ import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol, Te
 import { Link, useRouteMatch } from "react-router-dom"
 import WorkTogether from '../components/WorkTogether'
 import Scroll from 'react-scroll';
-import Projects from '../components/Projects'
+import Projects from './Projects'
 var Element  = Scroll.Element;
 var scroller = Scroll.scroller;
 
@@ -15,6 +15,13 @@ const MainLeftPane = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+`
+
+const HyperLink = styled.div`
+    color: var(--blue);
+    &:hover{
+        text-decoration-line: underline;
+    }
 `
 
 export default function Home (){
@@ -45,12 +52,12 @@ export default function Home (){
                         </TextMain>
                         <span style={{textAlign: 'right', fontSize: 24}}>and Designer.</span>
                         <TextDesc>
-                            Over the five years, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                            I am a web developer who also have strong passion on web design as well. Truly enjoying React.js at the moment and love to make simple and beautiful interface.
                         </TextDesc>
                         <Link to="/about">
-                            <div style={{color: 'var(--blue)'}}>
-                                About Me >
-                            </div>
+                            <HyperLink>
+                                About Me <img src="/images/more.png" width={10} />
+                            </HyperLink>
                         </Link>
                     </MainLeftPane>
                 </Col>
@@ -58,13 +65,9 @@ export default function Home (){
                     <img src="/images/main-portrait.png" style={{width: '100%', height: '100%'}} />
                 </Col>
             </Row>
-            <Row nogutter justify="center">
-                <Col sm={12} md={10} >
-                    <Element name="project" />
-                    <Projects />
-                    <WorkTogether />
-                </Col>
-            </Row>
+            <div style={{marginBottom: '2rem'}} />
+            <Element name="project" />
+            <Projects />
         </>
     )
 }

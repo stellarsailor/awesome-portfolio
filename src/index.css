@@ -16,7 +16,13 @@ body {
   --mono-6: #444;
   --mono-7: #333;
   --mono-8: #111;
-  --blue: #0070c9;
+  --blue: #06c;
+
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 code {

@@ -7,7 +7,7 @@ const GoToTopButton = styled.div`
     width: 45px;
     height: 45px;
     border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
     display: flex;
     justify-content: center;
@@ -15,8 +15,9 @@ const GoToTopButton = styled.div`
     right: 3%;
     bottom: 3%;
     z-index: 30;
+    transition: .2s linear;
     &:hover {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.7);
     }
     cursor: pointer;
 `

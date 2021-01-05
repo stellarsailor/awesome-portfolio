@@ -13,9 +13,9 @@ import {
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Project from './pages/Project';
+import Project from './pages/ProjectDetail';
 import Footer from './components/Footer';
-import Projects from './components/Projects';
+import Projects from './pages/Projects';
 import BackToTop from './components/BackToTop';
 import NavBar from './components/NavBar';
 
@@ -30,13 +30,16 @@ export default function App() {
         <Element name="top" />
         <Router>
           <NavBar />
-          <Switch>
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/project/:title" component={Project} />
-            <Route path="/project" component={Home} />
-            <Route path="/" component={Home} />
-          </Switch>
+          <div style={{paddingTop: 45}}>
+            <Switch>
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/project/:title" component={Project} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/project" component={Home} />
+              <Route path="/" component={Home} />
+            </Switch>
+          </div>
         </Router>
         <Footer />
       </Container>

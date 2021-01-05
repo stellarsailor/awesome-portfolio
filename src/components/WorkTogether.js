@@ -18,10 +18,10 @@ const WorkTogetherText = styled.div`
     font-weight: 1000;
     text-align: center;
     @media (max-width: 576px) {
-        font-size: 32px;
+        font-size: 28px;
     }
     &:hover{
-        /* text-decoration: underline; */
+        /* text-decoration-line: underline; */
     }
     cursor: pointer;
 `
@@ -31,6 +31,9 @@ const WorkTogetherSmallText = styled.div`
     font-size: 16px;
     font-weight: 600;
     text-align: center;
+    @media (max-width: 576px) {
+        font-size: 13px;
+    }
 `
 
 const Divider = styled.div`

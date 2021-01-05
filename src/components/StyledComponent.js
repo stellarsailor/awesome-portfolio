@@ -66,8 +66,8 @@ export const Divider = styled.div`
 `
 
 export const DividerTitle = styled.div`
-    font-size: 24px;
-    margin-top: 16px;
+    font-size: 26px;
+    margin-top: 40px;
     font-weight: 800;
     color: var(--mono-7);
 `
