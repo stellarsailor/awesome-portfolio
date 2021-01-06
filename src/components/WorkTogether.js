@@ -5,7 +5,7 @@ import { CenteredRow } from './StyledComponent'
 
 const WorkTogetherPane = styled.div`
     width: 100%;
-    height: 300px;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,17 +42,19 @@ const Divider = styled.div`
     margin: 24px 0px 16px 0px;
 `
 
-export default function WorkTogether() {
+export default function WorkTogether(props) {
+
+    const { linkTo, smallText, bigText } = props
 
     return(
         <WorkTogetherPane>
             <WorkTogetherSmallText>
-                NEED A WEB DEVELOPER WHO HAS A PASSION ON DESIGN?
+                {smallText}
             </WorkTogetherSmallText>
             <Divider />
-            <Link to="/contact">
+            <Link to={linkTo}>
                 <WorkTogetherText>
-                    Let's Work Together →
+                    {bigText} →
                 </WorkTogetherText>
             </Link>
         </WorkTogetherPane>

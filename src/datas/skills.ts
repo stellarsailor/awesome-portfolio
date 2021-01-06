@@ -46,7 +46,7 @@ export const skills: Array<skillType> = [
         type: 'FE',
         name: 'jQuery',
         image: 'jquery',
-        comment: "라이브러리 활용이 가능합니다.",
+        comment: "I can use basic jQuery library.",
         highlight: false,
     },
     {
@@ -67,7 +67,7 @@ export const skills: Array<skillType> = [
         type: 'FE',
         name: 'React Native',
         image: 'rn',
-        comment: "",
+        comment: "I have published full-stack mobile application on both Apple App Store and Google Play.",
         highlight: true,
     },
     {

@@ -4,13 +4,20 @@ import { Link, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import StickyHeader from '../components/StickyHeader'
 import { FlexDCol, FlexDRow } from '../components/StyledComponent'
+import WorkTogether from '../components/WorkTogether'
+import CircleIndicator from '../components/CircleIndicator'
 import { projects } from '../datas/projects'
 
 const BackToProjectList = styled.div`
-    color: var(--blue);
+    /* color: var(--blue); */
     font-size: 1.8rem;
     font-weight: 800;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+    }
 `
 
 const Divider = styled.div`
@@ -45,6 +52,13 @@ const InfoRight = styled.div`
     color: var(--mono-6);
 `
 
+const HyperLink = styled.a`
+    color: var(--blue);
+    &:visited {
+        color: var(--blue);
+    }
+`
+
 export default function ProjectDetail (props){
 
     let { title } = useParams()
@@ -54,23 +68,31 @@ export default function ProjectDetail (props){
     useEffect(() => {
         window.scrollTo(0, 0)
         setSelectedPrj(projects.filter(v => v.title === title)[0])
-    },[])
+    },[title])
 
     return (
         <Row nogutter justify="center">
+            <CircleIndicator />
             {
                 selectedPrj && (
                     <Col sm={12} md={10} style={{padding: '1rem'}}>
-                        <BackToProjectList onClick={() => props.history.goBack()}>
-                            <img src="/images/more.png" width={20} style={{transform: 'rotate(180deg)'}} /> Back 
-                        </BackToProjectList>
+                        <Link to={`/projects?s=${selectedPrj.title}`}>
+                            <BackToProjectList>
+                                <img src="/images/more.png" width={20} style={{transform: 'rotate(180deg)', marginRight: 8}} /> Back 
+                            </BackToProjectList>
+                        </Link>
                         <Divider />
                         <FlexDRow style={{marginTop: 16}}>
-                            <div style={{backgroundColor: 'aliceblue', width: 150, height: 150, borderRadius: 30, marginRight: 16}} />
+                            <img src={`/images/projects/${selectedPrj.title}/icon.png`} width={140} height={140} style={{borderRadius: 15, marginRight: 16}} />
                             <FlexDCol>
                                 <div style={{fontWeight: 800, fontSize: 24}}>{title}</div>
                                 <div>Minsu Lee</div>
-                                <div>CODE | LIVE LINK</div>
+                                <div>
+                                    {selectedPrj.codeLink && <span>CODE</span>}
+                                    |
+                                    {selectedPrj.liveLink && 
+                                    <HyperLink href={selectedPrj.liveLink} target="_blank"> LIVE LINK </HyperLink>}
+                                </div>
                             </FlexDCol>
                         </FlexDRow>
 
@@ -86,30 +108,49 @@ export default function ProjectDetail (props){
                             <InfoRight>{selectedPrj.languages}</InfoRight>
                         </InfoLine>
                         <InfoLine>
-                            <InfoLeft>Time Spent</InfoLeft>
-                            <InfoRight>{selectedPrj.timespent}+ hrs</InfoRight>
-                        </InfoLine>
-                        <InfoLine>
                             <InfoLeft>Duration</InfoLeft>
-                            <InfoRight>{selectedPrj.duration}</InfoRight>
+                            <InfoRight>{selectedPrj.duration} &nbsp; ({selectedPrj.year})</InfoRight>
                         </InfoLine>
+                        { selectedPrj.timespent &&
+                            <InfoLine>
+                                <InfoLeft>Time Spent</InfoLeft>
+                                <InfoRight>{selectedPrj.timespent} hrs</InfoRight>
+                            </InfoLine>
+                        }
                         <InfoLine>
                             <InfoLeft>Stack</InfoLeft>
-                            <InfoRight>React.js + Node.js + MySQL + AWS</InfoRight>
+                            <InfoRight>{selectedPrj.stack.toString().replaceAll(',', ' + ')}</InfoRight>
                         </InfoLine>
-                        <InfoLine>
-                            <InfoLeft>Library List</InfoLeft>
-                            <InfoRight>See Detail</InfoRight>
-                        </InfoLine>
-                        <InfoLine>
-                            <InfoLeft>Result</InfoLeft>
-                            <InfoRight>{selectedPrj.profit} See Detail</InfoRight>
-                        </InfoLine>
+                        {
+                            selectedPrj.library && 
+                            <InfoLine>
+                                <InfoLeft>Library List</InfoLeft>
+                                <InfoRight>
+                                    <a href={selectedPrj.library} target="_blank">
+                                        See Detail <img src="/images/blank.png" width={15} height={15} />
+                                    </a>
+                                </InfoRight>
+                            </InfoLine>
+                        }
+                        {
+                            selectedPrj.profit &&
+                            <InfoLine>
+                                <InfoLeft>Profit</InfoLeft>
+                                <InfoRight>{selectedPrj.profit}</InfoRight>
+                            </InfoLine>
+                        }
+                        {
+                            selectedPrj.result &&
+                            <InfoLine>
+                                <InfoLeft>Result</InfoLeft>
+                                <InfoRight>{selectedPrj.result}</InfoRight>
+                            </InfoLine>
+                        }
 
                         <Divider />
                         <TabTitle>Initial Idea</TabTitle>
 
-                        <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                        <div>{selectedPrj.idea}</div>
 
                         <Divider />
                         <TabTitle>Preview</TabTitle>
@@ -132,9 +173,20 @@ export default function ProjectDetail (props){
                         <TabTitle>Lessons Learned</TabTitle>
                         {selectedPrj.lesson}
 
-                        <div>
-                            See Next Project ->
-                        </div>
+                        {
+                            selectedPrj.id + 1 < projects.length ?
+                            <WorkTogether
+                            linkTo={`/project/${projects[selectedPrj.id + 1].title}`}
+                            smallText={projects[selectedPrj.id + 1].title}
+                            bigText="See Next Project"
+                            />
+                            :
+                            <WorkTogether
+                            linkTo={`/about`}
+                            smallText=""
+                            bigText="Read About Me"
+                            />
+                        }
                     </Col>
                 )
             }

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { Row, Col } from 'react-grid-system'
 import styled from 'styled-components'
-import Fade from 'react-reveal/Fade'
 import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol, TextUpper } from '../components/StyledComponent'
 import { Link, useRouteMatch } from "react-router-dom"
 import WorkTogether from '../components/WorkTogether'

@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react'
 import { Row, Col } from 'react-grid-system'
 import styled from 'styled-components'
-import Fade from 'react-reveal/Fade'
 import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol, TextSticky, DividerTitle, Divider } from '../components/StyledComponent'
 import { projects } from '../datas/projects'
 import { dynamicSort } from '../logics/dynamicSort'
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import StickyHeader from '../components/StickyHeader'
 import WorkTogether from '../components/WorkTogether'
 
@@ -21,10 +20,10 @@ const ProjectPane = styled.div`
     cursor: pointer;
 `
 
-const ProjectDuration = styled.div`
+const ProjectYear = styled.div`
     color: var(--mono-2);
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: 300;
 `
 
 const ProjectTitle = styled.span`
@@ -34,8 +33,10 @@ const ProjectTitle = styled.span`
 `
 
 export default function Projects (){
+    let { search } = useLocation()
 
     useEffect(() => {
+        console.log(search)
         window.scrollTo(0, 0)
     },[])
 
@@ -48,16 +49,16 @@ export default function Projects (){
                 <Divider />
 
                 <Row nogutter>
-                    {projects.filter(v => v.type === 'Production').sort(dynamicSort('id')).map( prj => (
+                    {projects.filter(v => v.type === 'Production').map( prj => (
                         <Col sm={12} md={6} style={{padding: 24}}>
                             <Link to={`/project/${prj.title}`}>
                                 <ProjectPane style={{backgroundImage: `url('/images/project-image.jpg')`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
                                     <FlexDRow>
-                                        <div style={{backgroundColor: 'aliceblue', width: 80, height: 80, borderRadius: 10, marginRight: 16}} />
+                                    <img src={`/images/projects/${prj.title}/icon.png`} width={80} height={80} style={{borderRadius: 10, marginRight: 16}} />
                                         <FlexDCol>
-                                            <ProjectDuration>
-                                                {prj.duration}
-                                            </ProjectDuration>
+                                            <ProjectYear>
+                                                {prj.year}
+                                            </ProjectYear>
                                             <ProjectTitle>
                                                 {prj.title}
                                             </ProjectTitle>
@@ -73,16 +74,16 @@ export default function Projects (){
                 <Divider />
 
                 <Row nogutter>
-                    {projects.filter(v => v.type === 'Toy').sort(dynamicSort('id')).map( prj => (
+                    {projects.filter(v => v.type === 'Toy').map( prj => (
                         <Col sm={12} md={6} style={{padding: 24}}>
                         <Link to={`/project/${prj.title}`}>
                             <ProjectPane style={{backgroundImage: `url('/images/project-image.jpg')`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
                                 <FlexDRow>
-                                    <div style={{backgroundColor: 'aliceblue', width: 80, height: 80, borderRadius: 10, marginRight: 16}} />
+                                    <img src={`/images/projects/${prj.title}/icon.png`} width={80} height={80} style={{borderRadius: 10, marginRight: 16}} />
                                     <FlexDCol>
-                                        <ProjectDuration>
-                                            {prj.duration}
-                                        </ProjectDuration>
+                                        <ProjectYear>
+                                            {prj.year}
+                                        </ProjectYear>
                                         <ProjectTitle>
                                             {prj.title}
                                         </ProjectTitle>
@@ -96,7 +97,11 @@ export default function Projects (){
                 
                 <DividerTitle>Others</DividerTitle>
                 <Divider />
-                <WorkTogether />
+                <WorkTogether
+                linkTo="/contact"
+                smallText="NEED A WEB DEVELOPER WHO HAS A PASSION ON DESIGN AS WELL?"
+                bigText="Let's Work Together"
+                />
             </Col>
         </Row>
     )

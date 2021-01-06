@@ -6,6 +6,7 @@ import StickyHeader from '../components/StickyHeader'
 import WorkTogether from '../components/WorkTogether'
 import { skills } from '../datas/skills'
 import SkillPane from '../components/SkillPane'
+import CircleIndicator from '../components/CircleIndicator'
 
 const CenteredTitle = styled.div`
     text-align: center;
@@ -70,7 +71,7 @@ const InfoRight = styled.div`
 export default function About (){
 
     useEffect(() => {
-        // window.scrollTo(0, 0)
+        window.scrollTo(0, 0)
     },[])
 
     const [ isSummaryMode, setIsSummaryMode ] = useState(true)
@@ -132,8 +133,9 @@ export default function About (){
                     <InfoLeft>2016 - 2018</InfoLeft>
                     <InfoRight>
                         <b>Republic of Korea Navy</b>
+                        <div>Second Lieutenent</div>
                         <div>A Chief Officer of E-learning Contents Creating for Navy.</div>
-                        <div>Second Lieutenent - I used to make something</div> 
+                        <div>I used to make something</div> 
                     </InfoRight>
                 </InfoLine>
                 <br/>
@@ -181,7 +183,11 @@ export default function About (){
                 </InfoLine>
                 <br/><br/>
 
-                <WorkTogether />
+                <WorkTogether
+                linkTo="/contact"
+                smallText="NEED A WEB DEVELOPER WHO HAS A PASSION ON DESIGN AS WELL?"
+                bigText="Let's Work Together"
+                />
             </Col>
         </Row>
     )

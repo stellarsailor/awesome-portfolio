@@ -37,5 +37,10 @@ code {
 } */
 
 a {
+  color: inherit;
   text-decoration: none !important;
+}
+
+a:visited, a:hover, a:active {
+  color: inherit;
 }

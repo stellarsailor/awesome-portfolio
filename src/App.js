@@ -1,4 +1,3 @@
-import './App.css';
 import { Container, Row, Col } from 'react-grid-system';
 
 import {
