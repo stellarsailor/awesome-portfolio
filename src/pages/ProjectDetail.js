@@ -12,9 +12,7 @@ const BackToProjectList = styled.div`
     /* color: var(--blue); */
     font-size: 1.8rem;
     font-weight: 800;
-    cursor: pointer;
     display: flex;
-    align-items: center;
     @media (max-width: 768px) {
         font-size: 1.4rem;
     }
@@ -72,26 +70,35 @@ export default function ProjectDetail (props){
 
     return (
         <Row nogutter justify="center">
-            <CircleIndicator />
             {
                 selectedPrj && (
-                    <Col sm={12} md={10} style={{padding: '1rem'}}>
-                        <Link to={`/projects?s=${selectedPrj.title}`}>
-                            <BackToProjectList>
-                                <img src="/images/more.png" width={20} style={{transform: 'rotate(180deg)', marginRight: 8}} /> Back 
-                            </BackToProjectList>
-                        </Link>
+                    <Col sm={12} md={10} lg={8} style={{padding: '1rem'}}>
+                        <CircleIndicator />
+                        <BackToProjectList>
+                            <Link to={`/projects?s=${selectedPrj.title}`}>
+                                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                    <img src="/images/more.png" width={20} style={{transform: 'rotate(180deg)', marginRight: 4}} /> Back 
+                                </div>
+                            </Link>
+                        </BackToProjectList>
                         <Divider />
                         <FlexDRow style={{marginTop: 16}}>
                             <img src={`/images/projects/${selectedPrj.title}/icon.png`} width={140} height={140} style={{borderRadius: 15, marginRight: 16}} />
                             <FlexDCol>
                                 <div style={{fontWeight: 800, fontSize: 24}}>{title}</div>
                                 <div>Minsu Lee</div>
-                                <div>
-                                    {selectedPrj.codeLink && <span>CODE</span>}
-                                    |
-                                    {selectedPrj.liveLink && 
-                                    <HyperLink href={selectedPrj.liveLink} target="_blank"> LIVE LINK </HyperLink>}
+                                <div style={{marginTop: 8}}>
+                                    {selectedPrj.codeLink ? 
+                                        <HyperLink href={selectedPrj.codeLink} target="_blank"> CODE </HyperLink>
+                                    : 
+                                        <span style={{color: 'var(--mono-3)'}}>CODE</span> 
+                                    }
+                                    <span style={{margin: '0px 4px'}}> | </span>
+                                    {selectedPrj.liveLink ? 
+                                        <HyperLink href={selectedPrj.liveLink} target="_blank"> LIVE LINK </HyperLink>
+                                    :
+                                        <span style={{color: 'var(--mono-3)'}}>LIVE LINK</span>
+                                    }
                                 </div>
                             </FlexDCol>
                         </FlexDRow>
@@ -149,8 +156,9 @@ export default function ProjectDetail (props){
 
                         <Divider />
                         <TabTitle>Initial Idea</TabTitle>
-
-                        <div>{selectedPrj.idea}</div>
+                        <div style={{color: 'var(--mono-6)'}}>
+                            {selectedPrj.idea}
+                        </div>
 
                         <Divider />
                         <TabTitle>Preview</TabTitle>
@@ -171,7 +179,9 @@ export default function ProjectDetail (props){
 
                         <Divider />
                         <TabTitle>Lessons Learned</TabTitle>
-                        {selectedPrj.lesson}
+                        <div style={{color: 'var(--mono-6)'}}>
+                            {selectedPrj.lesson}
+                        </div>
 
                         {
                             selectedPrj.id + 1 < projects.length ?

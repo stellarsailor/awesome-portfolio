@@ -122,6 +122,11 @@ export default function NavBar(props) {
                     {
                         viewMobilePane && 
                         <MobileOpenedPane>
+                            <Link to="/">
+                                <MobileTabLine onClick={() => setViewMobilePane(false)}>
+                                    Home
+                                </MobileTabLine>
+                            </Link>
                             <Link to="/projects">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
                                     Projects
@@ -137,21 +142,21 @@ export default function NavBar(props) {
                                     Contact
                                 </MobileTabLine>
                             </Link>
-                            <Link to="/">
+                            <a href="https://github.com/stellarsailor" target="_blank">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
                                     GitHub
                                 </MobileTabLine>
-                            </Link>
-                            <Link to="/">
+                            </a>
+                            <a href="https://www.linkedin.com/in/minsu-lee-b6818b198/" target="_blank">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
                                     LinkedIn
                                 </MobileTabLine>
-                            </Link>
-                            <Link to="/">
+                            </a>
+                            <a href="https://www.instagram.com/stellarsalior" target="_blank">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
                                     Instagram
                                 </MobileTabLine>
-                            </Link>
+                            </a>
                         </MobileOpenedPane>
                     }
                 </div>

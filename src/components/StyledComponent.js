@@ -4,6 +4,10 @@ export const TextMain = styled.div`
     font-size: 4rem;
     font-weight: 1000;
     color: var(--mono-8);
+    @media (max-width: 768px) {
+        font-size: 2rem;
+        font-weight: 1000;
+    }
 `
 
 export const TextMainTitle = styled.div`
