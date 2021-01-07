@@ -1,0 +1,35 @@
+{
+  "name": "genshinparty",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@types/react": "^17.0.0",
+    "@types/styled-components": "^5.1.5",
+    "cors": "^2.8.5",
+    "next": "latest",
+    "next-i18next": "^7.0.1",
+    "next-seo": "^4.17.0",
+    "react": "^16.8.0",
+    "react-alert": "^7.0.2",
+    "react-alert-template-basic": "^1.0.0",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-dom": "^16.8.0",
+    "react-grid-system": "^7.1.1",
+    "react-is": "^16.8.0",
+    "react-markdown": "^5.0.3",
+    "react-scroll": "^1.8.1",
+    "serverless-mysql": "^1.5.4",
+    "sql-template-strings": "^2.2.2",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.12",
+    "babel-plugin-styled-components": "^1.12.0",
+    "typescript": "^4.1.2"
+  },
+  "license": "MIT"
+}
