@@ -10,17 +10,34 @@ import WorkTogether from '../components/WorkTogether'
 
 const ProjectPane = styled.div`
     background-color: black; //#fbfbfd;
+    width: 100%;
     height: 70vh;
-    padding: 2rem;
+    overflow: hidden;
+    /* padding: 2rem; */
     @media (max-width: 768px) {
-        padding: 1rem;
-    }
-    &:hover {
-        /* background-color: white; */
-        opacity: 0.8;
-        transition: 0.2s linear;
+        /* padding: 1rem; */
     }
     cursor: pointer;
+`
+
+const ProjectImgHolder = styled.div`
+    width: 100%;
+    height: 100%;
+    background-image: ${props => `url(/images/projects/${props.title.replace(' ','%20')}/banner.png)`};
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &:hover {
+        transition: 0.3s linear;
+        transform: scale(1.05);
+        filter: brightness(80%);
+    }
+`
+
+const ProjectTextHolder = styled.div`
+    position: absolute; 
+    top: 2rem; 
+    left: 2rem;
 `
 
 const ProjectIcon = styled.img`
@@ -59,7 +76,7 @@ export default function Projects (){
 
     useEffect(() => {
         console.log(search)
-        // window.scrollTo(0, 0)
+        window.scrollTo(0, 0)
     },[])
 
     return (
@@ -74,18 +91,21 @@ export default function Projects (){
                     {projects.filter(v => v.type === 'Production').map( prj => (
                         <Col sm={12} md={6} style={{padding: 8}}>
                             <Link to={`/project/${prj.title}`}>
-                                <ProjectPane style={{backgroundImage: `url('/images/projects/${prj.title}/banner.png')`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
-                                    <FlexDRow>
-                                    <ProjectIcon src={`/images/projects/${prj.title}/icon.png`} />
-                                        <FlexDCol>
-                                            <ProjectYear>
-                                                {prj.year}
-                                            </ProjectYear>
-                                            <ProjectTitle>
-                                                {prj.title}
-                                            </ProjectTitle>
-                                        </FlexDCol>
-                                    </FlexDRow>
+                                <ProjectPane>
+                                    <ProjectImgHolder title={prj.title} />
+                                    <ProjectTextHolder>
+                                        <FlexDRow>
+                                            <ProjectIcon src={`/images/projects/${prj.title}/icon.png`} />
+                                            <FlexDCol>
+                                                <ProjectYear>
+                                                    {prj.year}
+                                                </ProjectYear>
+                                                <ProjectTitle>
+                                                    {prj.title}
+                                                </ProjectTitle>
+                                            </FlexDCol>
+                                        </FlexDRow>
+                                    </ProjectTextHolder>
                                 </ProjectPane>
                             </Link>
                         </Col>
@@ -98,27 +118,30 @@ export default function Projects (){
                 <Row nogutter>
                     {projects.filter(v => v.type === 'Toy').map( prj => (
                         <Col sm={12} md={6} style={{padding: 8}}>
-                        <Link to={`/project/${prj.title}`}>
-                            <ProjectPane style={{backgroundImage: `url('/images/projects/${prj.title}/banner.png')`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
-                                <FlexDRow>
-                                    <ProjectIcon src={`/images/projects/${prj.title}/icon.png`} />
-                                    <FlexDCol>
-                                        <ProjectYear>
-                                            {prj.year}
-                                        </ProjectYear>
-                                        <ProjectTitle>
-                                            {prj.title}
-                                        </ProjectTitle>
-                                    </FlexDCol>
-                                </FlexDRow>
-                            </ProjectPane>
-                        </Link>
-                    </Col>
+                            <Link to={`/project/${prj.title}`}>
+                                <ProjectPane>
+                                    <ProjectImgHolder title={prj.title} />
+                                    <ProjectTextHolder>
+                                        <FlexDRow>
+                                            <ProjectIcon src={`/images/projects/${prj.title}/icon.png`} />
+                                            <FlexDCol>
+                                                <ProjectYear>
+                                                    {prj.year}
+                                                </ProjectYear>
+                                                <ProjectTitle>
+                                                    {prj.title}
+                                                </ProjectTitle>
+                                            </FlexDCol>
+                                        </FlexDRow>
+                                    </ProjectTextHolder>
+                                </ProjectPane>
+                            </Link>
+                        </Col>
                     ))}
                 </Row>
                 
-                <DividerTitle>Others</DividerTitle>
-                <Divider />
+                {/* <DividerTitle>Others</DividerTitle>
+                <Divider /> */}
                 <WorkTogether
                 linkTo="/contact"
                 smallText="NEED A WEB DEVELOPER WHO HAS A PASSION ON DESIGN AS WELL?"
