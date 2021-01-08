@@ -16,7 +16,8 @@ const MainLeftPane = styled.div`
     justify-content: flex-end;
 `
 
-const HyperLink = styled.div`
+const HyperLink = styled.span`
+    font-size: 18px;
     color: var(--blue);
     &:hover{
         text-decoration-line: underline;
@@ -51,11 +52,11 @@ export default function Home (){
                         </TextMain>
                         <span style={{textAlign: 'right', fontSize: 24}}>and Designer.</span>
                         <TextDesc>
-                            I am a web developer who also have strong passion on web design as well. Truly enjoying React.js at the moment and love to make simple and beautiful interface.
+                            I am a web developer who also have strong passion on web design. Truly enjoying React.js at the moment and love to make simple and beautiful interface.
                         </TextDesc>
                         <Link to="/about">
                             <HyperLink>
-                                About Me <img src="/images/more.png" width={10} />
+                                About Me <img src="/images/more.png" width={12} />
                             </HyperLink>
                         </Link>
                     </MainLeftPane>

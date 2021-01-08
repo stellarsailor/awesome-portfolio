@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Row, Col } from 'react-grid-system'
-import { TextSubTitle, CenteredRow, TextCenterThin, TextSticky, DividerTitle, Divider } from '../components/StyledComponent'
+import { TextSubTitle, CenteredRow, TextCenterThin, TextSticky, DividerTitle, Divider, TextUpper } from '../components/StyledComponent'
 import StickyHeader from '../components/StickyHeader'
 import WorkTogether from '../components/WorkTogether'
 import { skills } from '../datas/skills'
@@ -86,11 +86,13 @@ export default function About (){
     return (
         <Row nogutter justify="center">
             <Col sm={12} md={8} style={{padding: '1rem'}}>
-                <TextSticky>
-                    About Me
-                </TextSticky>
+                <CenteredRow>
+                    <TextUpper>
+                        ABOUT ME
+                    </TextUpper>
+                </CenteredRow>
                 <CenteredTitle>
-                    I'm Minsu Lee. Web developer who has passion on design as well. A big fan of React.js. Web development is blah since 2012.
+                    I'm Minsu Lee. Web developer who has passion on design as well. Websites not only do the function work well but also the design should be the best.
                 </CenteredTitle>
 
                 <img src="/images/navy.jpg" style={{width: '100%'}} />
@@ -147,21 +149,21 @@ export default function About (){
                     <InfoLeft>2019 - 2020</InfoLeft>
                     <InfoRight>
                         <b>Seneca College</b>
-                        <div>Diploma of Computer Programming.</div>
+                        <div>Diploma of Computer Programming</div>
                     </InfoRight>
                 </InfoLine>
                 <InfoLine>
                     <InfoLeft>2018 - 2019</InfoLeft>
                     <InfoRight>
                         <b>Embassy English London UK</b>
-                        <div>Language Institution.</div>
+                        <div>Language Institute</div>
                     </InfoRight>
                 </InfoLine>
                 <InfoLine>
                     <InfoLeft>2012 - 2016</InfoLeft>
                     <InfoRight>
                         <b>Pukyoung University</b>
-                        <div>Bachelor's degree of Computer Engineering.</div>
+                        <div>Bachelor's degree of Computer Engineering</div>
                     </InfoRight>
                 </InfoLine>
                 <br/>

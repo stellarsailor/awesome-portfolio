@@ -3,7 +3,7 @@ import { Row, Col } from 'react-grid-system'
 import { Link, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import StickyHeader from '../components/StickyHeader'
-import { FlexDCol, FlexDRow } from '../components/StyledComponent'
+import { CenteredRow, FlexDCol, FlexDRow } from '../components/StyledComponent'
 import WorkTogether from '../components/WorkTogether'
 import CircleIndicator from '../components/CircleIndicator'
 import { projects } from '../datas/projects'
@@ -57,6 +57,14 @@ const HyperLink = styled.a`
     }
 `
 
+const CommentOnImage = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mono-5);
+    margin-bottom: 1rem;
+`
+
 export default function ProjectDetail (props){
 
     let { title } = useParams()
@@ -89,13 +97,13 @@ export default function ProjectDetail (props){
                                 <div>Minsu Lee</div>
                                 <div style={{marginTop: 8}}>
                                     {selectedPrj.codeLink ? 
-                                        <HyperLink href={selectedPrj.codeLink} target="_blank"> CODE </HyperLink>
+                                        <HyperLink href={selectedPrj.codeLink} target="_blank" rel="noreferrer"> CODE </HyperLink>
                                     : 
                                         <span style={{color: 'var(--mono-3)'}}>CODE</span> 
                                     }
                                     <span style={{margin: '0px 4px'}}> | </span>
                                     {selectedPrj.liveLink ? 
-                                        <HyperLink href={selectedPrj.liveLink} target="_blank"> LIVE LINK </HyperLink>
+                                        <HyperLink href={selectedPrj.liveLink} target="_blank" rel="noreferrer"> LIVE LINK </HyperLink>
                                     :
                                         <span style={{color: 'var(--mono-3)'}}>LIVE LINK</span>
                                     }
@@ -133,7 +141,7 @@ export default function ProjectDetail (props){
                             <InfoLine>
                                 <InfoLeft>Library List</InfoLeft>
                                 <InfoRight>
-                                    <a href={selectedPrj.library} target="_blank">
+                                    <a href={selectedPrj.library} target="_blank" rel="noreferrer">
                                         See Detail <img src="/images/blank.png" width={15} height={15} />
                                     </a>
                                 </InfoRight>
@@ -163,18 +171,33 @@ export default function ProjectDetail (props){
                         <Divider />
                         <TabTitle>Preview</TabTitle>
                         <Row nogutter justify="center">
-                            <Col sm={12} md={12} style={{padding: 8}}>
-                                <div style={{width: '100%', height: 500, backgroundColor: 'aliceblue'}} />
-                            </Col>
-                            <Col sm={12} md={6} style={{padding: 8}}>
-                                <div style={{width: '100%', height: 500, backgroundColor: 'aliceblue'}} />
-                            </Col>
-                            <Col sm={12} md={6} style={{padding: 8}}>
-                                <div style={{width: '100%', height: 500, backgroundColor: 'aliceblue'}} />
-                            </Col>
-                            <Col sm={12} md={12} style={{padding: 8}}>
-                                <div style={{width: '100%', height: 500, backgroundColor: 'aliceblue'}} />
-                            </Col>
+                            {
+                                selectedPrj.preview.map(v => (
+                                    <Col sm={12} md={12} style={{padding: 8}}>
+                                        {
+                                            v.type === 'mp4' ? 
+                                            <video 
+                                            controls
+                                            loop 
+                                            // autostart 
+                                            autoPlay
+                                            muted
+                                            src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
+                                            type="video/mp4" 
+                                            style={{width: '100%'}}
+                                            key={v.name} 
+                                            />
+                                            :
+                                            <img 
+                                            src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
+                                            style={{width: '100%'}} 
+                                            key={v.name} 
+                                            />
+                                        }
+                                        {v.comment && <CommentOnImage>{v.comment}</CommentOnImage>}
+                                    </Col>
+                                ))
+                            }
                         </Row>
 
                         <Divider />

@@ -22,7 +22,7 @@ const HighlightText = styled.div`
 
 const ContactImage = styled.div`
     width: 100%;
-    height: 400px;
+    height: 55vh;
     background-color: gray;
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@ const ContactImage = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     @media (max-width: 768px) {
-        height: 200px;
+        height: 30vh;
     }
 `
 
@@ -92,7 +92,7 @@ export default function Contact (){
                 <Row nogutter justify="center" style={{minHeight: 200}}>
                     {contactType.map( (type, index) => (
                         <Col xs={6} sm={6} md={3} style={{padding: 8}} key={index}>
-                            <a href={contactLink[index]} target="_blank">
+                            <a href={contactLink[index]} target="_blank" rel="noreferrer">
                                 <ContactTypeBox>
                                     <img src={`/images/icons/${type.toLowerCase()}.png`} width={60} height={60} />
                                     {type}

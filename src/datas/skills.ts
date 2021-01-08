@@ -67,7 +67,7 @@ export const skills: Array<skillType> = [
         type: 'FE',
         name: 'React Native',
         image: 'rn',
-        comment: "I have published full-stack mobile application on both Apple App Store and Google Play.",
+        comment: "I have published a full-stack mobile application on both Apple App Store and Google Play.",
         highlight: true,
     },
     {

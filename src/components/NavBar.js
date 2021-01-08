@@ -142,17 +142,17 @@ export default function NavBar(props) {
                                     Contact
                                 </MobileTabLine>
                             </Link>
-                            <a href="https://github.com/stellarsailor" target="_blank">
+                            <a href="https://github.com/stellarsailor" target="_blank" rel="noreferrer">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
                                     GitHub
                                 </MobileTabLine>
                             </a>
-                            <a href="https://www.linkedin.com/in/minsu-lee-b6818b198/" target="_blank">
+                            <a href="https://www.linkedin.com/in/minsu-lee-b6818b198/" target="_blank" rel="noreferrer">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
                                     LinkedIn
                                 </MobileTabLine>
                             </a>
-                            <a href="https://www.instagram.com/stellarsalior" target="_blank">
+                            <a href="https://www.instagram.com/stellarsalior" target="_blank" rel="noreferrer">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
                                     Instagram
                                 </MobileTabLine>
