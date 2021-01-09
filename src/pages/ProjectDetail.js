@@ -58,6 +58,7 @@ const HyperLink = styled.a`
 `
 
 const CommentOnImage = styled.div`
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,16 +97,30 @@ export default function ProjectDetail (props){
                                 <div style={{fontWeight: 800, fontSize: 24}}>{title}</div>
                                 <div>Minsu Lee</div>
                                 <div style={{marginTop: 8}}>
-                                    {selectedPrj.codeLink ? 
+                                    { selectedPrj.codeLink ? 
                                         <HyperLink href={selectedPrj.codeLink} target="_blank" rel="noreferrer"> CODE </HyperLink>
                                     : 
-                                        <span style={{color: 'var(--mono-3)'}}>CODE</span> 
+                                        <span style={{color: 'var(--mono-3)'}}> CODE </span> 
                                     }
                                     <span style={{margin: '0px 4px'}}> | </span>
-                                    {selectedPrj.liveLink ? 
-                                        <HyperLink href={selectedPrj.liveLink} target="_blank" rel="noreferrer"> LIVE LINK </HyperLink>
+                                    { selectedPrj.liveLink ? 
+                                        <HyperLink href={selectedPrj.liveLink} target="_blank" rel="noreferrer"> LIVE </HyperLink>
                                     :
-                                        <span style={{color: 'var(--mono-3)'}}>LIVE LINK</span>
+                                        <span style={{color: 'var(--mono-3)'}}> LIVE </span>
+                                    }
+                                    { selectedPrj.mobileApp && selectedPrj.googleLink ? 
+                                        <>
+                                            <span style={{margin: '0px 4px'}}> | </span>
+                                            <HyperLink href={selectedPrj.googleLink} target="_blank" rel="noreferrer"> Google Play </HyperLink>
+                                        </>
+                                        : <></>
+                                    }
+                                    { selectedPrj.mobileApp && selectedPrj.appleLink ? 
+                                        <>
+                                            <span style={{margin: '0px 4px'}}> | </span>
+                                            <HyperLink href={selectedPrj.appleLink} target="_blank" rel="noreferrer"> App Store </HyperLink>
+                                        </>
+                                        : <></>
                                     }
                                 </div>
                             </FlexDCol>
@@ -173,7 +188,7 @@ export default function ProjectDetail (props){
                         <Row nogutter justify="center">
                             {
                                 selectedPrj.preview.map(v => (
-                                    <Col sm={12} md={12} style={{padding: 8}}>
+                                    <Col sm={12} md={12} style={{padding: 8, marginBottom: '1rem'}}>
                                         {
                                             v.type === 'mp4' ? 
                                             <video 

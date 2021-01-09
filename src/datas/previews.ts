@@ -103,3 +103,79 @@ export const Memoiz = [
         flex: 'full',
     },
 ]
+
+export const SelfBingo = [
+    {
+        name: '0',
+        type: 'jpg',
+        flex: 'full',
+        comment: 'Various colors mean you can customize whatever you want'
+    },
+    {
+        name: '1',
+        type: 'jpg',
+        flex: 'full',
+    },
+    {
+        name: '2',
+        type: 'jpg',
+        flex: 'full',
+    },
+    {
+        name: '3',
+        type: 'jpg',
+        flex: 'full',
+        comment: 'You can customize your own marker style'
+    },
+    {
+        name: 'v1',
+        type: 'mp4',
+        flex: 'full',
+    },
+    {
+        name: '5',
+        type: 'jpg',
+        flex: 'full',
+        comment: 'SelfBingo supports social login'
+    },
+    {
+        name: '6',
+        type: 'jpg',
+        flex: 'full',
+        comment: "You can see statistics in the result page, such as 'your grade', top percentage, average."
+    },
+    {
+        name: '4',
+        type: 'jpg',
+        flex: 'full',
+        comment: "Also you can check how many other people selected on the every bingo element"
+    },
+    {
+        name: '7',
+        type: 'jpg',
+        flex: 'full',
+        comment: "In the Create Page, it supports various customization options, such as background color, cell color, and line color."
+    },
+    {
+        name: 'v2',
+        type: 'mp4',
+        flex: 'full',
+        comment: 'You can enter bingo elements randomly with one click'
+    },
+]
+
+export const Valog = [
+    {
+        name: '0',
+        type: 'jpg',
+        flex: 'full',
+    },
+]
+
+export const BritTea = [
+    {
+        name: '0',
+        type: 'jpg',
+        flex: 'full',
+    },
+]
