@@ -1,12 +1,30 @@
 import styled from 'styled-components'
 
 export const TextMain = styled.div`
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 1000;
     color: var(--mono-8);
+    @media (max-width: 1280px) {
+        font-size: 2.5rem;
+        font-weight: 1000;
+    }
     @media (max-width: 768px) {
         font-size: 2rem;
         font-weight: 1000;
+    }
+`
+
+export const TextMainSmall = styled.span`
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--mono-8);
+    @media (max-width: 1280px) {
+        font-size: 1.6rem;
+        font-weight: 800;
+    }
+    @media (max-width: 768px) {
+        font-size: 1.2rem;
+        font-weight: 800;
     }
 `
 
@@ -26,6 +44,14 @@ export const TextDesc = styled.div`
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--mono-4);
+    @media (max-width: 1280px) {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        font-weight: 600;
+    }
 `
 
 export const TextCenterThin = styled.div`
@@ -35,10 +61,18 @@ export const TextCenterThin = styled.div`
 `
 
 export const TextUpper = styled.div`
-    font-size: 1.4rem;
-    font-weight: 200;
+    font-size: 2rem;
+    font-weight: 100;
     letter-spacing: 3px;
     color: var(--mono-5);
+    @media (max-width: 1280px) {
+        font-size: 1.7rem;
+    }
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+    }
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 `
 
 export const TextSticky = styled.div`
@@ -74,4 +108,10 @@ export const DividerTitle = styled.div`
     margin-top: 40px;
     font-weight: 800;
     color: var(--mono-7);
+    @media (max-width: 1280px) {
+        font-size: 24px;
+    }
+    @media (max-width: 768px) {
+        font-size: 22px;
+    }
 `

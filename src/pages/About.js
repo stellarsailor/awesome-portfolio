@@ -85,7 +85,7 @@ export default function About (){
 
     return (
         <Row nogutter justify="center">
-            <Col sm={12} md={8} style={{padding: '1rem'}}>
+            <Col sm={12} md={8} style={{padding: '0px 1rem'}}>
                 <CenteredRow>
                     <TextUpper>
                         ABOUT ME

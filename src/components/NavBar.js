@@ -163,7 +163,7 @@ export default function NavBar(props) {
             </Visible>
             <Visible md lg xl xxl>
                 <div style={{width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.9)'}}>
-                    <Col sm={12} md={10} >
+                    <Col sm={12} md={10} style={{marginLeft: '3%'}}>
                         <NavigationPane>
                             <Link to="/"> <EachButton><img src="/images/logo.png" style={{width: 30}} /></EachButton> </Link>
                             <Link to="/projects"><EachButton>Projects</EachButton></Link>

@@ -82,6 +82,7 @@ export default function Projects (){
     return (
         <Row nogutter justify="center">
             <Col xs={11} sm={11} md={11} >
+                <div style={{marginBottom: '1rem'}} />
                 <TextMain>Personal Projects</TextMain>
 
                 <DividerTitle>Running Services</DividerTitle>
