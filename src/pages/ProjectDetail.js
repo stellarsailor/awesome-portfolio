@@ -191,23 +191,43 @@ export default function ProjectDetail (props){
                                     <Col sm={12} md={12} style={{padding: 8, marginBottom: '1rem'}}>
                                         {
                                             v.type === 'mp4' ? 
-                                            <video 
-                                            controls
-                                            loop 
-                                            // autostart 
-                                            autoPlay
-                                            muted
-                                            src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
-                                            type="video/mp4" 
-                                            style={{width: '100%'}}
-                                            key={v.name} 
-                                            />
+                                                v.flex === 'full' ?
+                                                <video 
+                                                controls
+                                                loop 
+                                                // autostart 
+                                                autoPlay
+                                                muted
+                                                src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
+                                                type="video/mp4" 
+                                                style={{width: '100%'}}
+                                                key={v.name} 
+                                                />
+                                                :
+                                                <video 
+                                                controls
+                                                loop 
+                                                // autostart 
+                                                autoPlay
+                                                muted
+                                                src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
+                                                type="video/mp4" 
+                                                style={{maxHeight: '80vh', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 'auto'}}
+                                                key={v.name} 
+                                                />
                                             :
-                                            <img 
-                                            src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
-                                            style={{width: '100%'}} 
-                                            key={v.name} 
-                                            />
+                                            v.flex === 'full' ?
+                                                <img 
+                                                src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
+                                                style={{width: '100%'}} 
+                                                key={v.name} 
+                                                />
+                                                :
+                                                <img 
+                                                src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
+                                                style={{maxHeight: '90vh', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 'auto'}} 
+                                                key={v.name} 
+                                                />
                                         }
                                         {v.comment && <CommentOnImage>{v.comment}</CommentOnImage>}
                                     </Col>

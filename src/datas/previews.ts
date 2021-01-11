@@ -2,7 +2,7 @@ type previewType = {
     name: string;
     type: 'jpg' | 'mp4' | 'gif';
     comment?: string;
-    flex: 'half' | 'full';
+    flex: 'half' | 'full' | 'mobile';
 }
 
 export const GenshinParty = [
@@ -207,5 +207,90 @@ export const BritTea = [
         name: '0',
         type: 'jpg',
         flex: 'full',
+        comment: 'main page'
+    },
+    {
+        name: 'intro',
+        type: 'mp4',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 't1',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 't1-2',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 't2',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 't3',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 't3-2',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 't4',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 't4',
+        type: 'mp4',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 'wb',
+        type: 'mp4',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 't5',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 'dv1',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 'dv2',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 'dv3',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'main page'
+    },
+    {
+        name: 'dv4',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'main page'
     },
 ]
