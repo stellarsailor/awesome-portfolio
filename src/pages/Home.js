@@ -84,6 +84,7 @@ export default function Home (){
                     About Me <img src="/images/more.png" width={12} />
                 </HyperLink>
             </Link>
+            <br /><br />
         </MainLeftPane>
     )
 
