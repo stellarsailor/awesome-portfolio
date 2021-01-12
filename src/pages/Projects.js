@@ -8,6 +8,10 @@ import { Link, useLocation } from "react-router-dom"
 import WorkTogether from '../components/WorkTogether'
 import { motion } from 'framer-motion'
 
+import Scroll from 'react-scroll'
+var Element  = Scroll.Element
+var scroller = Scroll.scroller
+
 const ProjectPane = styled(motion.div)`
     background-color: black; //#fbfbfd;
     width: 100%;
@@ -103,8 +107,16 @@ export default function Projects (){
     let { search } = useLocation()
 
     useEffect(() => {
-        console.log(search)
-        window.scrollTo(0, 0)
+        if(search === '') {
+            window.scrollTo(0, 0)
+        } else {
+            scroller.scrollTo(search.slice(3), {
+                duration: 1200,
+                delay: 50,
+                smooth: true,
+                offset: - 60, 
+            })
+        }
     },[])
 
     return (
@@ -130,6 +142,7 @@ export default function Projects (){
                 <Row nogutter>
                     {projects.filter(v => v.type === 'Production').map( (prj, index) => (
                         <Col sm={12} md={6} style={{padding: 8}}>
+                            <Element name={prj.id.toString()} />
                             {renderProjectPane(prj, index)}
                         </Col>
                     ))}
@@ -141,6 +154,7 @@ export default function Projects (){
                 <Row nogutter>
                     {projects.filter(v => v.type === 'Toy').map( (prj, index) => (
                         <Col sm={12} md={6} style={{padding: 8}}>
+                            <Element name={prj.id.toString()} />
                             {renderProjectPane(prj, index)}
                         </Col>
                     ))}

@@ -91,7 +91,7 @@ export default function ProjectDetail (props){
                         <Col sm={12} md={10} lg={8} style={{padding: '1rem'}}>
                             <CircleIndicator />
                             <BackToProjectList>
-                                <Link to={`/projects?s=${selectedPrj.title}`}>
+                                <Link to={`/projects?s=${selectedPrj.id}`}>
                                     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                         <img src="/images/more.png" width={20} style={{transform: 'rotate(180deg)', marginRight: 4}} /> Back 
                                     </div>
