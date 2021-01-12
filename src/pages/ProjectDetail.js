@@ -156,13 +156,13 @@ export default function ProjectDetail (props){
                             }
                             <InfoLine>
                                 <InfoLeft>Stack</InfoLeft>
-                                <InfoRight>{selectedPrj.stack.toString().replaceAll(',', ' + ')}</InfoRight>
+                                <InfoRight>{selectedPrj.stack.toString().replace(/,/g, ' + ')}</InfoRight>
                             </InfoLine>
                             {
                                 selectedPrj.feature &&
                                 <InfoLine>
                                     <InfoLeft>Features</InfoLeft>
-                                    <InfoRight>{selectedPrj.feature.toString().replaceAll(',', ' / ')}</InfoRight>
+                                    <InfoRight>{selectedPrj.feature.toString().replace(/,/g, ' / ')}</InfoRight>
                                 </InfoLine>
                             }
                             {
@@ -252,7 +252,7 @@ export default function ProjectDetail (props){
                                                         :
                                                         <img 
                                                         src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
-                                                        style={{maxHeight: '90vh', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 'auto'}} 
+                                                        style={{maxHeight: '90vh', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 'auto', maxWidth: '100%'}} 
                                                         key={v.name} 
                                                         />
                                                 }
