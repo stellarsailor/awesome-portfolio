@@ -1,9 +1,14 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-export const TextMain = styled.div`
+export const initialProps = { opacity: 0, y: 20 }
+export const animateProps = { opacity: 1, y: 0 }
+
+export const TextMain = styled(motion.div)`
     font-size: 3rem;
     font-weight: 1000;
     color: var(--mono-8);
+    margin-top: 1rem;
     @media (max-width: 1280px) {
         font-size: 2.5rem;
         font-weight: 1000;
@@ -40,7 +45,7 @@ export const TextSubTitle = styled.div`
     color: var(--mono-5);
 `
 
-export const TextDesc = styled.div`
+export const TextDesc = styled(motion.div)`
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--mono-4);
@@ -60,7 +65,7 @@ export const TextCenterThin = styled.div`
     color: var(--mono-4);
 `
 
-export const TextUpper = styled.div`
+export const TextUpper = styled(motion.div)`
     font-size: 2rem;
     font-weight: 100;
     letter-spacing: 3px;
@@ -72,7 +77,7 @@ export const TextUpper = styled.div`
         font-size: 1.4rem;
     }
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
 `
 
 export const TextSticky = styled.div`

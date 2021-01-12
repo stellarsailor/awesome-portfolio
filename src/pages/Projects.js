@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react'
 import { Row, Col } from 'react-grid-system'
 import styled from 'styled-components'
-import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol, TextSticky, DividerTitle, Divider } from '../components/StyledComponent'
+import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol, TextSticky, DividerTitle, Divider, initialProps, animateProps } from '../components/StyledComponent'
 import { projects } from '../datas/projects'
 import { dynamicSort } from '../logics/dynamicSort'
 import { Link, useLocation } from "react-router-dom"
-import StickyHeader from '../components/StickyHeader'
 import WorkTogether from '../components/WorkTogether'
+import { motion } from 'framer-motion'
 
-const ProjectPane = styled.div`
+const ProjectPane = styled(motion.div)`
     background-color: black; //#fbfbfd;
     width: 100%;
     height: 70vh;
     overflow: hidden;
-    /* padding: 2rem; */
     @media (max-width: 768px) {
         /* padding: 1rem; */
     }
@@ -34,7 +33,7 @@ const ProjectImgHolder = styled.div`
     }
 `
 
-const ProjectTextHolder = styled.div`
+const ProjectTextHolder = styled(motion.div)`
     position: absolute; 
     top: 2rem; 
     left: 2rem;
@@ -71,6 +70,35 @@ const ProjectTitle = styled.span`
     }
 `
 
+const renderProjectPane = (prj, index) => (
+    <Link to={`/project/${prj.title}`}>
+        <ProjectPane
+        initial={initialProps}
+        animate={animateProps}
+        transition={{ delay: 0.8 + (index * 0.2) }}
+        >
+            <ProjectImgHolder title={prj.title} />
+            <ProjectTextHolder
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 + (index * 0.2) }}
+            >
+                <FlexDRow>
+                    <ProjectIcon src={`/images/projects/${prj.title}/icon.png`} />
+                    <FlexDCol>
+                        <ProjectYear>
+                            {prj.year}
+                        </ProjectYear>
+                        <ProjectTitle>
+                            {prj.title}
+                        </ProjectTitle>
+                    </FlexDCol>
+                </FlexDRow>
+            </ProjectTextHolder>
+        </ProjectPane>
+    </Link>
+)
+
 export default function Projects (){
     let { search } = useLocation()
 
@@ -82,33 +110,27 @@ export default function Projects (){
     return (
         <Row nogutter justify="center">
             <Col xs={11} sm={11} md={11} >
-                <div style={{marginBottom: '1rem'}} />
-                <TextMain>Personal Projects</TextMain>
+                <TextMain
+                initial={initialProps}
+                animate={animateProps}
+                transition={{ delay: 0.4 }}
+                >
+                    Personal Projects
+                </TextMain>
 
-                <DividerTitle>Running Services</DividerTitle>
-                <Divider />
+                <motion.div
+                initial={initialProps}
+                animate={animateProps}
+                transition={{ delay: 0.6 }}
+                >
+                    <DividerTitle>Running Services</DividerTitle>
+                    <Divider />
+                </motion.div>
 
                 <Row nogutter>
-                    {projects.filter(v => v.type === 'Production').map( prj => (
+                    {projects.filter(v => v.type === 'Production').map( (prj, index) => (
                         <Col sm={12} md={6} style={{padding: 8}}>
-                            <Link to={`/project/${prj.title}`}>
-                                <ProjectPane>
-                                    <ProjectImgHolder title={prj.title} />
-                                    <ProjectTextHolder>
-                                        <FlexDRow>
-                                            <ProjectIcon src={`/images/projects/${prj.title}/icon.png`} />
-                                            <FlexDCol>
-                                                <ProjectYear>
-                                                    {prj.year}
-                                                </ProjectYear>
-                                                <ProjectTitle>
-                                                    {prj.title}
-                                                </ProjectTitle>
-                                            </FlexDCol>
-                                        </FlexDRow>
-                                    </ProjectTextHolder>
-                                </ProjectPane>
-                            </Link>
+                            {renderProjectPane(prj, index)}
                         </Col>
                     ))}
                 </Row>
@@ -117,26 +139,9 @@ export default function Projects (){
                 <Divider />
 
                 <Row nogutter>
-                    {projects.filter(v => v.type === 'Toy').map( prj => (
+                    {projects.filter(v => v.type === 'Toy').map( (prj, index) => (
                         <Col sm={12} md={6} style={{padding: 8}}>
-                            <Link to={`/project/${prj.title}`}>
-                                <ProjectPane>
-                                    <ProjectImgHolder title={prj.title} />
-                                    <ProjectTextHolder>
-                                        <FlexDRow>
-                                            <ProjectIcon src={`/images/projects/${prj.title}/icon.png`} />
-                                            <FlexDCol>
-                                                <ProjectYear>
-                                                    {prj.year}
-                                                </ProjectYear>
-                                                <ProjectTitle>
-                                                    {prj.title}
-                                                </ProjectTitle>
-                                            </FlexDCol>
-                                        </FlexDRow>
-                                    </ProjectTextHolder>
-                                </ProjectPane>
-                            </Link>
+                            {renderProjectPane(prj, index)}
                         </Col>
                     ))}
                 </Row>

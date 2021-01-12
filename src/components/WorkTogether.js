@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade'
 import { Link } from "react-router-dom";
 import { CenteredRow } from './StyledComponent'
 
@@ -47,16 +48,18 @@ export default function WorkTogether(props) {
     const { linkTo, smallText, bigText } = props
 
     return(
-        <WorkTogetherPane>
-            <WorkTogetherSmallText>
-                {smallText}
-            </WorkTogetherSmallText>
-            <Divider />
-            <Link to={linkTo}>
-                <WorkTogetherText>
-                    {bigText} →
-                </WorkTogetherText>
-            </Link>
-        </WorkTogetherPane>
+        <Fade bottom distance="50px">
+            <WorkTogetherPane>
+                <WorkTogetherSmallText>
+                    {smallText}
+                </WorkTogetherSmallText>
+                <Divider />
+                <Link to={linkTo}>
+                    <WorkTogetherText>
+                        {bigText} →
+                    </WorkTogetherText>
+                </Link>
+            </WorkTogetherPane>
+        </Fade>
     )
 }

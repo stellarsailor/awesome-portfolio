@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade'
 import { Row, Col } from 'react-grid-system'
 import { TextSubTitle, CenteredRow, TextCenterThin } from '../components/StyledComponent'
 
@@ -15,8 +16,9 @@ const HighlightText = styled.div`
     font-weight: 800;
     text-align: center;
     margin: 24px 0px;
+    padding: 1rem;
     @media (max-width: 768px) {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 `
 
@@ -45,6 +47,9 @@ const ContactText = styled.div`
     display: flex;
     justify-content: center;
     margin: 24px 0px;
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+    }
 `
 
 const ContactTypeBox = styled.div`
@@ -79,28 +84,34 @@ export default function Contact (){
         <Row nogutter justify="center">
             <ContactImage>
                 <HighlightText>
-                    <div style={{color: 'white', filter: 'none'}}>
-                        <div>TORONTO, CA</div>
-                        I'm willing to work with anything if you give a chance to me.
-                    </div>
+                    <Fade bottom distance="50px">
+                        <div style={{color: 'white', filter: 'none'}}>
+                            <div>TORONTO, CA</div>
+                            If you have any questions or would like to chat, feel free to reach out!
+                        </div>
+                    </Fade>
                 </HighlightText>
             </ContactImage>
             <Col sm={12} md={8} >
-                <ContactText>
-                    Contact
-                </ContactText>
-                <Row nogutter justify="center" style={{minHeight: 200}}>
-                    {contactType.map( (type, index) => (
-                        <Col xs={6} sm={6} md={3} style={{padding: 8}} key={index}>
-                            <a href={contactLink[index]} target="_blank" rel="noreferrer">
-                                <ContactTypeBox>
-                                    <img src={`/images/icons/${type.toLowerCase()}.png`} width={60} height={60} />
-                                    {type}
-                                </ContactTypeBox>
-                            </a>
-                        </Col>
-                    ))}
-                </Row>
+                <Fade bottom distance="50px">
+                    <ContactText>
+                        Contact
+                    </ContactText>
+                </Fade>
+                <Fade bottom distance="50px">
+                    <Row nogutter justify="center" style={{minHeight: 200}}>
+                        {contactType.map( (type, index) => (
+                            <Col xs={6} sm={6} md={3} style={{padding: 8}} key={index}>
+                                <a href={contactLink[index]} target="_blank" rel="noreferrer">
+                                    <ContactTypeBox>
+                                        <img src={`/images/icons/${type.toLowerCase()}.png`} width={60} height={60} />
+                                        {type}
+                                    </ContactTypeBox>
+                                </a>
+                            </Col>
+                        ))}
+                    </Row>
+                </Fade>
             </Col>
         </Row>
     )

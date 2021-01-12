@@ -1,14 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import { Row, Col } from 'react-grid-system'
-import { TextSubTitle, CenteredRow, TextCenterThin, TextSticky, DividerTitle, Divider, TextUpper } from '../components/StyledComponent'
-import StickyHeader from '../components/StickyHeader'
+import { TextSubTitle, CenteredRow, TextCenterThin, TextSticky, DividerTitle, Divider, TextUpper, initialProps, animateProps } from '../components/StyledComponent'
 import WorkTogether from '../components/WorkTogether'
 import { skills } from '../datas/skills'
 import SkillPane from '../components/SkillPane'
 import CircleIndicator from '../components/CircleIndicator'
 
-const CenteredTitle = styled.div`
+const CenteredTitle = styled(motion.div)`
     text-align: center;
     margin: 24px 0px;
     font-size: 2rem;
@@ -23,10 +23,10 @@ const CenteredTitle = styled.div`
 const StarCommentHelper = styled.div`
     text-align: right;
     color: var(--mono-5);
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
     @media (max-width: 768px) {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 `
 
@@ -38,7 +38,7 @@ const SkillTitle = styled.div`
     color: var(--mono-6);
     margin-left: 16px;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     @media (max-width: 768px) {
         font-size: 20px;
         margin-left: 8px;
@@ -59,6 +59,13 @@ const InfoLeft = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    font-size: 18px;
+    @media (max-width: 1280px) {
+        font-size: 16px;
+    }
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
 `
 
 const InfoRight = styled.div`
@@ -66,6 +73,13 @@ const InfoRight = styled.div`
     margin-left: 16px;
     text-align: left;
     color: var(--mono-6);
+    font-size: 18px;
+    @media (max-width: 1280px) {
+        font-size: 16px;
+    }
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
 `
 
 export default function About (){
@@ -87,103 +101,123 @@ export default function About (){
         <Row nogutter justify="center">
             <Col sm={12} md={8} style={{padding: '0px 1rem'}}>
                 <CenteredRow>
-                    <TextUpper>
+                    <TextUpper
+                    initial={initialProps}
+                    animate={animateProps}
+                    transition={{ delay: 0.4 }}
+                    >
                         ABOUT ME
                     </TextUpper>
                 </CenteredRow>
-                <CenteredTitle>
+                <CenteredTitle
+                initial={initialProps}
+                animate={animateProps}
+                transition={{ delay: 0.6 }}
+                >
                     I'm Minsu Lee. Web developer who has passion on design as well. Websites not only do the function work well but also the design should be the best.
                 </CenteredTitle>
 
-                <img src="/images/navy.jpg" style={{width: '100%'}} />
+                <motion.img 
+                initial={initialProps}
+                animate={animateProps}
+                transition={{ delay: 0.8 }}
+                src="/images/navy.jpg" 
+                style={{width: '100%'}} 
+                />
 
-                <DividerTitle>Skills</DividerTitle>
-                <Divider />
-                <StarCommentHelper>
-                    "<span style={{color: 'gold'}}>✭</span>" means I have used this for 300+ hours.
-                    {/* <span onClick={() => setIsSummaryMode(true)}>Summary</span> | <span onClick={() => setIsSummaryMode(false)}>Detail</span> */}
-                </StarCommentHelper>
+                <motion.div
+                initial={initialProps}
+                animate={animateProps}
+                transition={{ delay: 1 }}
+                >
+                    <DividerTitle>Skills</DividerTitle>
+                    <Divider />
+                    <StarCommentHelper>
+                        "<span style={{color: 'gold'}}>✭</span>" means I have used this for 300+ hours.
+                        {/* <span onClick={() => setIsSummaryMode(true)}>Summary</span> | <span onClick={() => setIsSummaryMode(false)}>Detail</span> */}
+                    </StarCommentHelper>
 
-                <SkillTitle>Front-End</SkillTitle>
-                {renderSkill('FE')}
-                <br/>
+                    <SkillTitle>Front-End</SkillTitle>
+                    {renderSkill('FE')}
+                    <br/>
 
-                <SkillTitle>Back-End/DB</SkillTitle>
-                {renderSkill('BE')}
-                <br/>
+                    <SkillTitle>Back-End/DB</SkillTitle>
+                    {renderSkill('BE')}
+                    {renderSkill('DB')}
+                    <br/>
 
-                <SkillTitle>DevOps</SkillTitle>
-                {renderSkill('DO')}
-                <br/>
+                    <SkillTitle>DevOps</SkillTitle>
+                    {renderSkill('DO')}
+                    <br/>
 
-                <SkillTitle>Programming Languages</SkillTitle>
-                {renderSkill('PL')}
-                <br/>
+                    <SkillTitle>Programming Languages</SkillTitle>
+                    {renderSkill('PL')}
+                    <br/>
 
-                <SkillTitle>etc.</SkillTitle>
-                {renderSkill('etc')}
-                <br/>
+                    <SkillTitle>etc.</SkillTitle>
+                    {renderSkill('etc')}
+                    <br/>
 
-                <SkillTitle>OS</SkillTitle>
-                {renderSkill('OS')}
-                <br/>
+                    <SkillTitle>OS</SkillTitle>
+                    {renderSkill('OS')}
+                    <br/>
 
-                <DividerTitle>Career</DividerTitle>
-                <Divider />
+                    <DividerTitle>Career</DividerTitle>
+                    <Divider />
 
-                <InfoLine>
-                    <InfoLeft>2016 - 2018</InfoLeft>
-                    <InfoRight>
-                        <b>Republic of Korea Navy</b>
-                        <div>Second Lieutenent</div>
-                        <div>A Chief Officer of E-learning Contents Creating for Navy.</div>
-                        <div>I used to make something</div> 
-                    </InfoRight>
-                </InfoLine>
-                <br/>
+                    <InfoLine>
+                        <InfoLeft>2016 - 2018</InfoLeft>
+                        <InfoRight>
+                            <b>Republic of Korea Navy</b>
+                            <div>Sub-lieutenant (IT branch)</div>
+                            <div>A chief officer of E-learning Contents Creating in Naval Education & Training Command</div>
+                        </InfoRight>
+                    </InfoLine>
+                    <br/>
 
-                <DividerTitle>Education</DividerTitle>
-                <Divider />
+                    <DividerTitle>Education</DividerTitle>
+                    <Divider />
 
-                <InfoLine>
-                    <InfoLeft>2019 - 2020</InfoLeft>
-                    <InfoRight>
-                        <b>Seneca College</b>
-                        <div>Diploma of Computer Programming</div>
-                    </InfoRight>
-                </InfoLine>
-                <InfoLine>
-                    <InfoLeft>2018 - 2019</InfoLeft>
-                    <InfoRight>
-                        <b>Embassy English London UK</b>
-                        <div>Language Institute</div>
-                    </InfoRight>
-                </InfoLine>
-                <InfoLine>
-                    <InfoLeft>2012 - 2016</InfoLeft>
-                    <InfoRight>
-                        <b>Pukyoung University</b>
-                        <div>Bachelor's degree of Computer Engineering</div>
-                    </InfoRight>
-                </InfoLine>
-                <br/>
-                
-                <DividerTitle>Languages</DividerTitle>
-                <Divider />
+                    <InfoLine>
+                        <InfoLeft>2019 - 2020</InfoLeft>
+                        <InfoRight>
+                            <b>Seneca College</b>
+                            <div>Diploma of Computer Programming</div>
+                        </InfoRight>
+                    </InfoLine>
+                    <InfoLine>
+                        <InfoLeft>2018 - 2019</InfoLeft>
+                        <InfoRight>
+                            <b>Embassy English London UK</b>
+                            <div>Language Institute</div>
+                        </InfoRight>
+                    </InfoLine>
+                    <InfoLine>
+                        <InfoLeft>2012 - 2016</InfoLeft>
+                        <InfoRight>
+                            <b>Pukyoung University</b>
+                            <div>Bachelor's degree of Computer Engineering</div>
+                        </InfoRight>
+                    </InfoLine>
+                    <br/>
+                    
+                    <DividerTitle>Languages</DividerTitle>
+                    <Divider />
 
-                <InfoLine>
-                    <InfoLeft>Korean</InfoLeft>
-                    <InfoRight>Native</InfoRight>
-                </InfoLine>
-                <InfoLine>
-                    <InfoLeft>English</InfoLeft>
-                    <InfoRight>Advanced</InfoRight>
-                </InfoLine>
-                <InfoLine>
-                    <InfoLeft>Japanese</InfoLeft>
-                    <InfoRight>Upper-intermediate</InfoRight>
-                </InfoLine>
-                <br/><br/>
+                    <InfoLine>
+                        <InfoLeft>Korean</InfoLeft>
+                        <InfoRight>Native</InfoRight>
+                    </InfoLine>
+                    <InfoLine>
+                        <InfoLeft>English</InfoLeft>
+                        <InfoRight>Advanced</InfoRight>
+                    </InfoLine>
+                    <InfoLine>
+                        <InfoLeft>Japanese</InfoLeft>
+                        <InfoRight>Upper-intermediate</InfoRight>
+                    </InfoLine>
+                    <br/><br/>
+                </motion.div>
 
                 <WorkTogether
                 linkTo="/contact"

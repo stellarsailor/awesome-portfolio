@@ -5,7 +5,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     margin-left: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     align-items: center;
     @media (max-width: 768px) {
         margin-left: 0.5rem;
@@ -21,6 +21,28 @@ const ColumnContainer = styled.div`
     }
 `
 
+const SkillTitle = styled.div`
+    font-size: 20px;
+    font-weight: 600;
+    @media (max-width: 1280px) {
+        font-size: 19px;
+    }
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+`
+
+const SkillComment = styled.div`
+    color: var(--mono-4);
+    font-size: 18px;
+    @media (max-width: 1280px) {
+        font-size: 16px;
+    }
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+`
+
 export default function SkillPane(props) {
 
     const { skill } = props
@@ -29,12 +51,12 @@ export default function SkillPane(props) {
         <Container>
             <img src={`/images/icons/${skill.image}.png`} width={40} height={40} style={{marginRight: 8}} />
             <ColumnContainer>
-                <div style={{fontSize: 18, fontWeight: 600}}>
+                <SkillTitle>
                     {skill.name} {skill.highlight && <span style={{color: 'gold'}}>✭</span>}
-                </div>
-                <div style={{color: 'gray', fontSize: 13}}>
+                </SkillTitle>
+                <SkillComment>
                     {skill.comment}
-                </div>
+                </SkillComment>
             </ColumnContainer>
         </Container>
     )

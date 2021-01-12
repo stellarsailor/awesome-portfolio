@@ -1,12 +1,9 @@
-import { Container, Row, Col } from 'react-grid-system';
+import { Container } from 'react-grid-system';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams
 } from "react-router-dom";
 
 import Home from './pages/Home';

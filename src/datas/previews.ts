@@ -42,13 +42,18 @@ export const DamwonProject = [
     {
         name: '1',
         type: 'jpg',
-        comment: 'Main Page',
         flex: 'full',
     },
     {
         name: '2',
         type: 'jpg',
-        comment: '',
+        comment: "Highlight clip's comments are edited like a chat in Twitch.tv",
+        flex: 'full',
+    },
+    {
+        name: '3',
+        type: 'jpg',
+        comment: 'This website was successfully delivered to Damwon Gaming and given Thanks from official DWG Instagram. DWG is now sponsored by KIA, so it became DWG KIA',
         flex: 'full',
     },
 ]
@@ -109,46 +114,49 @@ export const SelfBingo = [
         name: '0',
         type: 'jpg',
         flex: 'full',
-        comment: 'Various colors mean you can customize whatever you want'
+        comment: 'Various colors mean you can customize the bingo whatever you want.'
     },
     {
         name: '1',
         type: 'jpg',
         flex: 'full',
+        comment: 'Main layout was influenced by Reddit & Instagram.'
     },
     {
         name: '2',
         type: 'jpg',
         flex: 'full',
+        comment: 'I had to resize every bingo cell and font size, letter spacing to also fit in mobile.'
     },
     {
         name: '3',
         type: 'jpg',
         flex: 'full',
-        comment: 'You can customize your own marker style'
+        comment: "The user can customize own marker style. [Check, Circle, X Mark, Paint]"
     },
     {
         name: 'v1',
         type: 'mp4',
         flex: 'full',
-    },
-    {
-        name: '5',
-        type: 'jpg',
-        flex: 'full',
-        comment: 'SelfBingo supports social login'
+        comment: "The user setting is saved as a browser cookie."
     },
     {
         name: '6',
         type: 'jpg',
         flex: 'full',
-        comment: "You can see statistics in the result page, such as 'your grade', top percentage, average."
+        comment: "When you complete your bingo, the data is saved in the DB and You can see the statistics, such as 'your rank', top percentage and average."
     },
     {
         name: '4',
         type: 'jpg',
         flex: 'full',
         comment: "Also you can check how many other people selected on the every bingo element"
+    },
+    {
+        name: '5',
+        type: 'jpg',
+        flex: 'full',
+        comment: 'SelfBingo supports Apple and Facebook social login.'
     },
     {
         name: '7',
@@ -169,6 +177,7 @@ export const Valog = [
         name: '0',
         type: 'jpg',
         flex: 'full',
+        comment: 'Black and Red colors are from original Valorant theme.'
     },
     {
         name: '1',
@@ -180,25 +189,25 @@ export const Valog = [
         name: '2',
         type: 'jpg',
         flex: 'full',
-        comment: 'This project is the most visited project I have.'
+        comment: "It has every information about Valorant in Korean such as Basic Guide, Character Info, Map Info and callouts, Pro's setting."
     },
     {
         name: '3',
         type: 'jpg',
         flex: 'full',
-        comment: 'This project is the most visited project I have.'
+        comment: "Weapon info, specific words dictionary for FPS newcomers, Mouse Sensitivity Calculator for people from another game."
     },
     {
         name: '4',
         type: 'jpg',
         flex: 'full',
-        comment: 'People like this.'
+        comment: 'I made a mini game in the website which is "Reaction time test", users loved it.'
     },
     {
         name: '5',
         type: 'jpg',
         flex: 'full',
-        comment: 'People like this.'
+        comment: 'It has a same GUI of Valorant. When the enemy randomly appears in the scope, you have to click/touch the fire button. It checks time how much milliseconds passed till the player reacts. You can try it! - https://valog.gg/reaction/'
     },
 ]
 
