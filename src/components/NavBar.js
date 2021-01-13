@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { initialProps, animateProps } from '../components/StyledComponent'
 import Scroll from 'react-scroll'
+import { projects } from '../datas/projects';
 var scroller = Scroll.scroller;
 
 const NavigationPane = styled.div`
@@ -78,6 +79,7 @@ export default function NavBar(props) {
     const location = useLocation()
 
     const [ scrollPosition, setScrollPosition ] = useState(0)
+    const [ backScrollId, setBackScrollId ] = useState(0)
 
     const handleScroll = () => {
         const position = window.pageYOffset
@@ -85,13 +87,20 @@ export default function NavBar(props) {
     }
         
     useEffect(() => {
-        window.scrollTo(0, 0)
         window.addEventListener('scroll', handleScroll, { passive: true })
     
         return () => {
             window.removeEventListener('scroll', handleScroll)
         }
     }, [])
+
+    useEffect(() => {
+        let urlArr = location.pathname.split('/')
+        if(urlArr.length >= 3){
+            let selectedPrj = projects.filter(v => v.title === urlArr[2])[0]
+            setBackScrollId(selectedPrj.id)
+        }
+    },[location.pathname])
 
     const [ viewMobilePane, setViewMobilePane ] = useState(false)
 
@@ -113,8 +122,13 @@ export default function NavBar(props) {
                             initial={initialProps}
                             animate={animateProps}
                             transition={{ delay: 0.08 }}
-                            onClick={() => window.history.back()}>
-                                <img src="/images/more.png" style={{width: 20, height: 20, transform: 'rotate(180deg)', marginLeft: '2rem', marginRight: 4}} /> Back
+                            // onClick={() => window.history.back()}
+                            >
+                                <Link to={`/projects?s=${backScrollId}`}>
+                                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                        <img src="/images/more.png" style={{width: 20, height: 20, transform: 'rotate(180deg)', marginLeft: '2rem', marginRight: 4}} /> Back
+                                    </div>
+                                </Link>
                             </MobileSides>
                             :
                             <div style={{width: 50, height: 50, margin: '0px 8px'}}></div>

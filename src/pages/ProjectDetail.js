@@ -7,7 +7,6 @@ import { CenteredRow, FlexDCol, FlexDRow } from '../components/StyledComponent'
 import WorkTogether from '../components/WorkTogether'
 import CircleIndicator from '../components/CircleIndicator'
 import { projects } from '../datas/projects'
-import LoadingScreen from '../components/LoadingScreen'
 
 const BackToProjectList = styled.div`
     /* color: var(--blue); */
@@ -85,16 +84,6 @@ export default function ProjectDetail (props){
         setSelectedPrj(projects.filter(v => v.title === title)[0])
     },[title])
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setLoading(false)
-    //         window.scrollTo(0, 0)
-    //         setSelectedPrj(projects.filter(v => v.title === title)[0])
-    //     }, 1000);
-    // },[title])
-
-    // if(loading) return (<LoadingScreen />)
-    // else 
     return (
         <Fade bottom distance="50px">
             <Row nogutter justify="center">
