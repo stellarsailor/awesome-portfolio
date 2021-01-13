@@ -7,6 +7,7 @@ import { CenteredRow, FlexDCol, FlexDRow } from '../components/StyledComponent'
 import WorkTogether from '../components/WorkTogether'
 import CircleIndicator from '../components/CircleIndicator'
 import { projects } from '../datas/projects'
+import LoadingScreen from '../components/LoadingScreen'
 
 const BackToProjectList = styled.div`
     /* color: var(--blue); */
@@ -76,6 +77,7 @@ export default function ProjectDetail (props){
 
     let { title } = useParams()
 
+    const [ loading, setLoading ] = useState(true)
     const [ selectedPrj, setSelectedPrj ] = useState(null)
 
     useEffect(() => {
@@ -83,6 +85,16 @@ export default function ProjectDetail (props){
         setSelectedPrj(projects.filter(v => v.title === title)[0])
     },[title])
 
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setLoading(false)
+    //         window.scrollTo(0, 0)
+    //         setSelectedPrj(projects.filter(v => v.title === title)[0])
+    //     }, 1000);
+    // },[title])
+
+    // if(loading) return (<LoadingScreen />)
+    // else 
     return (
         <Fade bottom distance="50px">
             <Row nogutter justify="center">
@@ -222,7 +234,6 @@ export default function ProjectDetail (props){
                                                         <video 
                                                         controls
                                                         loop 
-                                                        // autostart 
                                                         autoPlay
                                                         muted
                                                         src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
@@ -234,12 +245,11 @@ export default function ProjectDetail (props){
                                                         <video 
                                                         controls
                                                         loop 
-                                                        // autostart 
                                                         autoPlay
                                                         muted
                                                         src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
                                                         type="video/mp4" 
-                                                        style={{maxHeight: '80vh', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 'auto'}}
+                                                        style={{maxHeight: '80vh', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 'auto', marginBottom: '1rem'}}
                                                         key={v.name} 
                                                         />
                                                     :

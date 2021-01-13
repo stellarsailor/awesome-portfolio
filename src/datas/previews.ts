@@ -9,32 +9,29 @@ export const GenshinParty = [
     {
         name: '0',
         type: 'jpg',
-        comment: '',
         flex: 'full',
     },
     {
         name: '1',
         type: 'jpg',
-        comment: 'Main Page',
         flex: 'full',
     },
     {
         name: '2',
         type: 'jpg',
-        comment: '',
         flex: 'full',
+        comment: 'A comparison of in-game GUI and Genshin Party UI'
     },
     {
         name: '3',
         type: 'jpg',
-        comment: '',
         flex: 'full',
     },
     {
         name: '4',
         type: 'jpg',
-        comment: '',
         flex: 'full',
+        comment: 'share URL explanation',
     },
 ]
 
@@ -47,13 +44,13 @@ export const DamwonProject = [
     {
         name: '2',
         type: 'jpg',
-        comment: "Highlight clip's comments are edited like a chat in Twitch.tv",
+        comment: "Highlight clip's comments are designed like a chat in Twitch.tv",
         flex: 'full',
     },
     {
         name: '3',
         type: 'jpg',
-        comment: 'This website was successfully delivered to Damwon Gaming and given Thanks from official DWG Instagram. DWG is now sponsored by KIA, so it became DWG KIA',
+        comment: 'This website was successfully delivered to Damwon Gaming and given Thanks from official DWG Instagram.',
         flex: 'full',
     },
 ]
@@ -68,43 +65,42 @@ export const Memoiz = [
     {
         name: '1',
         type: 'jpg',
-        comment: 'Main Page',
-        flex: 'full',
-    },
-    {
-        name: '2',
-        type: 'jpg',
-        comment: 'Main Page',
-        flex: 'full',
-    },
-    {
-        name: '3',
-        type: 'jpg',
-        comment: 'Mobile Login Page',
         flex: 'full',
     },
     {
         name: '4',
         type: 'mp4',
-        comment: 'Mobile Login Page',
+        comment: 'Users can take sentences in the cart. The sort by option is difficulty / accent / genre.',
         flex: 'full',
     },
     {
         name: '5',
         type: 'mp4',
-        comment: 'Mobile Login Page',
+        comment: 'When you start the study mode, it plays a sentence three times, and then randomly splited word buttons appear. Users need to arrange them in order.',
         flex: 'full',
     },
     {
         name: '6',
         type: 'mp4',
-        comment: 'Mobile Login Page',
+        comment: 'After that, an input box appears. Users need to enter the correct sentence. It does not care the case and space for the conveinience.',
+        flex: 'full',
+    },
+    {
+        name: '2',
+        type: 'jpg',
+        comment: 'When you complete studying, it gives points by difficulty. You can see the daily / weekly / all time leaderboards.',
+        flex: 'full',
+    },
+    {
+        name: '3',
+        type: 'jpg',
+        comment: 'First time I implemented social login.',
         flex: 'full',
     },
     {
         name: '7',
         type: 'mp4',
-        comment: 'Mobile Login Page',
+        comment: 'The most difficult part for me.',
         flex: 'full',
     },
 ]
@@ -216,90 +212,87 @@ export const BritTea = [
         name: '0',
         type: 'jpg',
         flex: 'full',
-        comment: 'main page'
     },
     {
         name: 'intro',
         type: 'mp4',
         flex: 'mobile',
-        comment: 'main page'
+        comment: 'Introduce page'
     },
     {
         name: 't1',
         type: 'jpg',
         flex: 'mobile',
-        comment: 'main page'
+        comment: 'Home Screen'
     },
     {
         name: 't1-2',
         type: 'jpg',
         flex: 'mobile',
-        comment: 'main page'
-    },
-    {
-        name: 't2',
-        type: 'jpg',
-        flex: 'mobile',
-        comment: 'main page'
-    },
-    {
-        name: 't3',
-        type: 'jpg',
-        flex: 'mobile',
-        comment: 'main page'
-    },
-    {
-        name: 't3-2',
-        type: 'jpg',
-        flex: 'mobile',
-        comment: 'main page'
-    },
-    {
-        name: 't4',
-        type: 'jpg',
-        flex: 'mobile',
-        comment: 'main page'
-    },
-    {
-        name: 't4',
-        type: 'mp4',
-        flex: 'mobile',
-        comment: 'main page'
-    },
-    {
-        name: 'wb',
-        type: 'mp4',
-        flex: 'mobile',
-        comment: 'main page'
-    },
-    {
-        name: 't5',
-        type: 'jpg',
-        flex: 'mobile',
-        comment: 'main page'
+        comment: 'Bookmarks page for signed-in users'
     },
     {
         name: 'dv1',
         type: 'jpg',
         flex: 'mobile',
-        comment: 'main page'
+        comment: 'This is the play page'
     },
     {
         name: 'dv2',
         type: 'jpg',
         flex: 'mobile',
-        comment: 'main page'
+        comment: 'After listening the sentence, you can record your voice.'
     },
     {
         name: 'dv3',
         type: 'jpg',
         flex: 'mobile',
-        comment: 'main page'
+        comment: 'You can see the scripts as well'
     },
     {
         name: 'dv4',
         type: 'jpg',
         flex: 'mobile',
-        comment: 'main page'
+        comment: 'There are draggable modal for options.'
+    },
+    {
+        name: 't2',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'You can search the sentence or video. I made a sort option for age, monologue/dialogue, gender, because it is good to practice the accent of a person of your age and gender.'
+    },
+    {
+        name: 't3',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'You can see and play your recordings here.'
+    },
+    {
+        name: 't3-2',
+        type: 'jpg',
+        flex: 'mobile',
+    },
+    {
+        name: 't4',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'There are some study materials here, the first one is a built-in vocabulary book implemented with async-storage. The others are web view.'
+    },
+    {
+        name: 't4',
+        type: 'mp4',
+        flex: 'mobile',
+    },
+    {
+        name: 'wb',
+        type: 'mp4',
+        flex: 'mobile',
+        comment: 'You can easily add a word from the video page.'
+    },
+    {
+        name: 't5',
+        type: 'jpg',
+        flex: 'mobile',
+        comment: 'My page/setting page'
     },
 ]
