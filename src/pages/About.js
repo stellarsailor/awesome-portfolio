@@ -1,12 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { Row, Col } from 'react-grid-system'
-import { TextSubTitle, CenteredRow, TextCenterThin, TextSticky, DividerTitle, Divider, TextUpper, initialProps, animateProps } from '../components/StyledComponent'
+import { CenteredRow, DividerTitle, Divider, TextUpper, initialProps, animateProps } from '../components/StyledComponent'
 import WorkTogether from '../components/WorkTogether'
 import { skills } from '../datas/skills'
 import SkillPane from '../components/SkillPane'
-import CircleIndicator from '../components/CircleIndicator'
 
 const CenteredTitle = styled(motion.div)`
     text-align: center;
@@ -88,14 +87,11 @@ export default function About (){
         window.scrollTo(0, 0)
     },[])
 
-    const [ isSummaryMode, setIsSummaryMode ] = useState(true)
-    const [ selectedProficiency, setSelectedProficiency ] = useState(0)
-
     const renderSkill = useCallback( (typeParams) => {
         return skills.filter(v => v.type === typeParams).map(v => (
             <SkillPane skill={v} />
         ))
-    },[selectedProficiency, isSummaryMode])
+    },[])
 
     return (
         <Row nogutter justify="center">

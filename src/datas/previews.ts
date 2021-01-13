@@ -5,7 +5,7 @@ type previewType = {
     flex: 'half' | 'full' | 'mobile';
 }
 
-export const GenshinParty = [
+export const GenshinParty: Array<previewType> = [
     {
         name: '0',
         type: 'jpg',

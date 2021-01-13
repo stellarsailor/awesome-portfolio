@@ -2,13 +2,6 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import { Row, Col } from 'react-grid-system'
-import { TextSubTitle, CenteredRow, TextCenterThin } from '../components/StyledComponent'
-
-const Divider = styled.div`
-    width: 80%;
-    border-bottom: 1px solid var(--mono-3);
-    margin: 16px 0px;
-`
 
 const HighlightText = styled.div`
     color: var(--mono-1);
@@ -104,7 +97,7 @@ export default function Contact (){
                             <Col xs={6} sm={6} md={3} style={{padding: 8}} key={index}>
                                 <a href={contactLink[index]} target="_blank" rel="noreferrer">
                                     <ContactTypeBox>
-                                        <img src={`/images/icons/${type.toLowerCase()}.png`} width={60} height={60} />
+                                        <img src={`/images/icons/${type.toLowerCase()}.png`} width={60} height={60} alt="Contact Method" />
                                         {type}
                                     </ContactTypeBox>
                                 </a>

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import { Link } from "react-router-dom";
-import { CenteredRow } from './StyledComponent'
 
 const WorkTogetherPane = styled.div`
     width: 100%;

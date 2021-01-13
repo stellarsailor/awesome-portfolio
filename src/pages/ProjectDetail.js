@@ -3,7 +3,7 @@ import { Row, Col } from 'react-grid-system'
 import { Link, useParams } from 'react-router-dom'
 import Fade from 'react-reveal/Fade'
 import styled from 'styled-components'
-import { CenteredRow, FlexDCol, FlexDRow } from '../components/StyledComponent'
+import { FlexDCol, FlexDRow } from '../components/StyledComponent'
 import WorkTogether from '../components/WorkTogether'
 import CircleIndicator from '../components/CircleIndicator'
 import { projects } from '../datas/projects'
@@ -76,7 +76,6 @@ export default function ProjectDetail (props){
 
     let { title } = useParams()
 
-    const [ loading, setLoading ] = useState(true)
     const [ selectedPrj, setSelectedPrj ] = useState(null)
 
     useEffect(() => {
@@ -94,13 +93,13 @@ export default function ProjectDetail (props){
                             <BackToProjectList>
                                 <Link to={`/projects?s=${selectedPrj.id}`}>
                                     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                        <img src="/images/more.png" width={20} style={{transform: 'rotate(180deg)', marginRight: 4}} /> Back 
+                                        <img src="/images/more.png" width={20} style={{transform: 'rotate(180deg)', marginRight: 4}} alt="Go Back Button" /> Back 
                                     </div>
                                 </Link>
                             </BackToProjectList>
                             <Divider />
                             <FlexDRow style={{marginTop: 16}}>
-                                <img src={`/images/projects/${selectedPrj.title}/icon.png`} width={140} height={140} style={{borderRadius: 15, marginRight: 16}} />
+                                <img src={`/images/projects/${selectedPrj.title}/icon.png`} width={140} height={140} style={{borderRadius: 15, marginRight: 16}} alt="Project Icon" />
                                 <FlexDCol>
                                     <div style={{fontWeight: 800, fontSize: 24}}>{title}</div>
                                     <div>Minsu Lee</div>
@@ -172,7 +171,7 @@ export default function ProjectDetail (props){
                                     <InfoLeft>Library List</InfoLeft>
                                     <InfoRight>
                                         <a href={selectedPrj.library} target="_blank" rel="noreferrer">
-                                            See Detail <img src="/images/blank.png" width={15} height={15} />
+                                            See Detail <img src="/images/blank.png" width={15} height={15} alt="See Detail" />
                                         </a>
                                     </InfoRight>
                                 </InfoLine>
@@ -247,12 +246,14 @@ export default function ProjectDetail (props){
                                                         src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
                                                         style={{width: '100%'}} 
                                                         key={v.name} 
+                                                        alt="Project Detail"
                                                         />
                                                         :
                                                         <img 
                                                         src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
                                                         style={{maxHeight: '90vh', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 'auto', maxWidth: '100%'}} 
                                                         key={v.name} 
+                                                        alt="Project Detail"
                                                         />
                                                 }
                                                 {v.comment && <CommentOnImage>{v.comment}</CommentOnImage>}

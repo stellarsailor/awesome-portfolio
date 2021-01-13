@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import { Row, Col, Visible } from 'react-grid-system'
 import styled from 'styled-components'
-import { initialProps, animateProps, TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol, TextUpper, TextMainSmall } from '../components/StyledComponent'
+import { initialProps, animateProps, TextMain, TextDesc, TextUpper } from '../components/StyledComponent'
 import { Link, useRouteMatch } from "react-router-dom"
-import WorkTogether from '../components/WorkTogether'
 import Scroll from 'react-scroll';
 import Projects from './Projects'
 import { motion } from 'framer-motion'
@@ -63,7 +62,7 @@ export default function Home (){
                 offset: 0, 
             })
         }
-    },[])
+    },[match])
 
     const renderTextPart = () => (
         <MainLeftPane>
@@ -104,7 +103,7 @@ export default function Home (){
                 animate={animateProps}
                 transition={{ delay: 1.5 }}
                 >
-                    About Me <img src="/images/more.png" width={12} />
+                    About Me <img src="/images/more.png" width={12} alt="About Me" />
                 </HyperLink>
             </Link>
             <br /><br />

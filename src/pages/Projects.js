@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import { Row, Col } from 'react-grid-system'
 import styled from 'styled-components'
-import { TextMain, TextDesc, TextMainTitle, TextSubTitle, FlexDRow, FlexDCol, TextSticky, DividerTitle, Divider, initialProps, animateProps } from '../components/StyledComponent'
+import { TextMain, FlexDRow, FlexDCol, DividerTitle, Divider, initialProps, animateProps } from '../components/StyledComponent'
 import { projects } from '../datas/projects'
-import { dynamicSort } from '../logics/dynamicSort'
 import { Link, useLocation } from "react-router-dom"
 import WorkTogether from '../components/WorkTogether'
 import { motion } from 'framer-motion'
@@ -117,7 +116,7 @@ export default function Projects (){
                 offset: - 60, 
             })
         }
-    },[])
+    },[search])
 
     return (
         <Row nogutter justify="center">

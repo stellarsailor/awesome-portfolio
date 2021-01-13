@@ -49,7 +49,7 @@ export default function BackToTop() {
     if(scrollPosition > 250){
         return (
             <GoToTopButton onClick={() => goToTop()}>
-                <img src="/images/icon_top.png" style={{width: 30, height: 30}} />
+                <img src="/images/icon_top.png" style={{width: 30, height: 30}} alt="Go Back to Top" />
             </GoToTopButton>
         )
     } else {
