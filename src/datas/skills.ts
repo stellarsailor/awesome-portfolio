@@ -122,7 +122,7 @@ export const skills: Array<skillType> = [
     {
         type: 'DO',
         name: 'Git',
-        image: 'Git',
+        image: 'git',
         comment: "I know the basics of configuration management.",
         highlight: true,
     },

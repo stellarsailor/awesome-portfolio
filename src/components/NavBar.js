@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Row, Col, Visible, Hidden } from 'react-grid-system'
 import { useParams, useLocation, useHistory, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import { initialProps, animateProps } from '../components/StyledComponent'
 import Scroll from 'react-scroll'
 var scroller = Scroll.scroller;
 
@@ -43,10 +45,10 @@ const MobileTabLine = styled.div`
     color: white;
 `
 
-const MobileSides = styled.div`
+const MobileSides = styled(motion.div)`
     color: white; //var(--blue);
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 800;
     width: 50px;
     height: 50px;
     margin: 0px 8px;
@@ -83,6 +85,7 @@ export default function NavBar(props) {
     }
         
     useEffect(() => {
+        window.scrollTo(0, 0)
         window.addEventListener('scroll', handleScroll, { passive: true })
     
         return () => {
@@ -105,9 +108,13 @@ export default function NavBar(props) {
                 <div style={{width: '100%', display: 'flex', flexDirection: 'column', backgroundColor: 'rgba(0, 0, 0, 1)'}}>
                     <MobileTab>
                         {
-                            location.pathname.includes('/project/') && scrollPosition > 50 ?
-                            <MobileSides onClick={() => window.history.back()}>
-                                <img src="/images/more.png" style={{width: 20, height: 20, transform: 'rotate(180deg)', marginLeft: 24}} /> Back
+                            location.pathname.includes('/project/') && scrollPosition > 50 ? 
+                            <MobileSides 
+                            initial={initialProps}
+                            animate={animateProps}
+                            transition={{ delay: 0.08 }}
+                            onClick={() => window.history.back()}>
+                                <img src="/images/more.png" style={{width: 20, height: 20, transform: 'rotate(180deg)', marginLeft: '2rem', marginRight: 4}} /> Back
                             </MobileSides>
                             :
                             <div style={{width: 50, height: 50, margin: '0px 8px'}}></div>
