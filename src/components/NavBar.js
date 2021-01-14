@@ -113,7 +113,6 @@ export default function NavBar(props) {
                             initial={initialProps}
                             animate={animateProps}
                             transition={{ delay: 0.08 }}
-                            // onClick={() => window.history.back()}
                             >
                                 <Link to={`/projects?s=${backScrollId}`}>
                                     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -139,7 +138,7 @@ export default function NavBar(props) {
                                     Home
                                 </MobileTabLine>
                             </Link>
-                            <Link to="/projects">
+                            <Link to="/project">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
                                     Projects
                                 </MobileTabLine>
@@ -178,7 +177,7 @@ export default function NavBar(props) {
                     <Col sm={12} md={10} style={{marginLeft: '3%'}}>
                         <NavigationPane>
                             <Link to="/"> <EachButton><img src="/images/logo.png" style={{width: 30}} alt="Logo" /></EachButton> </Link>
-                            <Link to="/projects"><EachButton>Projects</EachButton></Link>
+                            <Link to="/project"><EachButton>Projects</EachButton></Link>
                             <Link to="/about"><EachButton >About Me</EachButton></Link>
                             <Link to="/contact"><EachButton >Contact</EachButton></Link>
                         </NavigationPane>

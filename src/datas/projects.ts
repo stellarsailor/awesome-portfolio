@@ -63,10 +63,10 @@ export const projects: Array<ProjectType> = [
         result: '199k Users, 347k Sessions on Google Analytics ( ~ Jan, 2021), 5k downloads on Google Play (Jan, 2021)',
         library: 'https://github.com/stellarsailor/awesome-portfolio/blob/main/src/datas/dependencies/Valog.json',
         
-        idea: "I am a big fan of video games and e-sports, so when Riot Games' Valorant is newly released, I started to make a Valorant information website for Korean. I would say it was the very first Valorant website in Korean community, so it went viral.",
+        idea: "I am a big fan of video games and E-Sports, so when Riot Games' Valorant was released, I started to make a Valorant information website for the Koreans. I would say this is the very first Valorant website in the Korean community, so it went viral.",
         explanation: "In this project, there was no difficult logic, just JSON data communication between Front-end and Back-end for the information. I just had to make database tables properly. I deployed React project on AWS S3 and CloudFront and made Back-end API on AWS EC2 instance with Nginx and Let's Encrypt SSL. I also published an android mobile application with React Native to gather people more.",
         preview: Valog,
-        lesson: "The thing I was really struggled with was SEO. I didn't expect people would visit my website this much, so I had to make a profit. If you know, getting approval from Google Adsense is really hard unless it's search engine optimized well and had enough contents. I learned how to optimize the website a lot. I tried migrating to Next.js at that moment, but it took too much time. Instead of it, I found a solution which was 'react-snapshot'. It could help me get approval Google Adsense.",
+        lesson: "The thing I was really struggled with was SEO. I didn't expect people would visit my website this much, so I had to make a profit. If you know, getting approval from Google Adsense is really hard unless it is search engine optimized well and had enough contents. I learned how to optimize the website a lot. I tried migrating to Next.js at that moment, but it took too much time. Instead of it, I found a solution which was 'react-snapshot'. It could help me get approval Google Adsense.",
     },
     {
         id: 2,
@@ -114,7 +114,7 @@ export const projects: Array<ProjectType> = [
         id: 4,
         type: 'Toy',
         title: 'Damwon Project',
-        codeLink: '',
+        codeLink: 'https://github.com/stellarsailor/damwongaming',
         liveLink: 'https://2020championdwg.com',
         languages: 'Korean',
         year: '2020',
@@ -123,9 +123,9 @@ export const projects: Array<ProjectType> = [
         feature: ['SPA', 'Responsive', 'CSR', 'https'],
         library: 'https://github.com/stellarsailor/awesome-portfolio/blob/main/src/datas/dependencies/Damwon%20Project.json',
         
-        idea: "I love watching e-sports, and the biggest one is League of Legends. In 2020, the Korean team Damwon Gaming won the World Championship. I was so happy about that and I made a fan-letter/message book website for the fans to celebrate together. It was seen by every DWG player.",
+        idea: "I love watching E-Sports, and the biggest one is League of Legends. In 2020, the Korean team Damwon Gaming won the World Championship. I was so happy about that and I made a fan-letter/message book website from thousands of fans to celebrate together.",
         preview: DamwonProject,
-        // lesson: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        lesson: "The thing that's lacking is that I didn't pay much attention to the design and layout. I had to make a website quickly and the most time-consuming thing was managing JSON data. I received thousands of fan-letters, messages, fan-arts, articles and comments on clips. It took some time to process the JSON data.",
     },
     {
         id: 5,

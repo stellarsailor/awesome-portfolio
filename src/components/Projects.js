@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { Row, Col } from 'react-grid-system'
 import styled from 'styled-components'
-import { TextMain, FlexDRow, FlexDCol, DividerTitle, Divider, initialProps, animateProps } from '../components/StyledComponent'
+import { TextMain, FlexDRow, FlexDCol, DividerTitle, Divider, initialProps, animateProps } from './StyledComponent'
 import { projects } from '../datas/projects'
 import { Link, useLocation } from "react-router-dom"
-import WorkTogether from '../components/WorkTogether'
+import WorkTogether from './WorkTogether'
 import { motion } from 'framer-motion'
 
 import Scroll from 'react-scroll'

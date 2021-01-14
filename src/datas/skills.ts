@@ -30,6 +30,13 @@ export const skills: Array<skillType> = [
     },
     {
         type: 'FE',
+        name: 'React Native',
+        image: 'rn',
+        comment: "I have published full-stack mobile applications on both Apple App Store and Google Play.",
+        highlight: true,
+    },
+    {
+        type: 'FE',
         name: 'Next.js',
         image: 'next',
         comment: "I know what to do to achieve SEO in Next.js SSR Application.",
@@ -62,13 +69,6 @@ export const skills: Array<skillType> = [
         image: 'mobx',
         comment: "I do basic state management.",
         highlight: false,
-    },
-    {
-        type: 'FE',
-        name: 'React Native',
-        image: 'rn',
-        comment: "I have published full-stack mobile applications on both Apple App Store and Google Play.",
-        highlight: true,
     },
     {
         type: 'BE',
@@ -114,6 +114,13 @@ export const skills: Array<skillType> = [
     },
     {
         type: 'DO',
+        name: 'Git',
+        image: 'git',
+        comment: "I know the basics of configuration management.",
+        highlight: true,
+    },
+    {
+        type: 'DO',
         name: 'AWS',
         image: 'aws',
         comment: "I have some experience using AWS EC2, S3, Route53, CloudFront, RDS, Elastic Beanstalk.",
@@ -121,9 +128,16 @@ export const skills: Array<skillType> = [
     },
     {
         type: 'DO',
-        name: 'Git',
-        image: 'git',
-        comment: "I know the basics of configuration management.",
+        name: 'Vercel',
+        image: 'vercel',
+        comment: "I have deployed Next.js applications.",
+        highlight: true,
+    },
+    {
+        type: 'DO',
+        name: 'Heroku',
+        image: 'heroku',
+        comment: "I have deployed React.js, Angular.js, Node.js applications.",
         highlight: true,
     },
     {
@@ -154,20 +168,6 @@ export const skills: Array<skillType> = [
     //     comment: "",
     //     highlight: false,
     // },
-    {
-        type: 'DO',
-        name: 'Vercel',
-        image: 'vercel',
-        comment: "I have deployed Next.js applications.",
-        highlight: true,
-    },
-    {
-        type: 'DO',
-        name: 'Heroku',
-        image: 'heroku',
-        comment: "I have deployed React.js, Angular.js, Node.js applications.",
-        highlight: true,
-    },
     {
         type: 'PL',
         name: 'Javascript',

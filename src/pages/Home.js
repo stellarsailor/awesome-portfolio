@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { initialProps, animateProps, TextMain, TextDesc, TextUpper } from '../components/StyledComponent'
 import { Link, useRouteMatch } from "react-router-dom"
 import Scroll from 'react-scroll';
-import Projects from './Projects'
+import Projects from '../components/Projects'
 import { motion } from 'framer-motion'
 
 var Element  = Scroll.Element;
@@ -21,6 +21,10 @@ const MainLeftPane = styled.div`
 const HyperLink = styled(motion.span)`
     font-size: 20px;
     color: var(--blue);
+`
+
+const HyperLinkSpan = styled.span`
+    cursor: pointer;
     &:hover{
         text-decoration-line: underline;
     }
@@ -61,6 +65,8 @@ export default function Home (){
                 smooth: true,
                 offset: 0, 
             })
+        } else {
+            window.scrollTo(0, 0)
         }
     },[match])
 
@@ -80,7 +86,7 @@ export default function Home (){
             >
                 Web developer
             </TextMain>
-            <div style={{textAlign: 'right', maxWidth: 565}}>
+            <div style={{textAlign: 'right', maxWidth: 500, marginBottom: '1rem'}}>
                 <TextMain
                 initial={initialProps}
                 animate={animateProps}
@@ -94,18 +100,20 @@ export default function Home (){
             animate={animateProps}
             transition={{ delay: 1 }}
             >
-                I am Minsu Lee. A web developer who also has strong passion on design. Truly enjoying React.js at the moment and love to make simple and beautiful interface.
+                I am Minsu Lee. A web developer who also has a passion on web design. Websites should not only work properly, but it also has to be visually aesthetic.
             </TextDesc>
             <br />
-            <Link to="/about">
-                <HyperLink
-                initial={initialProps}
-                animate={animateProps}
-                transition={{ delay: 1.5 }}
-                >
-                    About Me <img src="/images/more.png" width={12} alt="About Me" />
-                </HyperLink>
-            </Link>
+            <HyperLink
+            initial={initialProps}
+            animate={animateProps}
+            transition={{ delay: 1.5 }}
+            >
+                <Link to="/about">
+                    <HyperLinkSpan>
+                        About Me <img src="/images/more.png" width={12} alt="About Me" />
+                    </HyperLinkSpan>
+                </Link>
+            </HyperLink>
             <br /><br />
         </MainLeftPane>
     )
@@ -147,8 +155,8 @@ export default function Home (){
                     </Visible>
                 </Row>
             </motion.div>
-            <div style={{marginBottom: '3rem'}} />
             <Element name="project" />
+            <div style={{marginBottom: '3rem'}} />
             <Projects />
         </>
     )

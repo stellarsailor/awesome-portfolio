@@ -23,7 +23,7 @@ const StarCommentHelper = styled.div`
     text-align: right;
     color: var(--mono-5);
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     @media (max-width: 768px) {
         font-size: 0.9rem;
     }
@@ -37,7 +37,7 @@ const SkillTitle = styled.div`
     color: var(--mono-6);
     margin-left: 16px;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     @media (max-width: 768px) {
         font-size: 20px;
         margin-left: 8px;
@@ -110,7 +110,8 @@ export default function About (){
                 animate={animateProps}
                 transition={{ delay: 0.6 }}
                 >
-                    I'm Minsu Lee. Web developer who has passion on design as well. Websites not only do the function work well but also the design should be the best.
+                    I am Minsu Lee. A web developer who has a passion on web design as well. 
+                    Truly enjoying React.js at the moment and love to make simple and beautiful interface.
                 </CenteredTitle>
 
                 <motion.img 
@@ -130,7 +131,6 @@ export default function About (){
                     <Divider />
                     <StarCommentHelper>
                         "<span style={{color: 'gold'}}>✭</span>" means I have used this for 300+ hours.
-                        {/* <span onClick={() => setIsSummaryMode(true)}>Summary</span> | <span onClick={() => setIsSummaryMode(false)}>Detail</span> */}
                     </StarCommentHelper>
 
                     <SkillTitle>Front-End</SkillTitle>

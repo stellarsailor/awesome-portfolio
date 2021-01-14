@@ -10,6 +10,10 @@ const WorkTogetherPane = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* background-image: ${props => `url('/images/skyline.png')`};
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat; */
 `
 
 const WorkTogetherText = styled.div`

@@ -223,6 +223,7 @@ export default function ProjectDetail (props){
                                                         controls
                                                         loop 
                                                         autoPlay
+                                                        playsInline
                                                         muted
                                                         src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
                                                         type="video/mp4" 
@@ -234,6 +235,7 @@ export default function ProjectDetail (props){
                                                         controls
                                                         loop 
                                                         autoPlay
+                                                        playsInline
                                                         muted
                                                         src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
                                                         type="video/mp4" 

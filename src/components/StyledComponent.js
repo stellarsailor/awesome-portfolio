@@ -9,6 +9,7 @@ export const TextMain = styled(motion.div)`
     font-weight: 1000;
     color: var(--mono-8);
     margin-top: 1rem;
+    line-height: 0.8;
     @media (max-width: 1280px) {
         font-size: 2.5rem;
         font-weight: 1000;
@@ -71,13 +72,13 @@ export const TextUpper = styled(motion.div)`
     letter-spacing: 3px;
     color: var(--mono-5);
     @media (max-width: 1280px) {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
     @media (max-width: 768px) {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     margin-top: 1rem;
-    margin-bottom: 0.2rem;
+    /* margin-bottom: 0.2rem; */
 `
 
 export const TextSticky = styled.div`
