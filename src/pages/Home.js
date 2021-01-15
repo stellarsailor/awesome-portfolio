@@ -100,7 +100,7 @@ export default function Home (){
             animate={animateProps}
             transition={{ delay: 1 }}
             >
-                I am Minsu Lee. A web developer who also has a passion on web design. Websites should not only work properly, but it also has to be visually aesthetic.
+                I am Minsu Lee. A web developer who has a passion for web design as well. Websites should not only work properly, but it also has to be visually aesthetic.
             </TextDesc>
             <br />
             <HyperLink

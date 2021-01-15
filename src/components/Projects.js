@@ -163,7 +163,7 @@ export default function Projects (){
                 <Divider /> */}
                 <WorkTogether
                 linkTo="/contact"
-                smallText="NEED A WEB DEVELOPER WHO HAS A PASSION ON DESIGN AS WELL?"
+                smallText="NEED A WEB DEVELOPER WHO HAS A PASSION FOR DESIGN AS WELL?"
                 bigText="Let's Work Together"
                 />
             </Col>
