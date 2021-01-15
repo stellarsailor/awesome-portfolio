@@ -110,7 +110,7 @@ export default function About (){
                 animate={animateProps}
                 transition={{ delay: 0.6 }}
                 >
-                    I am Minsu Lee. A web developer who has a passion on web design as well. 
+                    I am Minsu Lee. A web developer who has a passion for web design as well. 
                     Truly enjoying React.js at the moment and love to make simple and beautiful interface.
                 </CenteredTitle>
 
