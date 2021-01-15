@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { initialProps, animateProps } from '../components/StyledComponent'
-import { projects } from '../datas/projects'
+import { projects } from '../data/projects'
 
 const NavigationPane = styled.div`
     color: white;

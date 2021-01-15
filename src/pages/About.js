@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Row, Col } from 'react-grid-system'
 import { CenteredRow, DividerTitle, Divider, TextUpper, initialProps, animateProps } from '../components/StyledComponent'
 import WorkTogether from '../components/WorkTogether'
-import { skills } from '../datas/skills'
+import { skills } from '../data/skills'
 import SkillPane from '../components/SkillPane'
 
 const CenteredTitle = styled(motion.div)`

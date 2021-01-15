@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { FlexDCol, FlexDRow } from '../components/StyledComponent'
 import WorkTogether from '../components/WorkTogether'
 import CircleIndicator from '../components/CircleIndicator'
-import { projects } from '../datas/projects'
+import { projects } from '../data/projects'
 
 const BackToProjectList = styled.div`
     /* color: var(--blue); */
