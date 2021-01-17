@@ -81,6 +81,21 @@ const InfoRight = styled.div`
     }
 `
 
+const InsideList = styled.li`
+    margin-left: 2rem;
+    margin-bottom: 4px;
+    color: var(--mono-6);
+    font-size: 18px;
+    @media (max-width: 1280px) {
+        margin-left: 1.5rem;
+        font-size: 16px;
+    }
+    @media (max-width: 768px) {
+        margin-left: 1rem;
+        font-size: 14px;
+    }
+`
+
 export default function About (){
 
     useEffect(() => {
@@ -110,7 +125,7 @@ export default function About (){
                 animate={animateProps}
                 transition={{ delay: 0.6 }}
                 >
-                    I am Minsu Lee. A web developer who has a passion for web design as well. 
+                    I am Minsu Lee. A web developer with a passion for design & UX.
                     Truly enjoying React.js at the moment and love to make simple and beautiful interface.
                 </CenteredTitle>
 
@@ -118,7 +133,7 @@ export default function About (){
                 initial={initialProps}
                 animate={animateProps}
                 transition={{ delay: 0.8 }}
-                src="/images/navy.jpg" 
+                src="/images/about.jpg" 
                 style={{width: '100%'}} 
                 />
 
@@ -158,6 +173,16 @@ export default function About (){
                     {renderSkill('OS')}
                     <br/>
 
+                    <br/><br/>
+
+                    <motion.img 
+                    initial={initialProps}
+                    animate={animateProps}
+                    transition={{ delay: 0.8 }}
+                    src="/images/navy.jpg" 
+                    style={{width: '100%'}} 
+                    />
+
                     <DividerTitle>Career</DividerTitle>
                     <Divider />
 
@@ -166,9 +191,14 @@ export default function About (){
                         <InfoRight>
                             <b>Republic of Korea Navy</b>
                             <div>Sub-lieutenant (IT branch)</div>
-                            <div>A chief officer of E-learning Contents Creating in Naval Education & Training Command</div>
+                            <div>An officer in charge of E-learning Content Creating Dept. in Naval Education & Training Command</div>
                         </InfoRight>
                     </InfoLine>
+                    <div style={{marginTop: '1rem'}}>
+                        <InsideList>Managed teams of graphic design, voice recording, video editing, and 3d modeling to make E-learning content.</InsideList>
+                        <InsideList>Developed intranet websites with HTML, CSS and Vanilla JavaScript.</InsideList>
+                        <InsideList>Developed E-learning content with HTML and Adobe Captivate and served them on the intranet.</InsideList>
+                    </div>
                     <br/>
 
                     <DividerTitle>Education</DividerTitle>
@@ -191,7 +221,7 @@ export default function About (){
                     <InfoLine>
                         <InfoLeft>2012 - 2016</InfoLeft>
                         <InfoRight>
-                            <b>Pukyoung University</b>
+                            <b>Pukyong National University</b>
                             <div>Bachelor's degree of Computer Engineering</div>
                         </InfoRight>
                     </InfoLine>
@@ -210,14 +240,14 @@ export default function About (){
                     </InfoLine>
                     <InfoLine>
                         <InfoLeft>Japanese</InfoLeft>
-                        <InfoRight>Upper-intermediate</InfoRight>
+                        <InfoRight>Intermediate</InfoRight>
                     </InfoLine>
                     <br/><br/>
                 </motion.div>
 
                 <WorkTogether
                 linkTo="/contact"
-                smallText="NEED A WEB DEVELOPER WHO HAS A PASSION FOR DESIGN AS WELL?"
+                smallText="NEED A WEB DEVELOPER WITH A PASSION FOR DESIGN & UX?"
                 bigText="Let's Work Together"
                 />
             </Col>

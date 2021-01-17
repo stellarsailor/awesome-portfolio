@@ -73,6 +73,22 @@ const EachButton = styled.div`
     }
 `
 
+const ResumeButton = styled.div`
+    color: #f5f5f7;
+    font-size: 15px;
+    /* border: 1px solid var(--mono-5); */
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+    opacity: 0.8;
+    transition: opacity .3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    &:hover {
+        color: white;
+        opacity: 1;
+        cursor: pointer;
+    }
+`
+
 export default function NavBar(props) {
     const location = useLocation()
 
@@ -103,9 +119,9 @@ export default function NavBar(props) {
     const [ viewMobilePane, setViewMobilePane ] = useState(false)
 
     return (
-        <Row nogutter justify="center" style={{position: 'fixed', width: '100%', zIndex: 10}}>
+        <Row nogutter justify="center" style={{position: 'fixed', width: '100%', zIndex: 10, backgroundColor: 'rgba(0, 0, 0, 1)'}}>
             <Visible xs sm>
-                <div style={{width: '100%', display: 'flex', flexDirection: 'column', backgroundColor: 'rgba(0, 0, 0, 1)'}}>
+                <div style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
                     <MobileTab>
                         {
                             location.pathname.includes('/project/') && scrollPosition > 50 ? 
@@ -123,7 +139,7 @@ export default function NavBar(props) {
                             :
                             <div style={{width: 50, height: 50, margin: '0px 8px'}}></div>
                         }
-                        <Link to="/"> 
+                        <Link to="/" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}> 
                             <img src="/images/logo.png" style={{width: 30}} onClick={() => setViewMobilePane(false)} alt="Logo" />
                         </Link>
                         <MobileSides onClick={() => setViewMobilePane(!viewMobilePane)}>
@@ -153,7 +169,12 @@ export default function NavBar(props) {
                                     Contact
                                 </MobileTabLine>
                             </Link>
-                            <a href="https://github.com/stellarsailor" target="_blank" rel="noreferrer">
+                            <a href="https://drive.google.com/file/d/1e8b-BbIiDKbs0k6pzojxFjC1_myrprEd/view?usp=sharing" target="_blank" rel="noreferrer">
+                                <MobileTabLine onClick={() => setViewMobilePane(false)}>
+                                    Resume
+                                </MobileTabLine>
+                            </a>
+                            {/* <a href="https://github.com/stellarsailor" target="_blank" rel="noreferrer">
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
                                     GitHub
                                 </MobileTabLine>
@@ -167,22 +188,25 @@ export default function NavBar(props) {
                                 <MobileTabLine onClick={() => setViewMobilePane(false)}>
                                     Instagram
                                 </MobileTabLine>
-                            </a>
+                            </a> */}
                         </MobileOpenedPane>
                     }
                 </div>
             </Visible>
             <Visible md lg xl xxl>
-                <div style={{width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.9)'}}>
-                    <Col sm={12} md={10} style={{marginLeft: '3%'}}>
-                        <NavigationPane>
-                            <Link to="/"> <EachButton><img src="/images/logo.png" style={{width: 30}} alt="Logo" /></EachButton> </Link>
-                            <Link to="/project"><EachButton>Projects</EachButton></Link>
-                            <Link to="/about"><EachButton >About Me</EachButton></Link>
-                            <Link to="/contact"><EachButton >Contact</EachButton></Link>
-                        </NavigationPane>
-                    </Col>
-                </div>
+                <Col sm={12} md={11} style={{marginLeft: '0%'}}>
+                    <NavigationPane>
+                        <Link to="/"> <EachButton><img src="/images/logo.png" style={{width: 30}} alt="Logo" /></EachButton> </Link>
+                        <Link to="/project"><EachButton>Projects</EachButton></Link>
+                        <Link to="/about"><EachButton >About Me</EachButton></Link>
+                        <Link to="/contact"><EachButton >Contact</EachButton></Link>
+                        <a href="https://drive.google.com/file/d/1e8b-BbIiDKbs0k6pzojxFjC1_myrprEd/view?usp=sharing" target="_blank" rel="noreferrer" style={{position: 'absolute', right: 0}}>
+                            <ResumeButton>
+                                Resume
+                            </ResumeButton>
+                        </a>
+                    </NavigationPane>
+                </Col>
             </Visible>
         </Row>
     )

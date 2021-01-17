@@ -100,7 +100,7 @@ export const Memoiz = [
     {
         name: '7',
         type: 'mp4',
-        comment: 'The most difficult part for me.',
+        comment: 'Implementing playlists feature was a the most difficult thing to me at that time. I had to learn how to handle objects in arrays, and consider how to store an array data in the database.',
         flex: 'full',
     },
 ]

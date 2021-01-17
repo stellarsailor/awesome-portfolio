@@ -44,7 +44,7 @@ export const projects: Array<ProjectType> = [
         idea: "I came up with the idea of 'Single Bingo', which is the bingo that you can play by yourself. I think this is not common in English culture. There is bingo, for example, 'Silver Spoon bingo - How rich is your family?' or 'Anime/Movie Otaku Bingo - How many Animes/Movies have you watched?'. The bingo elements are set whatever by the creator and everyone can play the bingo and share the result of it. Some people tend to show off what they have had or watched/known. That was the idea of the SelfBingo.",
         explanation: "The every bingo element should be searched in Google Search Engine to gather people, so I had to make this project SSR base. I used Next.js first time properly in this project, and I really loved how much Next.js was well made and comfortable to set SSR. In addition, Vercel was an amazing platform to deploy Next.js project easily, in terms of no need to set up SSL for https.",
         preview: SelfBingo,
-        lesson: "It was difficult to implement Bingo logic and how to render neatly in every aspect ratio. It took some time to how to manage bingo Element as JSON data and to store in the database considering to implement average data or top percentage by rank-over. I think I have became good at handling arrays and objects in Javascript.",
+        lesson: "It was difficult to implement Bingo logic and how to render neatly in every aspect ratio. It took some time to how to manage bingo Element as JSON data and to store in the database considering to implement average data or top percentage by rank-over. I think I have became good at handling arrays and objects in JavaScript.",
     },
     {
         id: 1,
@@ -66,7 +66,7 @@ export const projects: Array<ProjectType> = [
         idea: "I am a big fan of video games and E-Sports, so when Riot Games' Valorant was released, I started to make a Valorant information website for the Koreans. I would say this is the very first Valorant website in the Korean community, so it went viral.",
         explanation: "In this project, there was no difficult logic, just JSON data communication between Front-end and Back-end for the information. I just had to make database tables properly. I deployed React project on AWS S3 and CloudFront and made Back-end API on AWS EC2 instance with Nginx and Let's Encrypt SSL. I also published an android mobile application with React Native to gather people more.",
         preview: Valog,
-        lesson: "The thing I was really struggled with was SEO. I didn't expect people would visit my website this much, so I had to make a profit. If you know, getting approval from Google Adsense is really hard unless it is search engine optimized well and had enough contents. I learned how to optimize the website a lot. I tried migrating to Next.js at that moment, but it took too much time. Instead of it, I found a solution which was 'react-snapshot'. It could help me get approval Google Adsense.",
+        lesson: "The thing I was really struggled with was SEO. I didn't expect people would visit my website this much, so I had to make a profit. If you know, getting approval from Google Adsense is really hard unless it is search engine optimized well and had enough content. I learned how to optimize the website a lot. I tried migrating to Next.js at that moment, but it took too much time. Instead of it, I found a solution which was 'react-snapshot'. It could help me get approval Google Adsense.",
     },
     {
         id: 2,

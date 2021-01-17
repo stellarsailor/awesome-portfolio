@@ -19,8 +19,11 @@ const MainLeftPane = styled.div`
 `
 
 const HyperLink = styled(motion.span)`
-    font-size: 20px;
+    font-size: 22px;
     color: var(--blue);
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
 `
 
 const HyperLinkSpan = styled.span`
@@ -86,7 +89,7 @@ export default function Home (){
             >
                 Web developer
             </TextMain>
-            <div style={{textAlign: 'right', maxWidth: 500, marginBottom: '1rem'}}>
+            <div style={{textAlign: 'right', maxWidth: 565, marginBottom: '1rem'}}>
                 <TextMain
                 initial={initialProps}
                 animate={animateProps}
@@ -100,7 +103,7 @@ export default function Home (){
             animate={animateProps}
             transition={{ delay: 1 }}
             >
-                I am Minsu Lee. A web developer who has a passion for web design as well. Websites should not only work properly, but it also has to be visually aesthetic.
+                I am Minsu Lee. A web developer with a passion for design & UX. Websites should not only work properly, but it also has to be visually aesthetic.
             </TextDesc>
             <br />
             <HyperLink
@@ -113,6 +116,11 @@ export default function Home (){
                         About Me <img src="/images/more.png" width={12} alt="About Me" />
                     </HyperLinkSpan>
                 </Link>
+                {/* <Link to="/about" style={{marginLeft: '1rem'}}>
+                    <HyperLinkSpan>
+                        Resume <img src="/images/more.png" width={12} alt="Resume" />
+                    </HyperLinkSpan>
+                </Link> */}
             </HyperLink>
             <br /><br />
         </MainLeftPane>

@@ -162,9 +162,9 @@ export default function Projects (){
                 {/* <DividerTitle>Others</DividerTitle>
                 <Divider /> */}
                 <WorkTogether
-                linkTo="/contact"
-                smallText="NEED A WEB DEVELOPER WHO HAS A PASSION FOR DESIGN AS WELL?"
-                bigText="Let's Work Together"
+                linkTo={`/about`}
+                smallText="NEED A WEB DEVELOPER WITH A PASSION FOR DESIGN?"
+                bigText="Read About Me"
                 />
             </Col>
         </Row>
