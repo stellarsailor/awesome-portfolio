@@ -140,7 +140,7 @@ export default function Projects (){
 
                 <Row nogutter>
                     {projects.filter(v => v.type === 'Production').map( (prj, index) => (
-                        <Col sm={12} md={6} style={{padding: 8}}>
+                        <Col sm={12} md={6} style={{padding: 8}} key={index}>
                             <Element name={prj.id.toString()} />
                             {renderProjectPane(prj, index)}
                         </Col>
@@ -152,7 +152,7 @@ export default function Projects (){
 
                 <Row nogutter>
                     {projects.filter(v => v.type === 'Toy').map( (prj, index) => (
-                        <Col sm={12} md={6} style={{padding: 8}}>
+                        <Col sm={12} md={6} style={{padding: 8}} key={index}>
                             <Element name={prj.id.toString()} />
                             {renderProjectPane(prj, index)}
                         </Col>

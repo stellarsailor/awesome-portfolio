@@ -87,7 +87,7 @@ export default function ProjectDetail (props){
         <Fade bottom distance="50px">
             <Row nogutter justify="center">
                 {
-                    selectedPrj && (
+                    selectedPrj !== null && (
                         <Col sm={12} md={10} lg={8} style={{padding: '1rem'}}>
                             <CircleIndicator />
                             <BackToProjectList>

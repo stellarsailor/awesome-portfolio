@@ -88,11 +88,11 @@ const InsideList = styled.li`
     color: var(--mono-6);
     font-size: 18px;
     @media (max-width: 1280px) {
-        margin-left: 1.5rem;
+        margin-left: 0rem;
         font-size: 16px;
     }
     @media (max-width: 768px) {
-        margin-left: 1rem;
+        margin-left: 0rem;
         font-size: 14px;
     }
 `
@@ -105,7 +105,7 @@ export default function About (){
 
     const renderSkill = useCallback( (typeParams) => {
         return skills.filter(v => v.type === typeParams).map(v => (
-            <SkillPane skill={v} />
+            <SkillPane skill={v} key={v.name} />
         ))
     },[])
 
@@ -196,7 +196,7 @@ export default function About (){
                         </InfoRight>
                     </InfoLine>
                     <ul style={{marginTop: '1rem'}}>
-                        <InsideList>Improved the intranet website layout of old design to modern design with HTML, CSS, and Vanilla JavaScript.</InsideList>
+                        <InsideList>Improved old design intranet websites to modern design and layout with HTML, CSS, and Vanilla JavaScript.</InsideList>
                         <InsideList>Created interactive E-learning content with HTML and Adobe Captivate and developed intranet websites to serve them.</InsideList>
                         <InsideList>Managed teams of planning, development, voice recording, video editing, and 3d modeling to make E-learning content.</InsideList>
                     </ul>
