@@ -82,7 +82,8 @@ const InfoRight = styled.div`
 `
 
 const InsideList = styled.li`
-    margin-left: 2rem;
+    list-style: square;
+    margin-left: 0.5rem;
     margin-bottom: 4px;
     color: var(--mono-6);
     font-size: 18px;
@@ -194,11 +195,11 @@ export default function About (){
                             <div>An officer in charge of E-learning Content Creating Dept. in Naval Education & Training Command</div>
                         </InfoRight>
                     </InfoLine>
-                    <div style={{marginTop: '1rem'}}>
-                        <InsideList>Managed teams of graphic design, voice recording, video editing, and 3d modeling to make E-learning content.</InsideList>
-                        <InsideList>Developed intranet websites with HTML, CSS and Vanilla JavaScript.</InsideList>
-                        <InsideList>Developed E-learning content with HTML and Adobe Captivate and served them on the intranet.</InsideList>
-                    </div>
+                    <ul style={{marginTop: '1rem'}}>
+                        <InsideList>Improved the intranet website layout of old design to modern design with HTML, CSS, and Vanilla JavaScript.</InsideList>
+                        <InsideList>Created interactive E-learning content with HTML and Adobe Captivate and developed intranet websites to serve them.</InsideList>
+                        <InsideList>Managed teams of planning, development, voice recording, video editing, and 3d modeling to make E-learning content.</InsideList>
+                    </ul>
                     <br/>
 
                     <DividerTitle>Education</DividerTitle>
@@ -222,7 +223,7 @@ export default function About (){
                         <InfoLeft>2012 - 2016</InfoLeft>
                         <InfoRight>
                             <b>Pukyong National University</b>
-                            <div>Bachelor's degree of Computer Engineering</div>
+                            <div>Bachelor's degree of Computer Engineering / ROTC</div>
                         </InfoRight>
                     </InfoLine>
                     <br/>

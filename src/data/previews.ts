@@ -265,7 +265,13 @@ export const BritTea = [
         name: 't3',
         type: 'jpg',
         flex: 'mobile',
-        comment: 'You can see and play your recordings here.'
+        comment: 'You can see and play your recordings here. Detailed code below to implement this.'
+    },
+    {
+        name: 'code',
+        type: 'jpg',
+        flex: 'full',
+        comment: "There are audio files named with eleven-letters youtube video key and sentence's number that user recorded their voice. To make a player of them, I had to sort the file names."
     },
     {
         name: 't3-2',
@@ -293,6 +299,6 @@ export const BritTea = [
         name: 't5',
         type: 'jpg',
         flex: 'mobile',
-        comment: 'My page/setting page'
+        comment: 'My page/setting page. I firstly thought adding Google social login only but had to add Apple social login to get approved from Apple App Store.'
     },
 ]
