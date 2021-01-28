@@ -58,7 +58,7 @@ const MobileSides = styled(motion.div)`
 `
 
 const EachButton = styled.div`
-    width: 100px;
+    width: 120px;
     font-size: 15px;
     color: #f5f5f7;
     display: flex;

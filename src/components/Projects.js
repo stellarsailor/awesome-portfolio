@@ -29,10 +29,10 @@ const ProjectImgHolder = styled.div`
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: 0.3s linear;
     &:hover {
-        transition: 0.3s linear;
         transform: scale(1.05);
-        filter: brightness(80%);
+        filter: brightness(75%);
     }
 `
 

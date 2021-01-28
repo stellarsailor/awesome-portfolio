@@ -97,6 +97,17 @@ const InsideList = styled.li`
     }
 `
 
+const EducationComment = styled.div`
+    color: var(--mono-4);
+    font-size: 14px;
+    @media (max-width: 1280px) {
+        font-size: 12px;
+    }
+    @media (max-width: 768px) {
+        font-size: 10px;
+    }
+`
+
 export default function About (){
 
     useEffect(() => {
@@ -210,6 +221,9 @@ export default function About (){
                         <InfoRight>
                             <b>Seneca College</b>
                             <div>Diploma of Computer Programming</div>
+                            {/* <EducationComment>
+                                It was good to review what I learned before. I had a lot of time to spare, so I was able to work on personal projects.
+                            </EducationComment> */}
                         </InfoRight>
                     </InfoLine>
                     <InfoLine>
@@ -217,6 +231,9 @@ export default function About (){
                         <InfoRight>
                             <b>Embassy English London UK</b>
                             <div>Language Institute</div>
+                            {/* <EducationComment>
+                                I could not make a sentence properly until I decided to learn English in 2018. At this time, I learned English a lot.
+                            </EducationComment> */}
                         </InfoRight>
                     </InfoLine>
                     <InfoLine>
@@ -224,6 +241,9 @@ export default function About (){
                         <InfoRight>
                             <b>Pukyong National University</b>
                             <div>Bachelor's degree of Computer Engineering / ROTC</div>
+                            {/* <EducationComment>
+                                Lorem
+                            </EducationComment> */}
                         </InfoRight>
                     </InfoLine>
                     <br/>

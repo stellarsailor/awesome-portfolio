@@ -92,7 +92,7 @@ export default function Contact (){
                     </ContactText>
                 </Fade>
                 <Fade bottom distance="50px">
-                    <Row nogutter justify="center" style={{minHeight: 200}}>
+                    <Row nogutter justify="center" style={{minHeight: 160}}>
                         {contactType.map( (type, index) => (
                             <Col xs={6} sm={6} md={3} style={{padding: 8}} key={index}>
                                 <a href={contactLink[index]} target="_blank" rel="noreferrer">
