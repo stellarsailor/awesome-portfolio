@@ -1,34 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Col } from 'react-grid-system'
 
 const Container = styled.div`
     display: flex;
-    flex-direction: row;
-    margin-left: 2rem;
-    margin-bottom: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     align-items: center;
     @media (max-width: 768px) {
         margin-left: 0.5rem;
     }
 `
 
-const ColumnContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-left: 8px;
-    @media (max-width: 768px) {
-        margin-left: 4px;
-    }
-`
-
 const SkillTitle = styled.div`
-    font-size: 20px;
-    font-weight: 600;
+    margin-top: 4px;
+    font-size: 1rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     @media (max-width: 1280px) {
-        font-size: 19px;
+        font-size: 0.9rem;
     }
     @media (max-width: 768px) {
-        font-size: 18px;
+        font-size: 0.8rem;
     }
 `
 
@@ -46,18 +43,25 @@ const SkillComment = styled.div`
 export default function SkillPane(props) {
 
     const { skill } = props
-
+    //TODOLIST : image hover, image/text responsive size, star position, AWS etc delete, space horizon/vertical identical
     return(
-        <Container>
-            <img src={`/images/icons/${skill.image}.png`} width={40} height={40} style={{marginRight: 8}} alt={`${skill.name} Icon`} />
-            <ColumnContainer>
+        <Col xs={3} sm={3} md={2} style={{padding: '1rem'}}>
+            <Container>
+                <img src={`/images/icons/${skill.image}.png`} width={40} height={40} alt={`${skill.name} Icon`} />
                 <SkillTitle>
-                    {skill.name} {skill.highlight && <span style={{color: 'gold'}}>✭</span>}
+                    {skill.name} 
                 </SkillTitle>
-                <SkillComment>
+                {/* {skill.highlight && <span style={{color: 'gold'}}>✭</span>} */}
+                {/* <SkillComment>
                     {skill.comment}
-                </SkillComment>
-            </ColumnContainer>
-        </Container>
+                </SkillComment> */}
+                {/* <div style={{width: 40, height: 40, position: 'relative'}}>
+                    <div style={{position: 'absolute', right: 0, top: 0, zIndex: 5}}>
+                        {skill.highlight && <span style={{color: 'gold', fontSize: 30}}>✭</span>}
+                    </div>
+                    <img src={`/images/icons/${skill.image}.png`} width={40} height={40} alt={`${skill.name} Icon`} />
+                </div> */}
+            </Container>
+        </Col>
     )
 }

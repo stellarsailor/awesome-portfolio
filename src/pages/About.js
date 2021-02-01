@@ -161,28 +161,40 @@ export default function About (){
                     </StarCommentHelper>
 
                     <SkillTitle>Front-End</SkillTitle>
-                    {renderSkill('FE')}
+                    <Row nogutter justify="left">
+                        {renderSkill('FE')}
+                    </Row>
                     <br/>
 
                     <SkillTitle>Back-End/DB</SkillTitle>
-                    {renderSkill('BE')}
-                    {renderSkill('DB')}
+                    <Row nogutter justify="left">
+                        {renderSkill('BE')}
+                        {renderSkill('DB')}
+                    </Row>
                     <br/>
 
                     <SkillTitle>DevOps</SkillTitle>
-                    {renderSkill('DO')}
+                    <Row nogutter justify="left">
+                        {renderSkill('DO')}
+                    </Row>
                     <br/>
 
                     <SkillTitle>Programming Languages</SkillTitle>
-                    {renderSkill('PL')}
+                    <Row nogutter justify="left">
+                        {renderSkill('PL')}
+                    </Row>
                     <br/>
 
                     <SkillTitle>etc.</SkillTitle>
-                    {renderSkill('etc')}
+                    <Row nogutter justify="left">
+                        {renderSkill('etc')}
+                    </Row>
                     <br/>
 
                     <SkillTitle>OS</SkillTitle>
-                    {renderSkill('OS')}
+                    <Row nogutter justify="left">
+                        {renderSkill('OS')}
+                    </Row>
                     <br/>
 
                     <br/><br/>
