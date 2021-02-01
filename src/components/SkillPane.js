@@ -11,12 +11,36 @@ const Container = styled.div`
     @media (max-width: 768px) {
         margin-left: 0.5rem;
     }
+    transition: 0.2s linear;
+    &:hover {
+        transform: scale(1.1);
+        /* filter: brightness(75%); */
+    }
+    cursor: pointer;
+`
+
+const SkillImage = styled.img`
+    src: ${props => props.src};
+    @media (max-width: 1920px) {
+        width: 50px;
+        height: 50px;
+    }
+    @media (max-width: 1600px) {
+        width: 45px;
+        height: 45px;
+    }
+    @media (max-width: 1280px) {
+        width: 40px;
+        height: 40px;
+    }
 `
 
 const SkillTitle = styled.div`
     margin-top: 4px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
+    min-height: 30px;
+    color: var(--mono-6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,13 +69,12 @@ export default function SkillPane(props) {
     const { skill } = props
     //TODOLIST : image hover, image/text responsive size, star position, AWS etc delete, space horizon/vertical identical
     return(
-        <Col xs={3} sm={3} md={2} style={{padding: '1rem'}}>
+        <Col xs={3} sm={3} md={2} lg={2} xl={1} style={{padding: '0.5rem'}}>
             <Container>
-                <img src={`/images/icons/${skill.image}.png`} width={40} height={40} alt={`${skill.name} Icon`} />
+                <SkillImage src={`/images/icons/${skill.image}.png`} alt={`${skill.name} Icon`} />
                 <SkillTitle>
                     {skill.name} 
                 </SkillTitle>
-                {/* {skill.highlight && <span style={{color: 'gold'}}>✭</span>} */}
                 {/* <SkillComment>
                     {skill.comment}
                 </SkillComment> */}

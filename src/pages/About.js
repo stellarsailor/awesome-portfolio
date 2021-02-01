@@ -156,9 +156,9 @@ export default function About (){
                 >
                     <DividerTitle>Skills</DividerTitle>
                     <Divider />
-                    <StarCommentHelper>
+                    {/* <StarCommentHelper>
                         "<span style={{color: 'gold'}}>✭</span>" means I have used this for 300+ hours.
-                    </StarCommentHelper>
+                    </StarCommentHelper> */}
 
                     <SkillTitle>Front-End</SkillTitle>
                     <Row nogutter justify="left">
