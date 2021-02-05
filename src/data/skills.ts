@@ -92,6 +92,13 @@ export const skills: Array<skillType> = [
         highlight: false,
     },
     {
+        type: 'BE',
+        name: 'NGINX',
+        image: 'nginx',
+        comment: "I",
+        highlight: false,
+    },
+    {
         type: 'DB',
         name: 'MySQL',
         image: 'mysql',
