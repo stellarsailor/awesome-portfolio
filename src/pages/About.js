@@ -207,7 +207,7 @@ export default function About (){
                     style={{width: '100%'}} 
                     />
 
-                    <DividerTitle>Career</DividerTitle>
+                    <DividerTitle>Work Experience</DividerTitle>
                     <Divider />
 
                     <InfoLine>
@@ -215,13 +215,12 @@ export default function About (){
                         <InfoRight>
                             <b>Republic of Korea Navy</b>
                             <div>Sub-lieutenant (IT branch)</div>
-                            <div>An officer in charge of E-learning Content Creating Dept. in Naval Education & Training Command</div>
+                            <div>An officer in charge of E-learning Content Creation Dept. in Naval Education & Training Command</div>
                         </InfoRight>
                     </InfoLine>
                     <ul style={{marginTop: '1rem'}}>
-                        <InsideList>Improved old design intranet websites to modern design and layout with HTML, CSS, and Vanilla JavaScript.</InsideList>
                         <InsideList>Created interactive E-learning content with HTML and Adobe Captivate and developed intranet websites to serve them.</InsideList>
-                        <InsideList>Managed teams of planning, development, voice recording, video editing, and 3d modeling to make E-learning content.</InsideList>
+                        <InsideList>Improved intranet websites by modernizing design and simplifying layout using HTML, CSS, and Vanilla JavaScript.</InsideList>
                     </ul>
                     <br/>
 

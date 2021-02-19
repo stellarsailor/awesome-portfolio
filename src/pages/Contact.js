@@ -71,7 +71,7 @@ export default function Contact (){
     },[])
 
     const contactType = ['Email', 'GitHub', 'LinkedIn', 'Instagram']
-    const contactLink = ['mailto:dev.stellarsailor@gmail.com', 'https://github.com/stellarsailor', 'https://www.linkedin.com/in/minsu-lee-b6818b198/', 'https://www.instagram.com/stellarsalior']
+    const contactLink = ['mailto:minsulee.dev@gmail.com', 'https://github.com/stellarsailor', 'https://www.linkedin.com/in/minsu-lee-b6818b198/', 'https://www.instagram.com/stellarsalior']
 
     return (
         <Row nogutter justify="center">

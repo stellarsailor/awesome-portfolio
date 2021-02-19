@@ -60,7 +60,7 @@ export const projects: Array<ProjectType> = [
         stack: ['React.js', 'Node.js(Express.js)', 'Nginx', 'MySQL(EC2)', 'AWS S3/EC2/CloudFront/Route53', 'React Native (Web View App)'],
         feature: ['SPA', 'Responsive', 'SSR by react-snapshot', 'SEO', 'RESTful Back-end', "https SSL(Let's Encrypt)"],
         profit: 'Google AdSense, KaKao Adfit / Google Admob(Mobile)',
-        result: '199k Users, 347k Sessions on Google Analytics, 5k downloads on Google Play ( ~ Jan 2021)',
+        result: '210k Users, 373k Sessions on Google Analytics, 5k downloads on Google Play ( ~ Feb 2021)',
         library: 'https://github.com/stellarsailor/portfolio/blob/orphan_branch/src/data/dependencies/Valog.json',
         
         idea: "I am a big fan of video games and E-Sports, so when Riot Games' Valorant was released, I started to make a Valorant information website for the Koreans. I would say this is the very first Valorant website in the Korean community, so it went viral.",

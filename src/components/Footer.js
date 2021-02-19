@@ -32,7 +32,7 @@ export default function Footer() {
     return (
         <FooterPane>
             <TextInside>
-                <HoverLink href="mailto:dev.stellarsailor@gmail.com" target="_blank" rel="noreferrer"> Email </HoverLink> 
+                <HoverLink href="mailto:minsulee.dev@gmail.com" target="_blank" rel="noreferrer"> Email </HoverLink> 
                 | 
                 <HoverLink href="https://github.com/stellarsailor" target="_blank" rel="noreferrer"> GitHub </HoverLink> 
                 | 
