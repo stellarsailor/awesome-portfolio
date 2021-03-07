@@ -39,7 +39,7 @@ export const projects: Array<ProjectType> = [
         stack: ['React.js(Next.js)', 'MySQL', 'AWS RDS'],
         feature: ['Responsive', 'Serverless', 'SSR', 'i18n', 'Social Login', 'SEO', 'https'],
         profit: 'KaKao Adfit',
-        library: 'https://github.com/stellarsailor/portfolio/blob/orphan_branch/src/data/dependencies/SelfBingo.json',
+        library: 'https://github.com/stellarsailor/awesome-portfolio/blob/main/src/data/dependencies/SelfBingo.json',
 
         idea: "I came up with the idea of 'Single Bingo', which is the bingo that you can play by yourself. I think this is not common in English culture. There is bingo, for example, 'Silver Spoon bingo - How rich is your family?' or 'Anime/Movie Otaku Bingo - How many Animes/Movies have you watched?'. The bingo elements are set whatever by the creator and everyone can play the bingo and share the result of it. Some people tend to show off what they have had or watched/known. That was the idea of the SelfBingo.",
         explanation: "The every bingo element should be searched in Google Search Engine to gather people, so I had to make this project SSR base. I used Next.js first time properly in this project, and I really loved how much Next.js was well made and comfortable to set SSR. In addition, Vercel was an amazing platform to deploy Next.js project easily, in terms of no need to set up SSL for https.",
@@ -61,8 +61,7 @@ export const projects: Array<ProjectType> = [
         feature: ['SPA', 'Responsive', 'SSR by react-snapshot', 'SEO', 'RESTful Back-end', "https SSL(Let's Encrypt)"],
         profit: 'Google AdSense, KaKao Adfit / Google Admob(Mobile)',
         result: '210k Users, 373k Sessions on Google Analytics, 5k downloads on Google Play ( ~ Feb 2021)',
-        library: 'https://github.com/stellarsailor/portfolio/blob/orphan_branch/src/data/dependencies/Valog.json',
-        
+        library: 'https://github.com/stellarsailor/awesome-portfolio/blob/main/src/data/dependencies/Valog.json',
         idea: "I am a big fan of video games and E-Sports, so when Riot Games' Valorant was released, I started to make a Valorant information website for the Koreans. I would say this is the very first Valorant website in the Korean community, so it went viral.",
         explanation: "In this project, there was no difficult logic, just JSON data communication between Front-end and Back-end for the information. I just had to make database tables properly. I deployed React project on AWS S3 and CloudFront and made Back-end API on AWS EC2 instance with Nginx and Let's Encrypt SSL. I also published an android mobile application with React Native to gather people more.",
         preview: Valog,
@@ -85,7 +84,7 @@ export const projects: Array<ProjectType> = [
         feature: ['RESTful Back-end', 'i18n', 'Social Login'],
         profit: 'Google Admob',
         result: '3k Downloads on Apple App store, 1k Downloads on Google Play',
-        library: 'https://github.com/stellarsailor/portfolio/blob/orphan_branch/src/data/dependencies/BritTea.json',
+        library: 'https://github.com/stellarsailor/awesome-portfolio/blob/main/src/data/dependencies/BritTea.json',
         
         idea: "After I made a English learning website 'Memoiz', I was eager to make a mobile application with a mic recording feature. In addition, I have realized that the best way to get accent is listen and repeat, and then listen their voice again and again. That was the key to practice accent. Listening theirs and modifing it. I used Youtube videos as a learning material. Users can listen a sentence from youtube videos and record their voice sentence by sentence. And then, they can play both audio or either one of them.",
         explanation: "I used React Native for the first time, and it was quite satisfying compared to when I developed an android app with Android Studio ver 2.0. To release worldwide, it has to support i18n, and I used Redux as a state management tool. For the main feature 'listening and repeat', I had to select libraries for the recording and Youtube player carefully. Usually it is related to native features so. The most I have accomplished in this app is I added Microsoft Codepush, which helps you update code bundle without building, uploading and getting approval in Apple App Store and Google Play.",
@@ -104,7 +103,7 @@ export const projects: Array<ProjectType> = [
         duration: '12.20. - 1. 1.',
         stack: ['React.js(Next.js)', 'AWS RDS(MySQL)', 'Vercel',],
         feature: ['SPA', 'Responsive', 'CSR', 'Serverless', 'i18n', 'https'],
-        library: 'https://github.com/stellarsailor/portfolio/blob/orphan_branch/src/data/dependencies/Genshin%20Party.json',
+        library: 'https://github.com/stellarsailor/awesome-portfolio/blob/main/src/data/dependencies/Genshin%20Party.json',
         
         idea: "I love playing video games, and the one I have fallen in love at the moment is 'Genshin Impact'. I enjoy combining web development with what I like to play. However there is no visualized detailed party window in the game, so I made it to help people make their party comp easily and share by a link.",
         preview: GenshinParty,
@@ -121,7 +120,7 @@ export const projects: Array<ProjectType> = [
         duration: '11. 4. - 11.14.',
         stack: ['React.js', 'AWS S3/CloudFront/Route53'],
         feature: ['SPA', 'Responsive', 'CSR', 'https'],
-        library: 'https://github.com/stellarsailor/portfolio/blob/orphan_branch/src/data/dependencies/Damwon%20Project.json',
+        library: 'https://github.com/stellarsailor/awesome-portfolio/blob/main/src/data/dependencies/Damwon%20Project.json',
         
         idea: "I love watching E-Sports, and the biggest one is League of Legends. In 2020, the Korean team Damwon Gaming won the World Championship. I was so happy about that and I made a fan-letter/message book website from thousands of fans to celebrate together.",
         preview: DamwonProject,
@@ -137,7 +136,7 @@ export const projects: Array<ProjectType> = [
         duration: '6.17. - 9. 7.',
         stack: ['React.js', 'Node.js(Express.js)', 'Nginx', 'MySQL(EC2)', 'AWS S3/EC2/CloudFront/Route53'],
         feature: ['SPA', 'Responsive', 'CSR', 'RESTful Back-end', 'Social Login', "https SSL(Let's Encrypt)"],
-        library: 'https://github.com/stellarsailor/portfolio/blob/orphan_branch/src/data/dependencies/Memoiz.json',
+        library: 'https://github.com/stellarsailor/awesome-portfolio/blob/main/src/data/dependencies/Memoiz.json',
         
         idea: "This is the first full-stack application with React.js I have ever developed. At that time I was learning, English especially speaking. I wanted to combine it with a website. The name is derived from the word 'Memoization'. I thought memorizing sentences itself to speak fluently was similar to the 'Memoization' in Computer Science.",
         preview: Memoiz,
