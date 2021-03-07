@@ -6,9 +6,122 @@ import { Link, useRouteMatch } from "react-router-dom"
 import Scroll from 'react-scroll';
 import Projects from '../components/Projects'
 import { motion } from 'framer-motion'
-
 var Element  = Scroll.Element;
 var scroller = Scroll.scroller;
+
+export default function Home (){
+
+    let match = useRouteMatch()
+
+    useEffect(() => {
+        if(match.path === '/project'){
+            scroller.scrollTo('project', {
+                duration: 1200,
+                delay: 50,
+                smooth: true,
+                offset: 0, 
+            })
+        } else {
+            window.scrollTo(0, 0)
+        }
+    },[match])
+
+    const renderTextPart = () => (
+        <MainLeftPane>
+            <TextUpper
+                initial={initialProps}
+                animate={animateProps}
+                transition={{ delay: 0.4 }}
+            >
+                TORONTO
+            </TextUpper>
+            <TextMain
+                initial={initialProps}
+                animate={animateProps}
+                transition={{ delay: 0.6 }}
+            >
+                Front-End 
+            </TextMain>
+            <div style={{textAlign: 'right', maxWidth: 565, marginBottom: '1rem'}}>
+                <TextMain
+                    initial={initialProps}
+                    animate={animateProps}
+                    transition={{ delay: 0.8 }}
+                >
+                    Web Developer
+                </TextMain>
+            </div>
+            <TextDesc
+                initial={initialProps}
+                animate={animateProps}
+                transition={{ delay: 1 }}
+            >
+                I am Minsu Lee. Front-End Web Developer with comprehensive expertise in JavaScript, TypeScript, React.js, React Native, and Design & UI/UX areas.
+            </TextDesc>
+            <br />
+            <HyperLink
+                initial={initialProps}
+                animate={animateProps}
+                transition={{ delay: 1.5 }}
+            >
+                <Link to="/about">
+                    <HyperLinkSpan>
+                        About Me <img src="/images/more.png" width={12} alt="About Me" />
+                    </HyperLinkSpan>
+                </Link>
+                {/* <Link to="/about" style={{marginLeft: '1rem'}}>
+                    <HyperLinkSpan>
+                        Resume <img src="/images/more.png" width={12} alt="Resume" />
+                    </HyperLinkSpan>
+                </Link> */}
+            </HyperLink>
+            <br /><br />
+        </MainLeftPane>
+    )
+
+    return (
+        <>
+            <motion.div
+                initial={{opacity: 0}}
+                animate={animateProps}
+                transition={{ duration: 1 }}
+            >
+                <Row 
+                    nogutter 
+                    bottom="xs"
+                    style={{height: 'calc(100vh - 45px)', backgroundImage: `url('/images/main-background-text.png')`, backgroundPosition: 'top', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} 
+                >
+                    <Col sm={12} md={6} style={{padding: '5%'}}>
+                        <Visible xs sm>
+                            <PortraitMobileContainer src="/images/main-portrait.png"
+                                initial={{opacity: 0}}
+                                animate={animateProps}
+                                transition={{ delay: 0.4, duration: 1 }}
+                            >
+                                {renderTextPart()}
+                            </PortraitMobileContainer>
+                        </Visible>
+                        <Visible md lg xl xxl>
+                            {renderTextPart()}
+                        </Visible>
+                    </Col>
+                    <Visible md lg xl xxl>
+                        <Col sm={12} md={6}>
+                            <PortraitContainer src="/images/main-portrait.png" 
+                                initial={{opacity: 0}}
+                                animate={animateProps}
+                                transition={{ delay: 0.4, duration: 1 }}
+                            />
+                        </Col>
+                    </Visible>
+                </Row>
+            </motion.div>
+            <Element name="project" />
+            <div style={{marginBottom: '3rem'}} />
+            <Projects />
+        </>
+    )
+}
 
 const MainLeftPane = styled.div`
     height: 100%;
@@ -55,117 +168,3 @@ const PortraitMobileContainer = styled(motion.div)`
         height: 100%;
     }
 `
-
-export default function Home (){
-
-    let match = useRouteMatch()
-
-    useEffect(() => {
-        if(match.path === '/project'){
-            scroller.scrollTo('project', {
-                duration: 1200,
-                delay: 50,
-                smooth: true,
-                offset: 0, 
-            })
-        } else {
-            window.scrollTo(0, 0)
-        }
-    },[match])
-
-    const renderTextPart = () => (
-        <MainLeftPane>
-            <TextUpper
-            initial={initialProps}
-            animate={animateProps}
-            transition={{ delay: 0.4 }}
-            >
-                TORONTO
-            </TextUpper>
-            <TextMain
-            initial={initialProps}
-            animate={animateProps}
-            transition={{ delay: 0.6 }}
-            >
-                Web developer
-            </TextMain>
-            <div style={{textAlign: 'right', maxWidth: 565, marginBottom: '1rem'}}>
-                <TextMain
-                initial={initialProps}
-                animate={animateProps}
-                transition={{ delay: 0.8 }}
-                >
-                    and designer.
-                </TextMain>
-            </div>
-            <TextDesc
-            initial={initialProps}
-            animate={animateProps}
-            transition={{ delay: 1 }}
-            >
-                I am Minsu Lee. A web developer with a passion for design & UX. Websites should not only work properly, but it also has to be visually aesthetic.
-            </TextDesc>
-            <br />
-            <HyperLink
-            initial={initialProps}
-            animate={animateProps}
-            transition={{ delay: 1.5 }}
-            >
-                <Link to="/about">
-                    <HyperLinkSpan>
-                        About Me <img src="/images/more.png" width={12} alt="About Me" />
-                    </HyperLinkSpan>
-                </Link>
-                {/* <Link to="/about" style={{marginLeft: '1rem'}}>
-                    <HyperLinkSpan>
-                        Resume <img src="/images/more.png" width={12} alt="Resume" />
-                    </HyperLinkSpan>
-                </Link> */}
-            </HyperLink>
-            <br /><br />
-        </MainLeftPane>
-    )
-
-    return (
-        <>
-            <motion.div
-            initial={{opacity: 0}}
-            animate={animateProps}
-            transition={{ duration: 1 }}
-            >
-                <Row 
-                nogutter 
-                bottom="xs"
-                style={{height: 'calc(100vh - 45px)', backgroundImage: `url('/images/main-background-text.png')`, backgroundPosition: 'top', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} 
-                >
-                    <Col sm={12} md={6} style={{padding: '5%'}}>
-                        <Visible xs sm>
-                            <PortraitMobileContainer src="/images/main-portrait.png"
-                            initial={{opacity: 0}}
-                            animate={animateProps}
-                            transition={{ delay: 0.4, duration: 1 }}
-                            >
-                                {renderTextPart()}
-                            </PortraitMobileContainer>
-                        </Visible>
-                        <Visible md lg xl xxl>
-                            {renderTextPart()}
-                        </Visible>
-                    </Col>
-                    <Visible md lg xl xxl>
-                        <Col sm={12} md={6}>
-                            <PortraitContainer src="/images/main-portrait.png" 
-                            initial={{opacity: 0}}
-                            animate={animateProps}
-                            transition={{ delay: 0.4, duration: 1 }}
-                            />
-                        </Col>
-                    </Visible>
-                </Row>
-            </motion.div>
-            <Element name="project" />
-            <div style={{marginBottom: '3rem'}} />
-            <Projects />
-        </>
-    )
-}

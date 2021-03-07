@@ -8,70 +8,6 @@ import WorkTogether from '../components/WorkTogether'
 import CircleIndicator from '../components/CircleIndicator'
 import { projects } from '../data/projects'
 
-const BackToProjectList = styled.div`
-    /* color: var(--blue); */
-    font-size: 1.8rem;
-    font-weight: 800;
-    display: flex;
-    @media (max-width: 768px) {
-        font-size: 1.4rem;
-    }
-`
-
-const Divider = styled.div`
-    width: 100%;
-    border-bottom: 1px solid var(--mono-3);
-    margin: 16px 0px;
-`
-
-const TabTitle = styled.div`
-    font-size: 24px;
-    margin-top: 16px;
-    font-weight: 800;
-`
-
-const InfoLine = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    margin-top: 8px;
-`
-
-const InfoLeft = styled.div`
-    width: 150px;
-    text-align: right;
-    color: var(--mono-6);
-`
-
-const InfoRight = styled.div`
-    width: 100%;
-    margin-left: 16px;
-    text-align: left;
-    color: var(--mono-6);
-`
-
-const TextContainer = styled.div`
-    color: var(--mono-6);
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-`
-
-const HyperLink = styled.a`
-    color: var(--blue);
-    &:visited {
-        color: var(--blue);
-    }
-`
-
-const CommentOnImage = styled.div`
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--mono-5);
-    margin-bottom: 1rem;
-`
-
 export default function ProjectDetail (props){
 
     let { title } = useParams()
@@ -220,42 +156,42 @@ export default function ProjectDetail (props){
                                                     v.type === 'mp4' ? 
                                                         v.flex === 'full' ?
                                                         <video 
-                                                        controls
-                                                        loop 
-                                                        autoPlay
-                                                        playsInline
-                                                        muted
-                                                        src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
-                                                        type="video/mp4" 
-                                                        style={{width: '100%'}}
-                                                        key={v.name} 
+                                                            controls
+                                                            loop 
+                                                            autoPlay
+                                                            playsInline
+                                                            muted
+                                                            src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
+                                                            type="video/mp4" 
+                                                            style={{width: '100%'}}
+                                                            key={v.name} 
                                                         />
                                                         :
                                                         <video 
-                                                        controls
-                                                        loop 
-                                                        autoPlay
-                                                        playsInline
-                                                        muted
-                                                        src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
-                                                        type="video/mp4" 
-                                                        style={{maxHeight: '80vh', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 'auto', marginBottom: '1rem'}}
-                                                        key={v.name} 
+                                                            controls
+                                                            loop 
+                                                            autoPlay
+                                                            playsInline
+                                                            muted
+                                                            src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
+                                                            type="video/mp4" 
+                                                            style={{maxHeight: '80vh', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 'auto', marginBottom: '1rem'}}
+                                                            key={v.name} 
                                                         />
                                                     :
                                                     v.flex === 'full' ?
                                                         <img 
-                                                        src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
-                                                        style={{width: '100%'}} 
-                                                        key={v.name} 
-                                                        alt="Project Detail"
+                                                            src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
+                                                            style={{width: '100%'}} 
+                                                            key={v.name} 
+                                                            alt="Project Detail"
                                                         />
                                                         :
                                                         <img 
-                                                        src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
-                                                        style={{maxHeight: '90vh', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 'auto', maxWidth: '100%'}} 
-                                                        key={v.name} 
-                                                        alt="Project Detail"
+                                                            src={`/images/projects/${selectedPrj.title}/${v.name}.${v.type}`} 
+                                                            style={{maxHeight: '90vh', display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 'auto', maxWidth: '100%'}} 
+                                                            key={v.name} 
+                                                            alt="Project Detail"
                                                         />
                                                 }
                                                 {v.comment && <CommentOnImage>{v.comment}</CommentOnImage>}
@@ -280,15 +216,15 @@ export default function ProjectDetail (props){
                             {
                                 selectedPrj.id + 1 < projects.length ?
                                 <WorkTogether
-                                linkTo={`/project/${projects[selectedPrj.id + 1].title}`}
-                                smallText={projects[selectedPrj.id + 1].title}
-                                bigText="See Next Project"
+                                    linkTo={`/project/${projects[selectedPrj.id + 1].title}`}
+                                    smallText={projects[selectedPrj.id + 1].title}
+                                    bigText="See Next Project"
                                 />
                                 :
                                 <WorkTogether
-                                linkTo={`/about`}
-                                smallText=""
-                                bigText="Read About Me"
+                                    linkTo={`/about`}
+                                    smallText=""
+                                    bigText="Read About Me"
                                 />
                             }
                         </Col>
@@ -298,3 +234,67 @@ export default function ProjectDetail (props){
         </Fade>
     )
 }
+
+const BackToProjectList = styled.div`
+    /* color: var(--blue); */
+    font-size: 1.8rem;
+    font-weight: 800;
+    display: flex;
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+    }
+`
+
+const Divider = styled.div`
+    width: 100%;
+    border-bottom: 1px solid var(--mono-3);
+    margin: 16px 0px;
+`
+
+const TabTitle = styled.div`
+    font-size: 24px;
+    margin-top: 16px;
+    font-weight: 800;
+`
+
+const InfoLine = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+`
+
+const InfoLeft = styled.div`
+    width: 150px;
+    text-align: right;
+    color: var(--mono-6);
+`
+
+const InfoRight = styled.div`
+    width: 100%;
+    margin-left: 16px;
+    text-align: left;
+    color: var(--mono-6);
+`
+
+const TextContainer = styled.div`
+    color: var(--mono-6);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+`
+
+const HyperLink = styled.a`
+    color: var(--blue);
+    &:visited {
+        color: var(--blue);
+    }
+`
+
+const CommentOnImage = styled.div`
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mono-5);
+    margin-bottom: 1rem;
+`

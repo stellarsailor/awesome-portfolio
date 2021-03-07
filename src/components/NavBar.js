@@ -7,88 +7,6 @@ import { motion } from 'framer-motion'
 import { initialProps, animateProps } from '../components/StyledComponent'
 import { projects } from '../data/projects'
 
-const NavigationPane = styled.div`
-    color: white;
-    width: 100%;
-    height: 45px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-`
-
-const MobileTab = styled.div`
-    width: 100%;
-    height: 45px;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`
-
-const MobileOpenedPane = styled.div`
-    width: 100%;
-    background-color: rgba(25, 25, 25, 1);
-    position: fixed;
-    top: 45px;
-    z-index: 10;
-`
-
-const MobileTabLine = styled.div`
-    width: 100%;
-    height: 40px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid rgba(60, 60, 60, 1);
-    color: white;
-`
-
-const MobileSides = styled(motion.div)`
-    color: white; //var(--blue);
-    font-size: 1.3rem;
-    font-weight: 800;
-    width: 50px;
-    height: 50px;
-    margin: 0px 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-`
-
-const EachButton = styled.div`
-    width: 120px;
-    font-size: 15px;
-    color: #f5f5f7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.8;
-    transition: opacity .3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    &:hover {
-        color: white;
-        opacity: 1;
-        cursor: pointer;
-    }
-`
-
-const ResumeButton = styled.div`
-    color: #f5f5f7;
-    font-size: 15px;
-    /* border: 1px solid var(--mono-5); */
-    border-radius: 5px;
-    padding: 5px;
-    margin-right: 5px;
-    opacity: 0.8;
-    transition: opacity .3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    &:hover {
-        color: white;
-        opacity: 1;
-        cursor: pointer;
-    }
-`
-
 export default function NavBar(props) {
     const location = useLocation()
 
@@ -126,9 +44,9 @@ export default function NavBar(props) {
                         {
                             location.pathname.includes('/project/') && scrollPosition > 50 ? 
                             <MobileSides 
-                            initial={initialProps}
-                            animate={animateProps}
-                            transition={{ delay: 0.08 }}
+                                initial={initialProps}
+                                animate={animateProps}
+                                transition={{ delay: 0.08 }}
                             >
                                 <Link to={`/projects?s=${backScrollId}`}>
                                     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -211,3 +129,85 @@ export default function NavBar(props) {
         </Row>
     )
 }
+
+const NavigationPane = styled.div`
+    color: white;
+    width: 100%;
+    height: 45px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+`
+
+const MobileTab = styled.div`
+    width: 100%;
+    height: 45px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
+const MobileOpenedPane = styled.div`
+    width: 100%;
+    background-color: rgba(25, 25, 25, 1);
+    position: fixed;
+    top: 45px;
+    z-index: 10;
+`
+
+const MobileTabLine = styled.div`
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(60, 60, 60, 1);
+    color: white;
+`
+
+const MobileSides = styled(motion.div)`
+    color: white; //var(--blue);
+    font-size: 1.3rem;
+    font-weight: 800;
+    width: 50px;
+    height: 50px;
+    margin: 0px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+`
+
+const EachButton = styled.div`
+    width: 120px;
+    font-size: 15px;
+    color: #f5f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity .3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    &:hover {
+        color: white;
+        opacity: 1;
+        cursor: pointer;
+    }
+`
+
+const ResumeButton = styled.div`
+    color: #f5f5f7;
+    font-size: 15px;
+    /* border: 1px solid var(--mono-5); */
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+    opacity: 0.8;
+    transition: opacity .3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    &:hover {
+        color: white;
+        opacity: 1;
+        cursor: pointer;
+    }
+`

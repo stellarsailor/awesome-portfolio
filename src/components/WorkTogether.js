@@ -3,6 +3,29 @@ import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import { Link } from "react-router-dom";
 
+export default function WorkTogether({
+    linkTo, 
+    smallText, 
+    bigText
+}) {
+
+    return(
+        <Fade bottom distance="50px">
+            <WorkTogetherPane>
+                <WorkTogetherSmallText>
+                    {smallText}
+                </WorkTogetherSmallText>
+                <Divider />
+                <Link to={linkTo}>
+                    <WorkTogetherText>
+                        {bigText} →
+                    </WorkTogetherText>
+                </Link>
+            </WorkTogetherPane>
+        </Fade>
+    )
+}
+
 const WorkTogetherPane = styled.div`
     width: 100%;
     height: 50vh;
@@ -45,24 +68,3 @@ const Divider = styled.div`
     border-bottom: 1px solid var(--mono-3);
     margin: 24px 0px 16px 0px;
 `
-
-export default function WorkTogether(props) {
-
-    const { linkTo, smallText, bigText } = props
-
-    return(
-        <Fade bottom distance="50px">
-            <WorkTogetherPane>
-                <WorkTogetherSmallText>
-                    {smallText}
-                </WorkTogetherSmallText>
-                <Divider />
-                <Link to={linkTo}>
-                    <WorkTogetherText>
-                        {bigText} →
-                    </WorkTogetherText>
-                </Link>
-            </WorkTogetherPane>
-        </Fade>
-    )
-}

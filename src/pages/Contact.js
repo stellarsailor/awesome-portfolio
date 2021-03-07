@@ -3,6 +3,52 @@ import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import { Row, Col } from 'react-grid-system'
 
+export default function Contact (){
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
+
+    const contactType = ['Email', 'GitHub', 'LinkedIn', 'Instagram']
+    const contactLink = ['mailto:minsulee.dev@gmail.com', 'https://github.com/stellarsailor', 'https://www.linkedin.com/in/minsu-lee-b6818b198/', 'https://www.instagram.com/stellarsalior']
+
+    return (
+        <Row nogutter justify="center">
+            <ContactImage>
+                <HighlightText>
+                    <Fade bottom distance="50px">
+                        <div style={{color: 'white', filter: 'none'}}>
+                            <div>TORONTO, CA</div>
+                            If you have any questions or would like to chat, feel free to reach out!
+                        </div>
+                    </Fade>
+                </HighlightText>
+            </ContactImage>
+            <Col sm={12} md={8} >
+                <Fade bottom distance="50px">
+                    <ContactText>
+                        Contact
+                    </ContactText>
+                </Fade>
+                <Fade bottom distance="50px">
+                    <Row nogutter justify="center" style={{minHeight: 160}}>
+                        {contactType.map( (type, index) => (
+                            <Col xs={6} sm={6} md={3} style={{padding: 8}} key={index}>
+                                <a href={contactLink[index]} target="_blank" rel="noreferrer">
+                                    <ContactTypeBox>
+                                        <img src={`/images/icons/${type.toLowerCase()}.png`} width={60} height={60} alt="Contact Method" />
+                                        {type}
+                                    </ContactTypeBox>
+                                </a>
+                            </Col>
+                        ))}
+                    </Row>
+                </Fade>
+            </Col>
+        </Row>
+    )
+}
+
 const HighlightText = styled.div`
     color: var(--mono-1);
     font-size: 2rem;
@@ -63,49 +109,3 @@ const ContactTypeBox = styled.div`
         font-size: 16px;
     }
 `
-
-export default function Contact (){
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    },[])
-
-    const contactType = ['Email', 'GitHub', 'LinkedIn', 'Instagram']
-    const contactLink = ['mailto:minsulee.dev@gmail.com', 'https://github.com/stellarsailor', 'https://www.linkedin.com/in/minsu-lee-b6818b198/', 'https://www.instagram.com/stellarsalior']
-
-    return (
-        <Row nogutter justify="center">
-            <ContactImage>
-                <HighlightText>
-                    <Fade bottom distance="50px">
-                        <div style={{color: 'white', filter: 'none'}}>
-                            <div>TORONTO, CA</div>
-                            If you have any questions or would like to chat, feel free to reach out!
-                        </div>
-                    </Fade>
-                </HighlightText>
-            </ContactImage>
-            <Col sm={12} md={8} >
-                <Fade bottom distance="50px">
-                    <ContactText>
-                        Contact
-                    </ContactText>
-                </Fade>
-                <Fade bottom distance="50px">
-                    <Row nogutter justify="center" style={{minHeight: 160}}>
-                        {contactType.map( (type, index) => (
-                            <Col xs={6} sm={6} md={3} style={{padding: 8}} key={index}>
-                                <a href={contactLink[index]} target="_blank" rel="noreferrer">
-                                    <ContactTypeBox>
-                                        <img src={`/images/icons/${type.toLowerCase()}.png`} width={60} height={60} alt="Contact Method" />
-                                        {type}
-                                    </ContactTypeBox>
-                                </a>
-                            </Col>
-                        ))}
-                    </Row>
-                </Fade>
-            </Col>
-        </Row>
-    )
-}

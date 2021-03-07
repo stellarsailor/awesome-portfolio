@@ -3,25 +3,6 @@ import styled from 'styled-components'
 import Scroll from 'react-scroll'
 var scroller = Scroll.scroller
 
-const GoToTopButton = styled.div`
-    width: 45px;
-    height: 45px;
-    border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 3%;
-    bottom: 3%;
-    z-index: 30;
-    transition: .2s linear;
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-    cursor: pointer;
-`
-
 export default function BackToTop() {
 
     const [ scrollPosition, setScrollPosition ] = useState(0)
@@ -58,3 +39,22 @@ export default function BackToTop() {
         )
     }
 }
+
+const GoToTopButton = styled.div`
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 3%;
+    bottom: 3%;
+    z-index: 30;
+    transition: .2s linear;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    cursor: pointer;
+`

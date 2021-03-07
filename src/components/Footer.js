@@ -1,6 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
 
+export default function Footer() {
+
+    return (
+        <FooterPane>
+            <TextInside>
+                <HoverLink href="mailto:minsulee.dev@gmail.com" target="_blank" rel="noreferrer"> Email </HoverLink> 
+                | 
+                <HoverLink href="https://github.com/stellarsailor" target="_blank" rel="noreferrer"> GitHub </HoverLink> 
+                | 
+                <HoverLink href="https://www.linkedin.com/in/minsu-lee-b6818b198/" target="_blank" rel="noreferrer"> LinkedIn </HoverLink> 
+                |
+                <HoverLink href="https://www.instagram.com/stellarsalior" target="_blank" rel="noreferrer"> Instagram </HoverLink>
+                </TextInside>
+            <TextInside>
+                ⓒ 2020 Minsu Lee All Rights Reserved.
+            </TextInside>
+        </FooterPane>
+    )
+}
+
 const FooterPane = styled.div`
     margin-top: 3rem;
     background-color: var(--mono-2);
@@ -26,23 +46,3 @@ const HoverLink = styled.a`
         cursor: pointer;
     }
 `
-
-export default function Footer() {
-
-    return (
-        <FooterPane>
-            <TextInside>
-                <HoverLink href="mailto:minsulee.dev@gmail.com" target="_blank" rel="noreferrer"> Email </HoverLink> 
-                | 
-                <HoverLink href="https://github.com/stellarsailor" target="_blank" rel="noreferrer"> GitHub </HoverLink> 
-                | 
-                <HoverLink href="https://www.linkedin.com/in/minsu-lee-b6818b198/" target="_blank" rel="noreferrer"> LinkedIn </HoverLink> 
-                |
-                <HoverLink href="https://www.instagram.com/stellarsalior" target="_blank" rel="noreferrer"> Instagram </HoverLink>
-                </TextInside>
-            <TextInside>
-                ⓒ 2020 Minsu Lee All Rights Reserved.
-            </TextInside>
-        </FooterPane>
-    )
-}

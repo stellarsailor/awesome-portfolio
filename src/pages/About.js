@@ -7,6 +7,181 @@ import WorkTogether from '../components/WorkTogether'
 import { skills } from '../data/skills'
 import SkillPane from '../components/SkillPane'
 
+export default function About (){
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
+
+    const renderSkill = useCallback( (typeParams) => {
+        return skills.filter(v => v.type === typeParams).map(v => (
+            <SkillPane skill={v} key={v.name} />
+        ))
+    },[])
+
+    return (
+        <Row nogutter justify="center">
+            <Col sm={12} md={8} style={{padding: '0px 1rem'}}>
+                <CenteredRow>
+                    <TextUpper
+                        initial={initialProps}
+                        animate={animateProps}
+                        transition={{ delay: 0.4 }}
+                    >
+                        ABOUT ME
+                    </TextUpper>
+                </CenteredRow>
+                <CenteredTitle
+                    initial={initialProps}
+                    animate={animateProps}
+                    transition={{ delay: 0.6 }}
+                >
+                    I am Minsu Lee. Truly enjoying React.js with TypeScript and love to make simple and beautiful interface.
+                </CenteredTitle>
+
+                <motion.img 
+                    initial={initialProps}
+                    animate={animateProps}
+                    transition={{ delay: 0.8 }}
+                    src="/images/about.jpg" 
+                    style={{width: '100%'}} 
+                />
+
+                <motion.div
+                    initial={initialProps}
+                    animate={animateProps}
+                    transition={{ delay: 1 }}
+                >
+                    <DividerTitle>Skills</DividerTitle>
+                    <Divider />
+
+                    <SkillTitle>Front-End</SkillTitle>
+                    <Row nogutter justify="start">
+                        {renderSkill('FE')}
+                    </Row>
+                    <br/>
+
+                    <SkillTitle>Back-End</SkillTitle>
+                    <Row nogutter justify="start">
+                        {renderSkill('BE')}
+                    </Row>
+                    <br/>
+
+                    <SkillTitle>DB/SQL</SkillTitle>
+                    <Row nogutter justify="start">
+                        {renderSkill('DB')}
+                    </Row>
+                    <br/>
+
+                    <SkillTitle>DevOps/Cloud</SkillTitle>
+                    <Row nogutter justify="start">
+                        {renderSkill('DO')}
+                    </Row>
+                    <br/>
+
+                    {/* <SkillTitle>Programming Languages</SkillTitle>
+                    <Row nogutter justify="start">
+                        {renderSkill('PL')}
+                    </Row>
+                    <br/> */}
+
+                    <SkillTitle>etc.</SkillTitle>
+                    <Row nogutter justify="start">
+                        {renderSkill('etc')}
+                    </Row>
+                    <br/>
+
+                    <SkillTitle>OS</SkillTitle>
+                    <Row nogutter justify="start">
+                        {renderSkill('OS')}
+                    </Row>
+                    <br/>
+
+                    <br/><br/>
+
+                    <motion.img 
+                        initial={initialProps}
+                        animate={animateProps}
+                        transition={{ delay: 0.8 }}
+                        src="/images/navy.jpg" 
+                        style={{width: '100%'}} 
+                    />
+
+                    <DividerTitle>Work Experience</DividerTitle>
+                    <Divider />
+
+                    <InfoLine>
+                        <InfoLeft>2016 - 2018</InfoLeft>
+                        <InfoRight>
+                            <b>Lieutenant Junior Grade (IT branch)</b>
+                            <div>Republic of Korea Navy</div>
+                            <div>An officer of E-learning Content Creation Dept. in Naval Education & Training Command</div>
+                        </InfoRight>
+                    </InfoLine>
+                    <ul style={{marginTop: '1rem'}}>
+                        <InsideList>Developed user interface of Navy E-Learning Portal Website with HTML, CSS, JavaScript, jQuery, JSP based on MVC pattern.</InsideList>
+                        <InsideList>Created wireframes and developed interactive E-Learning content with Adobe Captivate, Photoshop, and HTML.</InsideList>
+                        <InsideList>Introduced Adobe Captivate to reduce load times and enhance user experience by replacing Adobe Flash and providing HTML5 content.</InsideList>
+                    </ul>
+                    <br/>
+
+                    <DividerTitle>Education</DividerTitle>
+                    <Divider />
+
+                    <InfoLine>
+                        <InfoLeft>2019 - 2020</InfoLeft>
+                        <InfoRight>
+                            <b>Seneca College</b>
+                            <div>Diploma of Computer Programming</div>
+                        </InfoRight>
+                    </InfoLine>
+                    <InfoLine>
+                        <InfoLeft>2018 - 2019</InfoLeft>
+                        <InfoRight>
+                            <b>Embassy English London UK</b>
+                            <div>Language Institute</div>
+                        </InfoRight>
+                    </InfoLine>
+                    <InfoLine>
+                        <InfoLeft>2012 - 2016</InfoLeft>
+                        <InfoRight>
+                            <b>Pukyong National University</b>
+                            <div>Bachelor's degree of Computer Engineering / ROTC</div>
+                            {/* <EducationComment>
+                                Lorem
+                            </EducationComment> */}
+                        </InfoRight>
+                    </InfoLine>
+                    <br/>
+                    
+                    <DividerTitle>Languages</DividerTitle>
+                    <Divider />
+
+                    <InfoLine>
+                        <InfoLeft>Korean</InfoLeft>
+                        <InfoRight>Native</InfoRight>
+                    </InfoLine>
+                    <InfoLine>
+                        <InfoLeft>English</InfoLeft>
+                        <InfoRight>Advanced</InfoRight>
+                    </InfoLine>
+                    <InfoLine>
+                        <InfoLeft>Japanese</InfoLeft>
+                        <InfoRight>Intermediate</InfoRight>
+                    </InfoLine>
+                    <br/><br/>
+                </motion.div>
+
+                <WorkTogether
+                    linkTo="/contact"
+                    smallText="NEED A SELF-DIRECTED AND PASSIONATE WEB DEVELOPER?"
+                    bigText="Let's Work Together"
+                />
+            </Col>
+        </Row>
+    )
+}
+
 const CenteredTitle = styled(motion.div)`
     text-align: center;
     margin: 24px 0px;
@@ -16,16 +191,6 @@ const CenteredTitle = styled(motion.div)`
     @media (max-width: 768px) {
         font-size: 1.4rem;
         font-weight: 800;
-    }
-`
-
-const StarCommentHelper = styled.div`
-    text-align: right;
-    color: var(--mono-5);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    @media (max-width: 768px) {
-        font-size: 0.9rem;
     }
 `
 
@@ -96,193 +261,3 @@ const InsideList = styled.li`
         font-size: 14px;
     }
 `
-
-const EducationComment = styled.div`
-    color: var(--mono-4);
-    font-size: 14px;
-    @media (max-width: 1280px) {
-        font-size: 12px;
-    }
-    @media (max-width: 768px) {
-        font-size: 10px;
-    }
-`
-
-export default function About (){
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    },[])
-
-    const renderSkill = useCallback( (typeParams) => {
-        return skills.filter(v => v.type === typeParams).map(v => (
-            <SkillPane skill={v} key={v.name} />
-        ))
-    },[])
-
-    return (
-        <Row nogutter justify="center">
-            <Col sm={12} md={8} style={{padding: '0px 1rem'}}>
-                <CenteredRow>
-                    <TextUpper
-                    initial={initialProps}
-                    animate={animateProps}
-                    transition={{ delay: 0.4 }}
-                    >
-                        ABOUT ME
-                    </TextUpper>
-                </CenteredRow>
-                <CenteredTitle
-                initial={initialProps}
-                animate={animateProps}
-                transition={{ delay: 0.6 }}
-                >
-                    I am Minsu Lee. A web developer with a passion for design & UX.
-                    Truly enjoying React.js at the moment and love to make simple and beautiful interface.
-                </CenteredTitle>
-
-                <motion.img 
-                initial={initialProps}
-                animate={animateProps}
-                transition={{ delay: 0.8 }}
-                src="/images/about.jpg" 
-                style={{width: '100%'}} 
-                />
-
-                <motion.div
-                initial={initialProps}
-                animate={animateProps}
-                transition={{ delay: 1 }}
-                >
-                    <DividerTitle>Skills</DividerTitle>
-                    <Divider />
-                    {/* <StarCommentHelper>
-                        "<span style={{color: 'gold'}}>✭</span>" means I have used this for 300+ hours.
-                    </StarCommentHelper> */}
-
-                    <SkillTitle>Front-End</SkillTitle>
-                    <Row nogutter justify="start">
-                        {renderSkill('FE')}
-                    </Row>
-                    <br/>
-
-                    <SkillTitle>Back-End/DB</SkillTitle>
-                    <Row nogutter justify="start">
-                        {renderSkill('BE')}
-                        {renderSkill('DB')}
-                    </Row>
-                    <br/>
-
-                    <SkillTitle>DevOps</SkillTitle>
-                    <Row nogutter justify="start">
-                        {renderSkill('DO')}
-                    </Row>
-                    <br/>
-
-                    <SkillTitle>Programming Languages</SkillTitle>
-                    <Row nogutter justify="start">
-                        {renderSkill('PL')}
-                    </Row>
-                    <br/>
-
-                    <SkillTitle>etc.</SkillTitle>
-                    <Row nogutter justify="start">
-                        {renderSkill('etc')}
-                    </Row>
-                    <br/>
-
-                    <SkillTitle>OS</SkillTitle>
-                    <Row nogutter justify="start">
-                        {renderSkill('OS')}
-                    </Row>
-                    <br/>
-
-                    <br/><br/>
-
-                    <motion.img 
-                    initial={initialProps}
-                    animate={animateProps}
-                    transition={{ delay: 0.8 }}
-                    src="/images/navy.jpg" 
-                    style={{width: '100%'}} 
-                    />
-
-                    <DividerTitle>Work Experience</DividerTitle>
-                    <Divider />
-
-                    <InfoLine>
-                        <InfoLeft>2016 - 2018</InfoLeft>
-                        <InfoRight>
-                            <b>Republic of Korea Navy</b>
-                            <div>Sub-lieutenant (IT branch)</div>
-                            <div>An officer in charge of E-learning Content Creation Dept. in Naval Education & Training Command</div>
-                        </InfoRight>
-                    </InfoLine>
-                    <ul style={{marginTop: '1rem'}}>
-                        <InsideList>Created interactive E-learning content with HTML and Adobe Captivate and developed intranet websites to serve them.</InsideList>
-                        <InsideList>Improved intranet websites by modernizing design and simplifying layout using HTML, CSS, and Vanilla JavaScript.</InsideList>
-                    </ul>
-                    <br/>
-
-                    <DividerTitle>Education</DividerTitle>
-                    <Divider />
-
-                    <InfoLine>
-                        <InfoLeft>2019 - 2020</InfoLeft>
-                        <InfoRight>
-                            <b>Seneca College</b>
-                            <div>Diploma of Computer Programming</div>
-                            {/* <EducationComment>
-                                It was good to review what I learned before. I had a lot of time to spare, so I was able to work on personal projects.
-                            </EducationComment> */}
-                        </InfoRight>
-                    </InfoLine>
-                    <InfoLine>
-                        <InfoLeft>2018 - 2019</InfoLeft>
-                        <InfoRight>
-                            <b>Embassy English London UK</b>
-                            <div>Language Institute</div>
-                            {/* <EducationComment>
-                                I could not make a sentence properly until I decided to learn English in 2018. At this time, I learned English a lot.
-                            </EducationComment> */}
-                        </InfoRight>
-                    </InfoLine>
-                    <InfoLine>
-                        <InfoLeft>2012 - 2016</InfoLeft>
-                        <InfoRight>
-                            <b>Pukyong National University</b>
-                            <div>Bachelor's degree of Computer Engineering / ROTC</div>
-                            {/* <EducationComment>
-                                Lorem
-                            </EducationComment> */}
-                        </InfoRight>
-                    </InfoLine>
-                    <br/>
-                    
-                    <DividerTitle>Languages</DividerTitle>
-                    <Divider />
-
-                    <InfoLine>
-                        <InfoLeft>Korean</InfoLeft>
-                        <InfoRight>Native</InfoRight>
-                    </InfoLine>
-                    <InfoLine>
-                        <InfoLeft>English</InfoLeft>
-                        <InfoRight>Advanced</InfoRight>
-                    </InfoLine>
-                    <InfoLine>
-                        <InfoLeft>Japanese</InfoLeft>
-                        <InfoRight>Intermediate</InfoRight>
-                    </InfoLine>
-                    <br/><br/>
-                </motion.div>
-
-                <WorkTogether
-                linkTo="/contact"
-                smallText="NEED A WEB DEVELOPER WITH A PASSION FOR DESIGN & UX?"
-                bigText="Let's Work Together"
-                />
-            </Col>
-        </Row>
-    )
-}
