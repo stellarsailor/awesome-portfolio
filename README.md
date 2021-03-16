@@ -1,4 +1,4 @@
-## Minsu Lee - Portfolio
+![Imgur](https://i.imgur.com/TGjY6a8.png)
 
 ### Live Link : https://minsu-lee.com
 <br />
