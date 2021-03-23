@@ -36,7 +36,7 @@ export default function About (){
                     animate={animateProps}
                     transition={{ delay: 0.6 }}
                 >
-                    I am Minsu Lee. Truly enjoying React.js with TypeScript and love to make simple and beautiful interface.
+                    I am Minsu Lee. Truly enjoying React.js with TypeScript and love to make simple and beautiful interface. Willingness to learn more and master Back-End and Test-Driven Development.
                 </CenteredTitle>
 
                 <motion.img 
@@ -115,13 +115,22 @@ export default function About (){
                         <InfoRight>
                             <b>Lieutenant Junior Grade (IT branch)</b>
                             <div>Republic of Korea Navy</div>
-                            <div>An officer of E-learning Content Creation Dept. in Naval Education & Training Command</div>
+                            <div>An officer in charge of E-learning Content Creation in Naval Education & Training Command</div>
                         </InfoRight>
                     </InfoLine>
                     <ul style={{marginTop: '1rem'}}>
-                        <InsideList>Developed user interface of Navy E-Learning Portal Website with HTML, CSS, JavaScript, jQuery, JSP based on MVC pattern.</InsideList>
-                        <InsideList>Created wireframes and developed interactive E-Learning content with Adobe Captivate, Photoshop, and HTML.</InsideList>
-                        <InsideList>Introduced Adobe Captivate to reduce load times and enhance user experience by replacing Adobe Flash and providing HTML5 content.</InsideList>
+                        <InsideList>
+                            Maintained Learning Management System with HTML, CSS, JavaScript, jQuery, JSP based on MVC pattern.
+                        </InsideList>
+                        <InsideList>
+                            Improved user experience and reduced webpage load times by replacing Adobe Flash and providing HTML5 content.
+                        </InsideList>
+                        <InsideList>
+                            Led a content creation team and managed multiple priorities to meet deadlines.
+                        </InsideList>
+                        <InsideList>
+                            Created wireframes and developed interactive E-Learning content with HTML, Adobe Captivate, and Photoshop.
+                        </InsideList>
                     </ul>
                     <br/>
 
