@@ -1,25 +1,24 @@
-import { Container } from 'react-grid-system';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Project from './pages/ProjectDetail';
-import Footer from './components/Footer';
-import BackToTop from './components/BackToTop';
-import NavBar from './components/NavBar';
+import { Container } from "react-grid-system"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Contact from "./pages/Contact"
+import Project from "./pages/ProjectDetail"
+import Footer from "./components/Footer"
+import BackToTop from "./components/BackToTop"
+import NavBar from "./components/NavBar"
 
-import Scroll from 'react-scroll';
-var Element  = Scroll.Element;
+import Scroll from "react-scroll"
+var Element = Scroll.Element
 
 export default function App() {
-
   return (
-    <Container fluid style={{padding: 0}}>
+    <Container fluid style={{ padding: 0 }}>
       <BackToTop />
       <Element name="top" />
       <Router>
         <NavBar />
-        <div style={{paddingTop: 45}}>
+        <div style={{ paddingTop: 45 }}>
           <Switch>
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
@@ -31,6 +30,5 @@ export default function App() {
       </Router>
       <Footer />
     </Container>
-  );
+  )
 }
-
