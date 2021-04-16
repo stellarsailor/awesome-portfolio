@@ -61,7 +61,7 @@ export default function Home() {
         animate={animateProps}
         transition={{ delay: 1 }}
       >
-        I am Minsu Lee. Intermediate Front-End Developer with 2+ years of
+        I am Minsu Lee. Intermediate Front-End Web Developer with 2+ years of
         comprehensive expertise in JavaScript and React.
       </TextDesc>
       <br />
@@ -75,11 +75,6 @@ export default function Home() {
             About Me <img src="/images/more.png" width={12} alt="About Me" />
           </HyperLinkSpan>
         </Link>
-        {/* <Link to="/about" style={{marginLeft: '1rem'}}>
-            <HyperLinkSpan>
-                Resume <img src="/images/more.png" width={12} alt="Resume" />
-            </HyperLinkSpan>
-        </Link> */}
       </HyperLink>
       <br />
       <br />

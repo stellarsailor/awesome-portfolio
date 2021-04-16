@@ -88,10 +88,10 @@ export default function About() {
           <br />
 
           {/* <SkillTitle>Programming Languages</SkillTitle>
-                    <Row nogutter justify="start">
-                        {renderSkill('PL')}
-                    </Row>
-                    <br/> */}
+          <Row nogutter justify="start">
+            {renderSkill('PL')}
+          </Row>
+          <br/> */}
 
           <SkillTitle>etc.</SkillTitle>
           <Row nogutter justify="start">
@@ -122,18 +122,19 @@ export default function About() {
           <InfoLine>
             <InfoLeft>2016 - 2018</InfoLeft>
             <InfoRight>
-              <b>Lieutenant Junior Grade (IT branch)</b>
-              <div>Republic of Korea Navy</div>
+              <b>Content Developer</b>
+              <div>Republic of Korea Navy, South Korea</div>
               <div>
                 An officer in charge of E-learning Content Creation in Naval
-                Education & Training Command
+                Education & Training Command.
               </div>
             </InfoRight>
           </InfoLine>
           <ul style={{ marginTop: "1rem" }}>
             <InsideList>
-              Maintained Learning Management System with HTML, CSS, JavaScript,
-              jQuery, JSP based on MVC pattern.
+              Developed and maintained view part of an internal Learning
+              Management System with HTML5, CSS3, JavaScript, JSP based on MVC
+              pattern.
             </InsideList>
             <InsideList>
               Improved user experience and reduced webpage load times by
@@ -145,7 +146,7 @@ export default function About() {
             </InsideList>
             <InsideList>
               Created wireframes and developed interactive E-Learning content
-              with HTML, Adobe Captivate, and Photoshop.
+              with HTML5, Adobe Captivate and Photoshop.
             </InsideList>
           </ul>
           <br />
@@ -156,25 +157,24 @@ export default function About() {
           <InfoLine>
             <InfoLeft>2019 - 2020</InfoLeft>
             <InfoRight>
-              <b>Seneca College</b>
-              <div>Diploma of Computer Programming</div>
+              <b>Diploma of Computer Programming</b>
+              <div>Seneca College</div>
+              <small>Cumulative GPA 3.8/4.0</small>
             </InfoRight>
           </InfoLine>
           <InfoLine>
             <InfoLeft>2018 - 2019</InfoLeft>
             <InfoRight>
-              <b>Embassy English London UK</b>
               <div>Language Institute</div>
+              <div>Embassy English London UK</div>
             </InfoRight>
           </InfoLine>
           <InfoLine>
             <InfoLeft>2012 - 2016</InfoLeft>
             <InfoRight>
-              <b>Pukyong National University</b>
-              <div>Bachelor's degree of Computer Engineering / ROTC</div>
-              {/* <EducationComment>
-                                Lorem
-                            </EducationComment> */}
+              <b>Bachelor's degree of Computer Engineering</b>
+              <div>Pukyong National University</div>
+              <small>Activities: ROTC(Reserve Officers' Training Corps)</small>
             </InfoRight>
           </InfoLine>
           <br />
