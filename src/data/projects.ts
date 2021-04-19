@@ -5,6 +5,7 @@ import {
   BritTea,
   SelfBingo,
   Valog,
+  Cinewars,
 } from "./previews"
 
 type ProjectType = {
@@ -151,6 +152,31 @@ export const projects: Array<ProjectType> = [
   {
     id: 3,
     type: "Toy",
+    title: "Cinewars",
+    codeLink: "https://github.com/stellarsailor/cinewars",
+    liveLink: "https://cine-wars.com",
+    languages: "English",
+    year: "2021",
+    duration: "3.24. - 3. 28.",
+    stack: [
+      "React.js",
+      "TypeScript",
+      "React Hooks",
+      "Redux",
+      "Testing-Library",
+      "AWS S3/CloudFront/Route53",
+    ],
+    feature: ["SPA", "Responsive", "CSR", "HTTPS", "SWAPI"],
+    library:
+      "https://github.com/stellarsailor/awesome-portfolio/blob/main/src/data/dependencies/Cinewars.json",
+    idea:
+      "This was a React.js assessment using Starwars API(SWAPI.dev) in a hiring process with a company that starts with the name 'Cine****'. So I made a title as 'Cinewars'. Even though the requirement was a simple as two view pages using Starwars API, I always think that a website should have any interesting feature. Therefore I tried to add some storyline. 😄  Imagine, you are a high-grade person from the Galactic Empire, you are on board the Star Destroyer, and you are looking for someone's information. You asked your subordinate(Stormtrooper) to prepare the person database. That is the main plot of this website and I added a dialogue box to make users be absorbed in having a conversation with Stormtrooper.",
+    preview: Cinewars,
+    lesson: "If I spend additional time in terms of performance, I think I would add a caching feature because the character data is not changed very often in the database. Therefore if I accumulate the characters list data in Redux state additionally when a user navigates the page from 2 to 8(assuming 1 is already fetched), it would get rid of inefficient fetching when the user navigates pages back from 8 to 2 again.",
+  },
+  {
+    id: 4,
+    type: "Toy",
     title: "Genshin Party",
     codeLink: "https://github.com/stellarsailor/genshinProject",
     liveLink: "https://genshinparty.com/en",
@@ -177,7 +203,7 @@ export const projects: Array<ProjectType> = [
       "It was difficult to implement the logic to compose two parties exactly same as the in-game one. I considered a lot how to make query string to be the most efficient when the URL is shared.",
   },
   {
-    id: 4,
+    id: 5,
     type: "Toy",
     title: "Damwon Project",
     codeLink: "https://github.com/stellarsailor/damwongaming",
@@ -197,7 +223,7 @@ export const projects: Array<ProjectType> = [
       "The thing that's lacking is that I didn't pay much attention to the design and layout. I had to make a website quickly and the most time-consuming thing was managing JSON data. I received thousands of fan-letters, messages, fan-arts, articles and comments on clips. It took some time to process the JSON data.",
   },
   {
-    id: 5,
+    id: 6,
     type: "Toy",
     title: "Memoiz",
     codeLink: "",

@@ -323,3 +323,35 @@ export const BritTea = [
       "My page/setting page. I firstly thought adding Google social login only but had to add Apple social login to get approved from Apple App Store.",
   },
 ]
+
+export const Cinewars = [
+  {
+    name: "0",
+    type: "jpg",
+    flex: "full",
+  },
+  {
+    name: "1",
+    type: "jpg",
+    comment: "Main page. You can play the Background Music on the top-right button! Recommend listening it!",
+    flex: "full",
+  },
+  {
+    name: "2",
+    type: "jpg",
+    comment: "Stormtrooper explains the person's data that you want to look for.",
+    flex: "full",
+  },
+  {
+    name: "3",
+    type: "mp4",
+    comment: `I still can't forget the moment I first saw the scene that Star Destroyer appeared in "A New Hope". So I added little bit of animation(bit low FPS due to decreasing size of video)`,
+    flex: "full",
+  },
+  {
+    name: "4",
+    type: "jpg",
+    comment: "Scalable and different dialogue text by every character! It parses colors.",
+    flex: "full",
+  },
+]
