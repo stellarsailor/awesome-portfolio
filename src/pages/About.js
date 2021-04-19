@@ -43,8 +43,7 @@ export default function About() {
           transition={{ delay: 0.6 }}
         >
           I am Minsu Lee. Truly enjoying React.js with TypeScript and love to
-          make simple and beautiful interface. Willingness to learn more and
-          master Back-End and Test-Driven Development.
+          make simple and beautiful interface. Willingness to learn more about Test-Driven Development.
         </CenteredTitle>
 
         <motion.img
