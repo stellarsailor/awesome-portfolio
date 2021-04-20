@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react"
+import React, { useCallback, useContext, useEffect } from "react"
 import styled from "styled-components"
 import { motion } from "framer-motion"
 import { Row, Col } from "react-grid-system"
@@ -13,8 +13,11 @@ import {
 import WorkTogether from "../components/WorkTogether"
 import { skills } from "../data/skills"
 import SkillPane from "../components/SkillPane"
+import { LanguageContext } from "../store/LanguageProvider"
 
 export default function About() {
+  const [state] = useContext(LanguageContext)
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -43,7 +46,8 @@ export default function About() {
           transition={{ delay: 0.6 }}
         >
           I am Minsu Lee. Truly enjoying React.js with TypeScript and love to
-          make simple and beautiful interface. Willingness to learn more about Test-Driven Development.
+          make simple and beautiful interface. Willingness to learn more about
+          Test-Driven Development. {state.language}
         </CenteredTitle>
 
         <motion.img

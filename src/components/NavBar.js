@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useCallback, useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { Row, Col, Visible } from "react-grid-system"
 import { useLocation } from "react-router-dom"
@@ -6,8 +6,11 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 import { initialProps, animateProps } from "../components/StyledComponent"
 import { projects } from "../data/projects"
+import { LanguageContext } from "../store/LanguageProvider"
 
 export default function NavBar(props) {
+  const [state, actions] = useContext(LanguageContext)
+  
   const location = useLocation()
 
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -35,6 +38,11 @@ export default function NavBar(props) {
   }, [location.pathname])
 
   const [viewMobilePane, setViewMobilePane] = useState(false)
+
+  const onToggleLanguage = useCallback(() => {
+    if(state.language === 'en') actions.setLanguage('ko')
+    else actions.setLanguage('en')
+  },[state, actions])
 
   return (
     <Row
@@ -139,20 +147,20 @@ export default function NavBar(props) {
                 </MobileTabLine>
               </a>
               {/* <a href="https://github.com/stellarsailor" target="_blank" rel="noreferrer">
-                                <MobileTabLine onClick={() => setViewMobilePane(false)}>
-                                    GitHub
-                                </MobileTabLine>
-                            </a>
-                            <a href="https://www.linkedin.com/in/minsu-lee-b6818b198/" target="_blank" rel="noreferrer">
-                                <MobileTabLine onClick={() => setViewMobilePane(false)}>
-                                    LinkedIn
-                                </MobileTabLine>
-                            </a>
-                            <a href="https://www.instagram.com/stellarsalior" target="_blank" rel="noreferrer">
-                                <MobileTabLine onClick={() => setViewMobilePane(false)}>
-                                    Instagram
-                                </MobileTabLine>
-                            </a> */}
+                  <MobileTabLine onClick={() => setViewMobilePane(false)}>
+                      GitHub
+                  </MobileTabLine>
+              </a>
+              <a href="https://www.linkedin.com/in/minsu-lee-b6818b198/" target="_blank" rel="noreferrer">
+                  <MobileTabLine onClick={() => setViewMobilePane(false)}>
+                      LinkedIn
+                  </MobileTabLine>
+              </a>
+              <a href="https://www.instagram.com/stellarsalior" target="_blank" rel="noreferrer">
+                  <MobileTabLine onClick={() => setViewMobilePane(false)}>
+                      Instagram
+                  </MobileTabLine>
+              </a> */}
             </MobileOpenedPane>
           )}
         </div>
@@ -175,6 +183,9 @@ export default function NavBar(props) {
             <Link to="/contact">
               <EachButton>Contact</EachButton>
             </Link>
+            <div onClick={onToggleLanguage}>
+              {state.language}
+            </div>
             <a
               href="https://drive.google.com/file/d/1e8b-BbIiDKbs0k6pzojxFjC1_myrprEd/view?usp=sharing"
               target="_blank"

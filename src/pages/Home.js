@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useContext, useEffect } from "react"
 import { Row, Col, Visible } from "react-grid-system"
 import styled from "styled-components"
 import {
@@ -12,10 +12,12 @@ import { Link, useRouteMatch } from "react-router-dom"
 import Scroll from "react-scroll"
 import Projects from "../components/Projects"
 import { motion } from "framer-motion"
+import { LanguageContext } from "../store/LanguageProvider"
 var Element = Scroll.Element
 var scroller = Scroll.scroller
 
 export default function Home() {
+  const [state] = useContext(LanguageContext)
   let match = useRouteMatch()
 
   useEffect(() => {
@@ -62,7 +64,7 @@ export default function Home() {
         transition={{ delay: 1 }}
       >
         I am Minsu Lee. Intermediate Front-End Web Developer with 2+ years of
-        comprehensive expertise in JavaScript and React.
+        comprehensive expertise in JavaScript and React. {state.language}
       </TextDesc>
       <br />
       <HyperLink

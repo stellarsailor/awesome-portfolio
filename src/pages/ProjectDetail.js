@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Row, Col } from "react-grid-system"
 import { Link, useParams } from "react-router-dom"
 import Fade from "react-reveal/Fade"
@@ -7,8 +7,10 @@ import { FlexDCol, FlexDRow } from "../components/StyledComponent"
 import WorkTogether from "../components/WorkTogether"
 import CircleIndicator from "../components/CircleIndicator"
 import { projects } from "../data/projects"
+import { LanguageContext } from "../store/LanguageProvider"
 
 export default function ProjectDetail(props) {
+  const [state] = useContext(LanguageContext)
   let { title } = useParams()
 
   const [selectedPrj, setSelectedPrj] = useState(null)
@@ -53,7 +55,7 @@ export default function ProjectDetail(props) {
                 alt="Project Icon"
               />
               <FlexDCol>
-                <div style={{ fontWeight: 800, fontSize: 24 }}>{title}</div>
+                <div style={{ fontWeight: 800, fontSize: 24 }}>{title} {state.language}</div>
                 <div>Minsu Lee</div>
                 <div style={{ marginTop: 8 }}>
                   {selectedPrj.codeLink ? (

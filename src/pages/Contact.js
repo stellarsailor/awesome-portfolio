@@ -1,9 +1,12 @@
-import React, { useEffect } from "react"
+import React, { useContext, useEffect } from "react"
 import styled from "styled-components"
 import Fade from "react-reveal/Fade"
 import { Row, Col } from "react-grid-system"
+import { LanguageContext } from "../store/LanguageProvider"
 
 export default function Contact() {
+  const [state] = useContext(LanguageContext)
+  
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -24,7 +27,7 @@ export default function Contact() {
             <div style={{ color: "white", filter: "none" }}>
               <div>TORONTO, CA</div>
               If you have any questions or would like to chat, feel free to
-              reach out!
+              reach out! {state.language}
             </div>
           </Fade>
         </HighlightText>
