@@ -146,6 +146,11 @@ export default function NavBar(props) {
                   Resume
                 </MobileTabLine>
               </a>
+              <MobileTabLine onClick={() => { setViewMobilePane(false); onToggleLanguage(); }}>
+                <span style={state.language === 'en' ? {fontWeight: 'bold', color: 'white'} : {color: 'gray'}}>en</span>
+                <span style={{margin: '0px 8px'}}> / </span> 
+                <span style={state.language === 'ko' ? {fontWeight: 'bold', color: 'white'} : {color: 'gray'}}>kr</span>
+              </MobileTabLine>
               {/* <a href="https://github.com/stellarsailor" target="_blank" rel="noreferrer">
                   <MobileTabLine onClick={() => setViewMobilePane(false)}>
                       GitHub
@@ -183,17 +188,18 @@ export default function NavBar(props) {
             <Link to="/contact">
               <EachButton>Contact</EachButton>
             </Link>
-            <div onClick={onToggleLanguage}>
-              {state.language}
-            </div>
             <a
               href="https://drive.google.com/file/d/1e8b-BbIiDKbs0k6pzojxFjC1_myrprEd/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
-              style={{ position: "absolute", right: 0 }}
             >
-              <ResumeButton>Resume</ResumeButton>
+              <EachButton>Resume</EachButton>
             </a>
+            <TopRightButton onClick={onToggleLanguage}>
+              <span style={state.language === 'en' ? {fontWeight: 'bold', color: 'white'} : {color: 'gray'}}>en</span>
+              <span style={{margin: '0px 4px'}}> / </span> 
+              <span style={state.language === 'ko' ? {fontWeight: 'bold', color: 'white'} : {color: 'gray'}}>kr</span>
+            </TopRightButton>
           </NavigationPane>
         </Col>
       </Visible>
@@ -253,7 +259,7 @@ const MobileSides = styled(motion.div)`
 
 const EachButton = styled.div`
   width: 120px;
-  font-size: 15px;
+  font-size: 1rem;
   color: #f5f5f7;
   display: flex;
   justify-content: center;
@@ -267,9 +273,12 @@ const EachButton = styled.div`
   }
 `
 
-const ResumeButton = styled.div`
+const TopRightButton = styled.div`
+  position: absolute;
+  right: 1rem;
+  width: 60px;
   color: #f5f5f7;
-  font-size: 15px;
+  font-size: 1rem;
   /* border: 1px solid var(--mono-5); */
   border-radius: 5px;
   padding: 5px;

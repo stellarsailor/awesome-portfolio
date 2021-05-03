@@ -14,6 +14,7 @@ import WorkTogether from "../components/WorkTogether"
 import { skills } from "../data/skills"
 import SkillPane from "../components/SkillPane"
 import { LanguageContext } from "../store/LanguageProvider"
+import { tr } from "../data/translation"
 
 export default function About() {
   const [state] = useContext(LanguageContext)
@@ -45,9 +46,7 @@ export default function About() {
           animate={animateProps}
           transition={{ delay: 0.6 }}
         >
-          I am Minsu Lee. Truly enjoying React.js with TypeScript and love to
-          make simple and beautiful interface. Willingness to learn more about
-          Test-Driven Development. {state.language}
+          {tr[state.language].ABOUT_ME_COMMENT}
         </CenteredTitle>
 
         <motion.img
@@ -203,7 +202,7 @@ export default function About() {
 
         <WorkTogether
           linkTo="/contact"
-          smallText="NEED A SELF-DIRECTED AND PASSIONATE WEB DEVELOPER?"
+          smallText={tr[state.language].MAIN_BUTTON_DESC}
           bigText="Let's Work Together"
         />
       </Col>

@@ -35,12 +35,16 @@ const WorkTogetherText = styled.div`
   font-size: 48px;
   font-weight: 1000;
   text-align: center;
+  text-decoration: underline solid transparent;
+  -webkit-text-decoration: underline solid transparent;
   @media (max-width: 576px) {
     font-size: 28px;
   }
   &:hover {
-    text-decoration-line: underline;
+    text-decoration: underline solid var(--mono-8);
+    -webkit-text-decoration: underline solid var(--mono-8);
   }
+  transition: text-decoration 0.5s ease;
   cursor: pointer;
 `
 

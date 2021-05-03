@@ -13,6 +13,7 @@ import Scroll from "react-scroll"
 import Projects from "../components/Projects"
 import { motion } from "framer-motion"
 import { LanguageContext } from "../store/LanguageProvider"
+import { tr } from "../data/translation"
 var Element = Scroll.Element
 var scroller = Scroll.scroller
 
@@ -38,16 +39,16 @@ export default function Home() {
       <TextUpper
         initial={initialProps}
         animate={animateProps}
-        transition={{ delay: 0.4 }}
+        transition={{ delay: 0.6 }}
       >
         TORONTO
       </TextUpper>
       <TextMain
         initial={initialProps}
         animate={animateProps}
-        transition={{ delay: 0.6 }}
+        transition={{ delay: 0.4 }}
       >
-        Front-End
+        Full-Stack
       </TextMain>
       <div style={{ textAlign: "right", maxWidth: 565, marginBottom: "1rem" }}>
         <TextMain
@@ -63,8 +64,7 @@ export default function Home() {
         animate={animateProps}
         transition={{ delay: 1 }}
       >
-        I am Minsu Lee. Intermediate Front-End Web Developer with 2+ years of
-        comprehensive expertise in JavaScript and React. {state.language}
+        {tr[state.language].MAIN_INTRODUCE}
       </TextDesc>
       <br />
       <HyperLink
@@ -153,9 +153,13 @@ const HyperLink = styled(motion.span)`
 
 const HyperLinkSpan = styled.span`
   cursor: pointer;
+  text-decoration: underline solid transparent;
+  -webkit-text-decoration: underline solid transparent;
   &:hover {
-    text-decoration-line: underline;
+    text-decoration: underline solid var(--blue);
+    -webkit-text-decoration: underline solid var(--blue);
   }
+  transition: text-decoration 0.5s ease;
 `
 
 const PortraitContainer = styled(motion.div)`

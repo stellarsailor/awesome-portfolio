@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useContext, useEffect } from "react"
 import { Row, Col } from "react-grid-system"
 import styled from "styled-components"
 import {
@@ -15,6 +15,8 @@ import { Link, useLocation } from "react-router-dom"
 import WorkTogether from "./WorkTogether"
 import { motion } from "framer-motion"
 import Scroll from "react-scroll"
+import { tr } from "../data/translation"
+import { LanguageContext } from "../store/LanguageProvider"
 var Element = Scroll.Element
 var scroller = Scroll.scroller
 
@@ -44,6 +46,7 @@ const renderProjectPane = (prj, index) => (
 )
 
 export default function Projects() {
+  const [state] = useContext(LanguageContext)
   let { search } = useLocation()
 
   useEffect(() => {
@@ -67,7 +70,7 @@ export default function Projects() {
           animate={animateProps}
           transition={{ delay: 0.4 }}
         >
-          Personal Projects
+          {tr[state.language].MAIN_PERSONAL_PROJECTS}
         </TextMain>
 
         <motion.div
@@ -75,7 +78,9 @@ export default function Projects() {
           animate={animateProps}
           transition={{ delay: 0.6 }}
         >
-          <DividerTitle>Running Services</DividerTitle>
+          <DividerTitle>
+            {tr[state.language].MAIN_RUNNING_SERVICES}
+          </DividerTitle>
           <Divider />
         </motion.div>
 
@@ -90,7 +95,9 @@ export default function Projects() {
             ))}
         </Row>
 
-        <DividerTitle>Toy Projects</DividerTitle>
+        <DividerTitle>
+          {tr[state.language].MAIN_TOY_PROJECTS}
+        </DividerTitle>
         <Divider />
 
         <Row nogutter>
@@ -106,11 +113,13 @@ export default function Projects() {
 
         {/* <DividerTitle>Others</DividerTitle>
         <Divider /> */}
-        <WorkTogether
-          linkTo={`/about`}
-          smallText="NEED A SELF-DIRECTED AND PASSIONATE WEB DEVELOPER?"
-          bigText="Read About Me"
-        />
+        <div style={{margin: 8, backgroundColor: '#fafafa'}}>
+          <WorkTogether
+            linkTo={`/about`}
+            smallText={tr[state.language].MAIN_BUTTON_DESC}
+            bigText="Read About Me"
+          />
+        </div>
       </Col>
     </Row>
   )

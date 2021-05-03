@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Fade from "react-reveal/Fade"
 import { Row, Col } from "react-grid-system"
 import { LanguageContext } from "../store/LanguageProvider"
+import { tr } from "../data/translation"
 
 export default function Contact() {
   const [state] = useContext(LanguageContext)
@@ -26,8 +27,7 @@ export default function Contact() {
           <Fade bottom distance="50px">
             <div style={{ color: "white", filter: "none" }}>
               <div>TORONTO, CA</div>
-              If you have any questions or would like to chat, feel free to
-              reach out! {state.language}
+              {tr[state.language].CONTACT_COMMENT}
             </div>
           </Fade>
         </HighlightText>
