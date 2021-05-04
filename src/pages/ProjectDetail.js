@@ -55,7 +55,7 @@ export default function ProjectDetail(props) {
                 alt="Project Icon"
               />
               <FlexDCol>
-                <div style={{ fontWeight: 800, fontSize: 24 }}>{title} {state.language}</div>
+                <div style={{ fontWeight: 800, fontSize: 24 }}>{title}</div>
                 <div>Minsu Lee</div>
                 <div style={{ marginTop: 8 }}>
                   {selectedPrj.codeLink ? (
