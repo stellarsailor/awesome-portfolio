@@ -122,6 +122,21 @@ export default function About() {
           <Divider />
 
           <InfoLine>
+            <InfoLeft>2021 </InfoLeft>
+            <InfoRight>
+              <b>Development Intern</b>
+              <div>Critical Mass, Toronto, ON</div>
+            </InfoRight>
+          </InfoLine>
+          <ul style={{ marginTop: "1rem" }}>
+            <InsideList>
+              Developed automated testing for Nissan Next Generation Shopping tool.
+            </InsideList>
+          </ul>
+          <br />
+          <br />
+
+          <InfoLine>
             <InfoLeft>2016 - 2018</InfoLeft>
             <InfoRight>
               <b>Content Developer</b>
