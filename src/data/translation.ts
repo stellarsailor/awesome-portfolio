@@ -15,7 +15,7 @@ const TRANSLATIONS: {
     MAIN_RUNNING_SERVICES: 'Running Services',
     MAIN_TOY_PROJECTS: 'Toy Projects',
     MAIN_BUTTON_DESC: 'NEED A SELF-DIRECTED AND PASSIONATE WEB DEVELOPER?',
-    ABOUT_ME_COMMENT: 'Truly enjoying React.js with TypeScript and love to make simple and beautiful interface. Willingness to learn more about Test-Driven Development.',
+    ABOUT_ME_COMMENT: 'Truly enjoying React.js with TypeScript and love to make simple and beautiful interface.',
     CONTACT_COMMENT: 'If you have any questions or would like to chat, feel free to reach out!'
   },
   ko: {
@@ -24,7 +24,7 @@ const TRANSLATIONS: {
     MAIN_RUNNING_SERVICES: '운영 중인 서비스',
     MAIN_TOY_PROJECTS: '토이 프로젝트',
     MAIN_BUTTON_DESC: '자기주도적이고 열정적인 웹 개발자를 찾으시나요?',
-    ABOUT_ME_COMMENT: 'React와 TypeScript 조합을 즐기고 있으며 심플하고 아름다운 유저 인터페이스 구현을 좋아합니다. TDD를 더욱 공부하고 적용해보고 싶습니다.',
+    ABOUT_ME_COMMENT: 'React와 TypeScript 조합을 즐기고 있으며 심플하고 아름다운 유저 인터페이스 구현을 좋아합니다..',
     CONTACT_COMMENT: '웹 개발과 관련된 대화는 언제든지 환영합니다!'
   }
 }

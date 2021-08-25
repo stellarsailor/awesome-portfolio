@@ -122,18 +122,20 @@ export default function About() {
           <Divider />
 
           <InfoLine>
-            <InfoLeft>2021 </InfoLeft>
+            <InfoLeft>2021 - Present </InfoLeft>
             <InfoRight>
-              <b>Development Intern</b>
-              <div>Critical Mass, Toronto, ON</div>
+              <b>Web Developer</b>
+              <div>Critical Mass (Omnicom Group), Toronto, ON</div>
             </InfoRight>
           </InfoLine>
           <ul style={{ marginTop: "1rem" }}>
             <InsideList>
-              Developed automated testing for Nissan Next Generation Shopping tool.
+              Developed new features and fixed bugs of Mitsubishi USA MiPulse migration project using React, GraphQL, Storybook, and AEM(Adobe Experience Manager).
+            </InsideList>
+            <InsideList>
+              Developed automated testing cases for Nissan USA Next Generation Shopping tool using React and Testing-library.
             </InsideList>
           </ul>
-          <br />
           <br />
 
           <InfoLine>
@@ -176,14 +178,13 @@ export default function About() {
             <InfoRight>
               <b>Diploma of Computer Programming</b>
               <div>Seneca College</div>
-              <small>Cumulative GPA 3.8/4.0</small>
             </InfoRight>
           </InfoLine>
           <InfoLine>
             <InfoLeft>2018 - 2019</InfoLeft>
             <InfoRight>
-              <div>Language Institute</div>
               <div>Embassy English London UK</div>
+              <small>Language Institute</small>
             </InfoRight>
           </InfoLine>
           <InfoLine>
